@@ -4,6 +4,9 @@ body {
 }
 
 .card-container {
+
+  background-color: rgba(0, 255, 255, 0.078);
+
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
   grid-gap: 20px;
@@ -11,6 +14,7 @@ body {
 }
 
 .card {
+  background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.259);
   padding: 20px;
@@ -43,10 +47,9 @@ body {
 
 
 button {
-  background-color: #063a6b;
+  background-color: #ec9b19;
   color: white;
   padding: 10px;
-  border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -81,13 +84,14 @@ button:hover {
 }
 
 .nav {
-  margin: 0 auto;
+  background-color: #013c68;
+  padding: 0.5rem;
 }
 
 .category {
   padding: 10px;
-  background-color: #214663;
-  color: rgb(255, 255, 255);
+  background-color: #ec9b19;
+  color: #fff;
   border-radius: 5px;
   margin: 10px;
   font-size: 1.5em;
@@ -99,6 +103,8 @@ button:hover {
 }
 
 .search-div {
+  background-color: rgba(0, 255, 255, 0.078);
+
 
   display: flex;
   justify-content: center;
@@ -113,10 +119,9 @@ button:hover {
 }
 
 .search-button {
-  background-color: #006756;
+  background-color: #ec9b19;
   height: 4em;
-  padding: 20px;
-  font-size: 1rem;
+  font-size: 1.5rem;
   margin: 1rem;
   width: 8rem;
   border-radius: 10px;
