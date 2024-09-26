@@ -2,31 +2,31 @@ import { useState } from 'react'
 import '../styles/App.css'
 
 function App() {
-
   return (
-
-
     <div className='body'>
-
       <header className='header-top'>
         <h1 className='header-title'>Dessert Heaven</h1>
       </header>
       <nav className='nav'>
-          <ul className='nav-list'>
-            <li><button className='category'>Category</button></li>
-            <li><button className='category'>Category</button></li>
-            <li><button className='category'>Category</button></li>
+        <hr />
+        <ul className='nav-list'>
+          <li><button className='category'>Category</button></li>
+          <li><button className='category'>Category</button></li>
+          <li><button className='category'>Category</button></li>
 
-            <li><button className='category'>Category</button></li>
-            <li><button className='category'>Category</button></li>
-            <li><button className='category'>Category</button></li>
-          </ul>
-        </nav>
+          <li><button className='category'>Category</button></li>
+          <li><button className='category'>Category</button></li>
+          <li><button className='category'>Category</button></li>
+        </ul>
+        <hr />
+      </nav>
+
 
       <div className='search-div'>
         <input type="text" placeholder="Search..." />
         <button type="submit" className='search-button'>Search</button>
       </div>
+
 
 
       <main className='card-container'>
