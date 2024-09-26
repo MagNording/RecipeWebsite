@@ -1,5 +1,4 @@
 function NavBar(props) {
-    console.log(props.categories);
     return (
         <nav className='nav'>
         <hr />
