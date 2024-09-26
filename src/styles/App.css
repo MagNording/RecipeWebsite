@@ -4,7 +4,7 @@ body {
 }
 
 .header-top {
-  background-image: url("../public/kelvin-han-a-niLBbZF4o-unsplash.jpg");
+  background-image: url("../images/home-page.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -17,8 +17,6 @@ body {
   flex-direction: column;
   justify-content: space-around;
   background-color: rgba(0, 0, 0, 0.664);
-
-
 }
 
 .header-title {
@@ -27,12 +25,12 @@ body {
   text-shadow: 5px 5px 10px rgb(0, 0, 0);
 }
 
-
 .header-citation {
   color: rgb(255, 255, 255);
   font-weight: bold;
   font-family: serif;
 }
+
 .arrow {
   font-size: 4rem;
   color: rgb(255, 255, 255);
@@ -40,9 +38,7 @@ body {
 
 
 .card-container {
-
   background-color: rgba(0, 255, 255, 0.078);
-
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
   grid-gap: 20px;
