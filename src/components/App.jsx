@@ -21,17 +21,19 @@ function createRecipeCard(content) {
 const categoryList = ["category1", "category2", "category3", "category4", "category5"];
 
 function App() {
-<<<<<<<<< Temporary merge branch 1
-  const [count, setCount] = useState(0)
-=========
-  //const [count, setCount] = useState(0)
->>>>>>>>> Temporary merge branch 2
-
   return (
-    <div>
-      <h1>Recipe Website</h1>
+    <div className='body'>
+      <HomeHeader />
+      <NavBar categories={categoryList}/>
+      <SearchBar />
+
+      <main className='card-container'>
+        {recipeContent.map(createRecipeCard)}
+      </main>
+
+      <Footer />
     </div>
-  );
+  )
 }
 
 export default App;
