@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import '../styles/App.css';
 import HomeHeader from './HomeHeader';
+import NavBar from './NavBar';
 import SearchBar from './SearchBar';
 import RecipeCard from './RecipeCard';
 import Footer from './Footer';
@@ -17,24 +18,13 @@ function createRecipeCard(content) {
   );
 }
 
+const categoryList = ["category1", "category2", "category3", "category4", "category5"];
+
 function App() {
   return (
     <div className='body'>
       <HomeHeader />
-      <nav className='nav'>
-        <hr />
-        <ul className='nav-list'>
-          <li><button className='category'>Category</button></li>
-          <li><button className='category'>Category</button></li>
-          <li><button className='category'>Category</button></li>
-
-          <li><button className='category'>Category</button></li>
-          <li><button className='category'>Category</button></li>
-          <li><button className='category'>Category</button></li>
-        </ul>
-        <hr />
-      </nav>
-
+      <NavBar categories={categoryList}/>
       <SearchBar />
 
       <main className='card-container'>
