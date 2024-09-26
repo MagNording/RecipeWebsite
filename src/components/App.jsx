@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import '../styles/App.css';
 import HomeHeader from './HomeHeader';
+import SearchBar from './SearchBar';
 import RecipeCard from './RecipeCard';
+import Footer from './Footer';
 import recipeContent from '../recipes-content';
 
 function createRecipeCard(content) {
@@ -33,23 +35,14 @@ function App() {
         <hr />
       </nav>
 
-      <div className='search-div'>
-        <input type="text" placeholder="Search..." />
-        <button type="submit" className='search-button'>Search</button>
-      </div>
+      <SearchBar />
 
       <main className='card-container'>
         {recipeContent.map(createRecipeCard)}
       </main>
 
-      <footer className='footer'>
-        <p>Recipe Website &copy; 2024</p> 
-        <p>GRUPP 3, JU23 & ITP24</p>
-      </footer>
-
+      <Footer />
     </div>
-
-
   )
 }
 
