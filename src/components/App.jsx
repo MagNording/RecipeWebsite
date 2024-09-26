@@ -1,5 +1,18 @@
 import { useState } from 'react'
-import '../styles/App.css'
+import '../styles/App.css';
+import RecipeCard from './RecipeCard';
+import recipeContent from '../recipes-content';
+
+function createRecipeCard(content) {
+  return(
+    <RecipeCard
+      key={content.id}
+      image={content.image}
+      name={content.name}
+      description={content.description}
+    />
+  );
+}
 
 function App() {
   return (
@@ -30,115 +43,12 @@ function App() {
         <button type="submit" className='search-button'>Search</button>
       </div>
 
-
-
       <main className='card-container'>
-
-        <section className='card'>
-          <h2>Namn</h2>
-          <img src="../public/brooke-lark-pGM4sjt_BdQ-unsplash.jpg" alt="Recipe 1" />
-          <ul className='recipe-list'>
-            <li>
-              <h3>Recipe 1</h3>
-              <p>Description of Recipe 1</p>
-              <button>View Recipe</button>
-            </li>
-          </ul>
-        </section>
-
-        <section className='card'>
-          <h2>Namn</h2>
-          <img src="../public/brooke-lark-pGM4sjt_BdQ-unsplash.jpg" alt="Recipe 2" />
-          <ul className='recipe-list'>
-            <li>
-              <h3>Recipe 2</h3>
-              <p>Description of Recipe 2</p>
-              <button>View Recipe</button>
-            </li>
-          </ul>
-        </section>
-
-        <section className='card'>
-          <h2>Namn</h2>
-          <ul className='recipe-list'>
-            <li>
-              <img src="../public/brooke-lark-pGM4sjt_BdQ-unsplash.jpg" alt="Recipe 3" />
-              <h3>Recipe 3</h3>
-              <p>Description of Recipe 3</p>
-              <button>View Recipe</button>
-            </li>
-          </ul>
-        </section>
-
-
-        <section className='card'>
-          <h2>Namn</h2>
-          <ul className='recipe-list'>
-            <li>
-              <img src="../public/brooke-lark-pGM4sjt_BdQ-unsplash.jpg" alt="Recipe 3" />
-              <h3>Recipe 3</h3>
-              <p>Description of Recipe 3</p>
-              <button>View Recipe</button>
-            </li>
-          </ul>
-        </section>
-
-
-        <section className='card'>
-          <h2>Namn</h2>
-          <ul className='recipe-list'>
-            <li>
-              <img src="../public/brooke-lark-pGM4sjt_BdQ-unsplash.jpg" alt="Recipe 3" />
-              <h3>Recipe 3</h3>
-              <p>Description of Recipe 3</p>
-              <button>View Recipe</button>
-            </li>
-          </ul>
-        </section>
-
-
-        <section className='card'>
-          <h2>Namn</h2>
-          <ul className='recipe-list'>
-            <li>
-              <img src="../public/brooke-lark-pGM4sjt_BdQ-unsplash.jpg" alt="Recipe 3" />
-              <h3>Recipe 3</h3>
-              <p>Description of Recipe 3</p>
-              <button>View Recipe</button>
-            </li>
-          </ul>
-        </section>
-
-
-        <section className='card'>
-          <h2>Namn</h2>
-          <ul className='recipe-list'>
-            <li>
-              <img src="../public/brooke-lark-pGM4sjt_BdQ-unsplash.jpg" alt="Recipe 3" />
-              <h3>Recipe 3</h3>
-              <p>Description of Recipe 3</p>
-              <button>View Recipe</button>
-            </li>
-          </ul>
-        </section>
-
-
-        <section className='card'>
-          <h2>Namn</h2>
-          <ul className='recipe-list'>
-            <li>
-              <img src="../public/brooke-lark-pGM4sjt_BdQ-unsplash.jpg" alt="Recipe 3" />
-              <h3>Recipe 3</h3>
-              <p>Description of Recipe 3</p>
-              <button>View Recipe</button>
-            </li>
-          </ul>
-        </section>
+        {recipeContent.map(createRecipeCard)}
       </main>
 
       <footer className='footer'>
         <p>Recipe Website &copy; 2022 GRUPP 3, JU23 & ITP24</p>
-
       </footer>
 
     </div>
