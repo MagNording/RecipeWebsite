@@ -1,10 +1,11 @@
 import { useState } from 'react'
-import '../styles/App.css'
+/* import '../styles/App.css'
+ */import ViewRecipe from './ViewRecipe';
 
 function App() {
   return (
     <div className='body'>
-      <header className='header-top'>
+  {/*     <header className='header-top'>
         <h1 className='header-title'>Dessert Heaven</h1>
         <h2 className='header-citation'>"A Taste of Heaven in Every Bite"</h2>
         <h2 className='header-citation'>"Where Every Dessert Tells a Story"</h2>
@@ -140,7 +141,9 @@ function App() {
         <p>Recipe Website &copy; 2022 GRUPP 3, JU23 & ITP24</p>
 
       </footer>
+ */}
 
+    <ViewRecipe />
     </div>
 
 
