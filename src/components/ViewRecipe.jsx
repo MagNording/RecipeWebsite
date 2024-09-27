@@ -45,8 +45,8 @@ export default function
                     </div>
                 </div>
 
-                <div className='card-holder'>
-                    <div className='card--comments--stars'>
+                <div className='card-holder-last '>
+                    <div className='card-last'>
                         <h2>Kommentarer</h2>
                         <ul className='scroll-list comments'>
                             <li><p>kommentar 1 ugfudfgduigug</p></li>
@@ -68,7 +68,7 @@ export default function
                     </div>
 
 
-                    <div className='card--comments--stars'>
+                    <div className='card-last'>
                         <h2>Stjärnor</h2>
                         <p className='stars'>★★★★★</p>
                         <button >Recensera</button>
