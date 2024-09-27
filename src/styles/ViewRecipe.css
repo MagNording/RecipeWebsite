@@ -44,16 +44,8 @@ p {
 
 }
 
-.card-holder-1 {
-    width: 80%;
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    gap: 2rem;
-    margin-top: 20px;
-    
-}
+.card--comments--stars {
 
-.card-1 {
     font-size: 1.2rem;
     margin-bottom: 20px;
     text-align: center;
@@ -70,7 +62,7 @@ p {
     overflow: hidden; 
 }
 
-.card-1:hover {
+.card--comments--stars:hover {
     transform: scale(1.05);
 }
 
@@ -107,7 +99,7 @@ p {
 .card-holder {
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    gap: 2rem;
+    gap: 3rem;
     margin-top: 20px;
 }
 
@@ -141,22 +133,9 @@ p {
     text-align: center;
 }
 
-.buttons {
-    list-style-type: none;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 10px;
-    padding: 0;
-
-}
-
-.button-list-holder {
-    width: 100%;
-    margin: 0;
-}
 
 button {
+    
     padding: 10px;
     background-color: #ec9b19;
     color: #fff;
@@ -221,17 +200,3 @@ button:active {
     color: #000000;
 }
 
-.return-btn {
-    background-color: #ec9b19;
-    color: white;
-    padding: 12px 25px;
-    border-radius: 8px;
-    margin-top: 20px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.return-btn:hover {
-    background-color: #008f94;
-}

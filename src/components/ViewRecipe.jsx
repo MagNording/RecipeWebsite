@@ -45,11 +45,9 @@ export default function
                     </div>
                 </div>
 
-                <div className='card-holder-1'>
-
-
-                    <div className='card-1'>
-                        <h2>Kommantarer</h2>
+                <div className='card-holder'>
+                    <div className='card--comments--stars'>
+                        <h2>Kommentarer</h2>
                         <ul className='scroll-list comments'>
                             <li><p>kommentar 1 ugfudfgduigug</p></li>
                             <li><p>kommentar 1</p></li>
@@ -63,35 +61,22 @@ export default function
                             <li><p>kommentar 1</p></li>
                             <li><p>kommentar 1</p></li>
                             <li><p>kommentar 1</p></li>
+
                         </ul>
+                        <button>Kommentera</button>
+
                     </div>
 
 
-                    <div className='card-1'>
+                    <div className='card--comments--stars'>
                         <h2>Stjärnor</h2>
                         <p className='stars'>★★★★★</p>
+                        <button >Recensera</button>
+
                     </div>
                 </div>
 
-
-                <div className='button-list-holder'>
-                    <ul className="buttons">
-                        <li>
-                            <button className='comment-btn'>Kommentera</button>
-                        </li>
-                        <li>
-                        <button className='return-btn'>Return</button>
-
-                        </li>
-                        <li>
-                            <button className='star-btn'>Recensera med stjärnor</button>
-                        </li>
-                    </ul>
-                </div>
-
-
-
-
+                <button>Home</button>
 
             </div>
         </div>
