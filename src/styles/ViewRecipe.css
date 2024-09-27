@@ -53,8 +53,8 @@ p {
 }
 
 .comments {
-    padding: 10px;
-    border-radius: 10px;
+    border: solid 5px #000000b0;
+    margin-bottom: 0.5rem;
     width: 100%;
 
 }
