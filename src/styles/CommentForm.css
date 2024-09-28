@@ -77,3 +77,14 @@ button:active {
 h2 {
     font-family: 'Courier New', Courier, monospace;
 }
+
+.anonymous-label {
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+input[type="checkbox"] {
+    transform: scale(2);
+    margin: 10px;
+}

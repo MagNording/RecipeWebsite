@@ -5,7 +5,7 @@ import ViewRecipe from './ViewRecipe';
 
 function App() {
   return (
-    <ViewRecipe/>
+    <Comment/>
   )
 }
 
