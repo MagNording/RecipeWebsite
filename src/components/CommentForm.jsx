@@ -10,16 +10,21 @@ function CommentForm() {
         <div className='main'>
             <div className='container'>
                 <form>
+                    <h2>Kommentar</h2>
                     <div className='name-div'>
                         <label htmlFor="name"></label>
-                        <input type="text"id="name" placeholder='enter name' required/>
+                        <input type="text" id="name" placeholder='ange namn' required />
                     </div>
 
                     <div className='comment-div'>
                         <label htmlFor="comment"></label>
-                        <textarea id="comment" placeholder='enter comment'/>
+                        <textarea id="comment" placeholder='ange din kommentar' cols={20} rows={5} />
                     </div>
-                    <button type="submit">Submit Comment</button>
+                    <div className='button-container'>
+                        <button type="submit">Ange kommentar</button>
+                        <button type='submit'>Tillbaka</button>
+                    </div>
+
                 </form>
             </div>
         </div>

@@ -39,101 +39,92 @@ export default function Landing() {
                     <img src="../public/brooke-lark-pGM4sjt_BdQ-unsplash.jpg" alt="Recipe 1" />
                     <ul className='recipe-list'>
                         <li>
-                            <h3>Recipe 1</h3>
-                            <p>Description of Recipe 1</p>
-                            <button>View Recipe</button>
+                            <h3>Recept 1</h3>
+                            <p>recept detaljer</p>
+                            <button>visa recept</button>
                         </li>
                     </ul>
                 </section>
 
                 <section className='card'>
                     <h2>Namn</h2>
-                    <img src="../public/brooke-lark-pGM4sjt_BdQ-unsplash.jpg" alt="Recipe 2" />
+                    <img src="../public/brooke-lark-pGM4sjt_BdQ-unsplash.jpg" alt="Recipe 1" />
                     <ul className='recipe-list'>
                         <li>
-                            <h3>Recipe 2</h3>
-                            <p>Description of Recipe 2</p>
-                            <button>View Recipe</button>
+                            <h3>Recept 1</h3>
+                            <p>recept detaljer</p>
+                            <button>visa recept</button>
+                        </li>
+                    </ul>
+                </section>
+                <section className='card'>
+                    <h2>Namn</h2>
+                    <img src="../public/brooke-lark-pGM4sjt_BdQ-unsplash.jpg" alt="Recipe 1" />
+                    <ul className='recipe-list'>
+                        <li>
+                            <h3>Recept 1</h3>
+                            <p>recept detaljer</p>
+                            <button>visa recept</button>
+                        </li>
+                    </ul>
+                </section>
+                <section className='card'>
+                    <h2>Namn</h2>
+                    <img src="../public/brooke-lark-pGM4sjt_BdQ-unsplash.jpg" alt="Recipe 1" />
+                    <ul className='recipe-list'>
+                        <li>
+                            <h3>Recept 1</h3>
+                            <p>recept detaljer</p>
+                            <button>visa recept</button>
                         </li>
                     </ul>
                 </section>
 
                 <section className='card'>
                     <h2>Namn</h2>
+                    <img src="../public/brooke-lark-pGM4sjt_BdQ-unsplash.jpg" alt="Recipe 1" />
                     <ul className='recipe-list'>
                         <li>
-                            <img src="../public/brooke-lark-pGM4sjt_BdQ-unsplash.jpg" alt="Recipe 3" />
-                            <h3>Recipe 3</h3>
-                            <p>Description of Recipe 3</p>
-                            <button>View Recipe</button>
+                            <h3>Recept 1</h3>
+                            <p>recept detaljer</p>
+                            <button>visa recept</button>
                         </li>
                     </ul>
                 </section>
-
-
                 <section className='card'>
                     <h2>Namn</h2>
+                    <img src="../public/brooke-lark-pGM4sjt_BdQ-unsplash.jpg" alt="Recipe 1" />
                     <ul className='recipe-list'>
                         <li>
-                            <img src="../public/brooke-lark-pGM4sjt_BdQ-unsplash.jpg" alt="Recipe 3" />
-                            <h3>Recipe 3</h3>
-                            <p>Description of Recipe 3</p>
-                            <button>View Recipe</button>
+                            <h3>Recept 1</h3>
+                            <p>recept detaljer</p>
+                            <button>visa recept</button>
                         </li>
                     </ul>
                 </section>
-
-
                 <section className='card'>
                     <h2>Namn</h2>
+                    <img src="../public/brooke-lark-pGM4sjt_BdQ-unsplash.jpg" alt="Recipe 1" />
                     <ul className='recipe-list'>
                         <li>
-                            <img src="../public/brooke-lark-pGM4sjt_BdQ-unsplash.jpg" alt="Recipe 3" />
-                            <h3>Recipe 3</h3>
-                            <p>Description of Recipe 3</p>
-                            <button>View Recipe</button>
+                            <h3>Recept 1</h3>
+                            <p>recept detaljer</p>
+                            <button>visa recept</button>
                         </li>
                     </ul>
                 </section>
-
-
                 <section className='card'>
                     <h2>Namn</h2>
+                    <img src="../public/brooke-lark-pGM4sjt_BdQ-unsplash.jpg" alt="Recipe 1" />
                     <ul className='recipe-list'>
                         <li>
-                            <img src="../public/brooke-lark-pGM4sjt_BdQ-unsplash.jpg" alt="Recipe 3" />
-                            <h3>Recipe 3</h3>
-                            <p>Description of Recipe 3</p>
-                            <button>View Recipe</button>
+                            <h3>Recept 1</h3>
+                            <p>recept detaljer</p>
+                            <button>visa recept</button>
                         </li>
                     </ul>
                 </section>
-
-
-                <section className='card'>
-                    <h2>Namn</h2>
-                    <ul className='recipe-list'>
-                        <li>
-                            <img src="../public/brooke-lark-pGM4sjt_BdQ-unsplash.jpg" alt="Recipe 3" />
-                            <h3>Recipe 3</h3>
-                            <p>Description of Recipe 3</p>
-                            <button>View Recipe</button>
-                        </li>
-                    </ul>
-                </section>
-
-
-                <section className='card'>
-                    <h2>Namn</h2>
-                    <ul className='recipe-list'>
-                        <li>
-                            <img src="../public/brooke-lark-pGM4sjt_BdQ-unsplash.jpg" alt="Recipe 3" />
-                            <h3>Recipe 3</h3>
-                            <p>Description of Recipe 3</p>
-                            <button>View Recipe</button>
-                        </li>
-                    </ul>
-                </section>
+               
             </main>
 
             <footer className='footer'>

@@ -1,12 +1,10 @@
 
 import Comment from './CommentForm';
-
+import Landing from '../components/Landing'
 
 function App() {
   return (
-   
-    <Comment />
-
+    <Landing/>
   )
 }
 
