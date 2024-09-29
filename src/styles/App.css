@@ -1,6 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --primary-accent: rgba(0, 255, 255, 0.078);
+  --secondary-accent: #013c68;
+  --button-color: #ec9b19;
+  --hover-color: #008f94;
+  --white-color: rgb(255, 255, 255);
+}
+
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 
 .header-top {
@@ -21,30 +31,31 @@ body {
 
 .header-title {
   font-size: 5em;
-  color: white;
+  color: var(--white-color);
   text-shadow: 5px 5px 10px rgb(0, 0, 0);
 }
 
 .header-citation {
-  color: rgb(255, 255, 255);
+  color: var(--white-color);
   font-weight: bold;
-  font-family: serif;
+  font-family: "Raleway", sans-serif;
 }
 
 .arrow {
   font-size: 4rem;
-  color: rgb(255, 255, 255);
+  color: var(--white-color);
 }
 
 h2 {
-  background-color: rgba(0, 255, 255, 0.078);
+  font-size: 2rem;
+  background-color: var(--primary-accent);
   padding: 2rem 0 0 0;
   margin: 0;
   text-align: center;
 }
 
 .card-container {
-  background-color: rgba(0, 255, 255, 0.078);
+  background-color: var(--primary-accent);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
   grid-gap: 20px;
@@ -52,7 +63,7 @@ h2 {
 }
 
 .card {
-  background-color: #fff;
+  background-color: var(--white-color);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.259);
   padding: 20px;
@@ -84,8 +95,8 @@ h2 {
 }
 
 button {
-  background-color: #ec9b19;
-  color: white;
+  background-color: var(--button-color);
+  color: var(--white-color);
   padding: 10px;
   border-radius: 5px;
   cursor: pointer;
@@ -93,18 +104,18 @@ button {
 }
 
 button:hover {
-  background-color: #008f94;
+  background-color: var(--hover-color);
 }
 
 .nav {
-  background-color: #013c68;
+  background-color: var(--secondary-accent);
   padding: 0.5rem;
 }
 
 .category {
   padding: 10px;
-  background-color: #ec9b19;
-  color: #fff;
+  background-color: var(--button-color);
+  color: var(--white-color);
   border-radius: 5px;
   margin: 10px;
   font-size: 1.5em;
@@ -116,7 +127,7 @@ button:hover {
 }
 
 .search-div {
-  background-color: rgba(0, 255, 255, 0.078);
+  background-color: var(--primary-accent);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -134,7 +145,7 @@ button:hover {
 }
 
 .search-button {
-  background-color: #ec9b19;
+  background-color: var(--button-color);
   width: 8rem;
   cursor: pointer;
 }
@@ -152,9 +163,9 @@ button:hover {
 }
 
 .footer {
-  color: rgb(255, 255, 255);
-  background-color: #013c68;
-  padding: 2em;
-  font-size: 2rem;
+  color: var(--white-color);
+  background-color: var(--secondary-accent);
+  padding: 1em;
+  font-size: 1rem;
   text-align: center;
 }
