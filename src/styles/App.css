@@ -112,6 +112,15 @@ button:hover {
   padding: 0.5rem;
 }
 
+.nav-list {
+  margin: 0;
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .category {
   padding: 10px;
   background-color: var(--button-color);
@@ -154,17 +163,10 @@ button:hover {
   transform: translateY(2px);
 }
 
-.nav-list {
-  margin: 0;
-  list-style-type: none;
-  padding: 0;
-  display: flex;
-  justify-content: space-around;
-}
-
 .footer {
   color: var(--white-color);
   background-color: var(--secondary-accent);
+  margin: 1rem 0 0 0;
   padding: 1em;
   font-size: 1rem;
   text-align: center;
