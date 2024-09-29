@@ -1,22 +1,9 @@
-import { useState } from 'react'
 import '../styles/App.css';
 import HomeHeader from './HomeHeader';
 import NavBar from './NavBar';
 import SearchBar from './SearchBar';
-import RecipeCard from './RecipeCard';
 import Footer from './Footer';
-import recipeContent from '../recipes-content';
-
-function createRecipeCard(content) {
-  return(
-    <RecipeCard
-      key={content.id}
-      image={content.image}
-      name={content.name}
-      description={content.description}
-    />
-  );
-}
+import AvailableRecipes from './AvailableRecipes';
 
 const categoryList = ["category1", "category2", "category3", "category4", "category5"];
 
@@ -27,8 +14,9 @@ function App() {
       <NavBar categories={categoryList}/>
       <SearchBar />
 
+      <h2>Populära Bakverk</h2>
       <main className='card-container'>
-        {recipeContent.map(createRecipeCard)}
+        <AvailableRecipes />
       </main>
 
       <Footer />
