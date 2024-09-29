@@ -36,6 +36,12 @@ body {
   color: rgb(255, 255, 255);
 }
 
+h2 {
+  background-color: rgba(0, 255, 255, 0.078);
+  padding: 2rem 0 0 0;
+  margin: 0;
+  text-align: center;
+}
 
 .card-container {
   background-color: rgba(0, 255, 255, 0.078);
@@ -59,7 +65,7 @@ body {
 
 .card img {
   width: 100%;
-  height: auto;
+  max-height: 200;
   border-radius: 10px;
 }
 
@@ -73,10 +79,9 @@ body {
 }
 
 .recipe-list h3 {
-  font-size: 2em;
+  font-size: 1.3em;
   margin: 10px 0;
 }
-
 
 button {
   background-color: #ec9b19;
@@ -90,7 +95,6 @@ button {
 button:hover {
   background-color: #008f94;
 }
-
 
 .nav {
   background-color: #013c68;
@@ -113,29 +117,26 @@ button:hover {
 
 .search-div {
   background-color: rgba(0, 255, 255, 0.078);
-
-
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
-.search-div input[type="text"] {
+.search-div > * {
   border-radius: 10px;
   padding: 0.8rem;
-  width: 50%;
-  margin: 0.5rem;
+  margin: 1rem;
   font-size: 1.5em;
+}
+
+.search-div input[type="text"] {
+  width: 40%;
 }
 
 .search-button {
   background-color: #ec9b19;
-  height: 4em;
-  font-size: 1.5rem;
-  margin: 1rem;
   width: 8rem;
-  border-radius: 10px;
   cursor: pointer;
-
 }
 
 .search-button:active {
