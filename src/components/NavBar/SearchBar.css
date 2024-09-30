@@ -13,6 +13,7 @@
 }
   
 .search-div input[type="text"] {
+    margin: 1rem;
     width: 40%;
 }
   
