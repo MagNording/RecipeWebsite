@@ -46,7 +46,7 @@ body {
   color: var(--white-color);
 }
 
-h2 {
+main > h2 {
   font-size: 2rem;
   background-color: var(--primary-accent);
   padding: 2rem 0 0 0;
@@ -68,6 +68,11 @@ h2 {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.259);
   padding: 20px;
   transition: transform 0.3s;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .card:hover {
@@ -81,6 +86,7 @@ h2 {
 }
 
 .recipe-list {
+  margin: 0;
   list-style-type: none;
   padding: 0;
 }
@@ -166,8 +172,69 @@ button:hover {
 .footer {
   color: var(--white-color);
   background-color: var(--secondary-accent);
-  margin: 1rem 0 0 0;
+  margin: 0;
   padding: 1em;
   font-size: 1rem;
   text-align: center;
 }
+
+/* ------ Scroll-to-Top function ------ */
+
+main {
+  position: relative;
+}
+
+.scroll-container {
+  position: absolute;
+  top: 0;
+  right:0;
+  height: 100%;
+}
+
+.scroll-container:before {          /*  to hide the button when page first loaded  */
+  content: '';
+  display: block;
+  height: 100vh;
+  pointer-events: none;
+}
+
+.scroll-container a {            /*   fixed to right bottom of page  */
+  position: sticky;
+  top: 88vh;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.scroll-container a span {
+  font-size: 1.2rem;
+}
+
+.scroll-button {
+  padding: 0.8rem;
+  text-decoration: none;
+  background-color: var(--hover-color);
+  color: var(--white-color);
+  margin-bottom: 0.4rem;
+}
+
+.details {
+  background-color: #33333311;
+  padding: 0.5rem;
+  border-radius: 10px;
+  text-align: center;
+  height: auto;
+
+  transition: 0.2s;
+
+}
+
+.details:hover {
+  transform: scale(1.1);
+}
+
+
+.stars {
+  color: #ec9b19;
+  font-size: 2em;
+}
+
