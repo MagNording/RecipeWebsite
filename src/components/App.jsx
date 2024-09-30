@@ -1,11 +1,25 @@
 
-import Comment from './CommentForm';
-import Landing from '../components/Landing'
-import ViewRecipe from './ViewRecipe';
+import '../styles/App.css';
+import HomeHeader from './HomeHeader';
+import NavBar from './NavBar';
+import SearchBar from './SearchBar';
+import Footer from './Footer';
+import AvailableRecipes from './AvailableRecipes';
 
 function App() {
   return (
-    <Comment/>
+    <div className='body'>
+      <HomeHeader />
+      <NavBar />
+      <SearchBar />
+
+      <h2>Populära Bakverk</h2>
+      <main className='card-container'>
+        <AvailableRecipes />
+      </main>
+
+      <Footer />
+    </div>
   )
 }
 
