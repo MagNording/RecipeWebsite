@@ -166,8 +166,47 @@ button:hover {
 .footer {
   color: var(--white-color);
   background-color: var(--secondary-accent);
-  margin: 1rem 0 0 0;
+  margin: 0;
   padding: 1em;
   font-size: 1rem;
   text-align: center;
+}
+
+/* ------ Scroll-to-Top function ------ */
+
+main {
+  position: relative;
+}
+
+.scroll-container {
+  position: absolute;
+  top: 0;
+  right:0;
+  height: 100%;
+}
+
+.scroll-container:before {          /*  to hide the button when page first loaded  */
+  content: '';
+  display: block;
+  height: 100vh;
+  pointer-events: none;
+}
+
+.scroll-container a {            /*   fixed to right bottom of page  */
+  position: sticky;
+  top: 88vh;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.scroll-container a span {
+  font-size: 1.2rem;
+}
+
+.scroll-button {
+  padding: 0.8rem;
+  text-decoration: none;
+  background-color: var(--hover-color);
+  color: var(--white-color);
+  margin-bottom: 0.4rem;
 }
