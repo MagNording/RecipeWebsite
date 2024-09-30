@@ -68,6 +68,11 @@ main > h2 {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.259);
   padding: 20px;
   transition: transform 0.3s;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .card:hover {
@@ -81,6 +86,7 @@ main > h2 {
 }
 
 .recipe-list {
+  margin: 0;
   list-style-type: none;
   padding: 0;
 }
@@ -210,3 +216,25 @@ main {
   color: var(--white-color);
   margin-bottom: 0.4rem;
 }
+
+.details {
+  background-color: #33333311;
+  padding: 0.5rem;
+  border-radius: 10px;
+  text-align: center;
+  height: auto;
+
+  transition: 0.2s;
+
+}
+
+.details:hover {
+  transform: scale(1.1);
+}
+
+
+.stars {
+  color: #ec9b19;
+  font-size: 2em;
+}
+

@@ -8,6 +8,7 @@ function createRecipeCard(content) {
         imageUrl={content.imageUrl}
         title={content.title}
         description={content.description}
+        time={content.timeInMins}
       />
     );
 }  
