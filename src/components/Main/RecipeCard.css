@@ -37,6 +37,9 @@
 }
 
 .details {
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
     background-color: #33333311;
     padding: 0.5rem;
     border-radius: 10px;
@@ -45,6 +48,12 @@
 
     transition: 0.2s;
 }
+
+/* Time and difficulty icons */
+.details svg {
+    color: #4f5559;
+    font-size: 1.4em;
+  }
 
 .details:hover {
     transform: scale(1.1);
