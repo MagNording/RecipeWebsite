@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import './AvailableCategories.css';
 
 export default function AvailableCategories() {
     const [availableCategories, setAvailableCategories] = useState([]);

@@ -1,3 +1,5 @@
+import './HomeHeader.css';
+
 function HomeHeader() {
     return (
       <header className='header-top'>

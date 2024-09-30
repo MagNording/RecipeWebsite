@@ -1,5 +1,5 @@
-import React from 'react'
-import '../styles/CommentForm.css'
+import React from 'react';
+import './CommentForm.css';
 
 function CommentForm() {
 

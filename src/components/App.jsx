@@ -1,9 +1,9 @@
-import '../styles/App.css';
-import HomeHeader from './HomeHeader';
-import NavBar from './NavBar';
-import SearchBar from './SearchBar';
-import Footer from './Footer';
-import Main from './Main';
+import './App.css';
+import HomeHeader from './Header/HomeHeader.jsx';
+import NavBar from './NavBar/NavBar.jsx';
+import SearchBar from './NavBar/SearchBar.jsx';
+import Footer from './Footer/Footer.jsx';
+import Main from './Main/Main.jsx';
 
 function App() {
   return (
