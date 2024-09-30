@@ -1,7 +1,10 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faClock, faSignal } from '@fortawesome/free-solid-svg-icons';
+
 
 function RecipeCard(props) {
-  
+
   function categorizeDifficulty(minutes) {
     if (minutes <= 30) {
       return 'enkel';
@@ -23,11 +26,11 @@ function RecipeCard(props) {
           <p className='desc'>{props.description}</p>
           <p className='stars'>★★★★★</p>
           <div className='details'>
-            <p><strong>Tar {props.time} min, {categorizeDifficulty(props.time)}</strong></p>
+            <p><FontAwesomeIcon icon={faClock} /> {props.time} min</p>
+            <p><FontAwesomeIcon icon={faSignal} />Tar {categorizeDifficulty(props.time)}</p>
           </div>
         </li>
       </ul>
-
     </section>
   );
 }
