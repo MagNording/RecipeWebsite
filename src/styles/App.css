@@ -172,7 +172,13 @@ button:hover {
   text-align: center;
 }
 
+.stars {
+  font-size: 2rem;
+  color: gold;
+}
 
-desc {
-  
+.details {
+  background-color: #5151511b;
+  padding: 0.8rem;
+  border-radius: 10px;
 }
