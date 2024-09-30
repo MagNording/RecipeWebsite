@@ -9,11 +9,11 @@ import CommentForm from '../components/CommentForm'
 function App() {
   return (
     <div className='body'>
-      {/* <HomeHeader />
+      <HomeHeader />
       <NavBar />
       <SearchBar />
       <Main />
-      <Footer /> */}
+      <Footer />
       <CommentForm />
     </div>
   )
