@@ -24,8 +24,8 @@ function RecipeCard(props) {
           <p className='desc'>{props.description}</p>
           <p className='stars'>★★★★★</p>
           <div className='details'>
-            <p>{props.time} min</p>
-            <p>Tar {categorizeDifficulty(props.time)}</p>
+            <p>Tar {props.time} min</p>
+            <p>{categorizeDifficulty(props.time)}</p>
           </div>
         </li>
       </ul>
