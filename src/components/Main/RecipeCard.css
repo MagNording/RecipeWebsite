@@ -49,32 +49,45 @@
     transition: 0.2s;
 }
 
+.details > p:nth-child(1) {
+    display: flex;
+    align-content: flex-end;
+    gap: 8px;
+}
+
+.details > p:nth-child(1) > span{
+    align-content: flex-end;
+}
+
 .difficulty-level {
     display: flex;
-    align-items: bottom;
     gap: 10px;
-  }
+}
+
+.difficulty-text {
+    align-content: flex-end;
+}
 
 .difficulty-bars {
     display: flex;
     gap: 3.5px; /* Mellanrum mellan staplarna */
-  }
+}
   
-  .bar {
+.bar {
     width: 5px;
-    height: 20px;
+    height: 22px;
     background-color: lightgray; /* Tom stapel */
-  }
+}
   
-  .bar.filled {
+.bar.filled {
     background-color: #013c68; /* Fylld stapel */
-  }
+}
 
 /* Time icon */
 .details svg {
     color: #013c68;
     font-size: 1.4em;
-  } 
+} 
 
 .details:hover {
     transform: scale(1.1);
