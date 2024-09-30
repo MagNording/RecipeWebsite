@@ -1,0 +1,28 @@
+.search-div {
+    background-color: var(--primary-accent);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+  
+.search-div > * {
+    border-radius: 10px;
+    padding: 0.8rem;
+    margin: 1rem;
+    font-size: 1.5em;
+}
+  
+.search-div input[type="text"] {
+    width: 40%;
+}
+  
+.search-button {
+    background-color: var(--button-color);
+    width: 8rem;
+    cursor: pointer;
+}
+  
+.search-button:active {
+    transform: translateY(2px);
+}
+  

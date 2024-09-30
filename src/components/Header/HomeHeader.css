@@ -1,0 +1,33 @@
+.header-top {
+    background-image: url("../../images/home-page.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: darken;
+  
+    padding: 13rem;
+  
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: rgba(0, 0, 0, 0.664);
+}
+  
+.header-title {
+    font-size: 5em;
+    color: var(--white-color);
+    text-shadow: 5px 5px 10px rgb(0, 0, 0);
+}
+  
+.header-citation {
+    color: var(--white-color);
+    font-weight: bold;
+    font-family: "Raleway", sans-serif;
+}
+  
+.arrow {
+    font-size: 4rem;
+    color: var(--white-color);
+}
+  

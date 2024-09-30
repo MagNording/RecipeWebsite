@@ -1,4 +1,5 @@
 import AvailableRecipes from './AvailableRecipes';
+import './Main.css';
 
 export default function Main() {
     return (

@@ -1,7 +1,5 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClock, faSignal } from '@fortawesome/free-solid-svg-icons';
-
+import './RecipeCard.css';
 
 function RecipeCard(props) {
 
@@ -26,8 +24,8 @@ function RecipeCard(props) {
           <p className='desc'>{props.description}</p>
           <p className='stars'>★★★★★</p>
           <div className='details'>
-            <p><FontAwesomeIcon icon={faClock} /> Tar {props.time} min</p>
-            <p><FontAwesomeIcon icon={faSignal} /> {categorizeDifficulty(props.time)}</p>
+            <p>{props.time} min</p>
+            <p>Tar {categorizeDifficulty(props.time)}</p>
           </div>
         </li>
       </ul>

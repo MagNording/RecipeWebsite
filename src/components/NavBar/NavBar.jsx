@@ -1,3 +1,4 @@
+import './NavBar.css';
 import AvailableCategories from './AvailableCategories';
 
 function NavBar() {

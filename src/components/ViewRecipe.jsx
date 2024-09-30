@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/ViewRecipe.css'
+import './ViewRecipe.css'
 
 export default function
     () {
