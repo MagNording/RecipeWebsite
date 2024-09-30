@@ -3,7 +3,7 @@ import HomeHeader from './HomeHeader';
 import NavBar from './NavBar';
 import SearchBar from './SearchBar';
 import Footer from './Footer';
-import AvailableRecipes from './AvailableRecipes';
+import Main from './Main';
 
 function App() {
   return (
@@ -12,12 +12,7 @@ function App() {
       <NavBar />
       <SearchBar />
 
-      <main>
-        <h2>Populära Bakverk</h2>
-        <div className='card-container'>
-          <AvailableRecipes />
-        </div>
-      </main>
+      <Main />
 
       <Footer />
     </div>
