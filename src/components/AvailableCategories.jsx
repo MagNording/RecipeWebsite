@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 export default function AvailableCategories() {
     const [availableCategories, setAvailableCategories] = useState([]);
 
-
     useEffect(() => {
         fetch('https://recept3-bolen.reky.se/recipes')
         .then((response) => {

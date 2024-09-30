@@ -3,10 +3,10 @@ import AvailableCategories from './AvailableCategories';
 function NavBar() {
     return (
         <nav className='nav'>
-        <hr />
-        <AvailableCategories />
-        <hr />
-      </nav>
+          <hr />
+          <AvailableCategories />
+          <hr />
+        </nav>
     );
 }
 
