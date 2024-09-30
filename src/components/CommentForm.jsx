@@ -1,8 +1,5 @@
 import React from 'react'
-import { useState } from 'react';
 import '../styles/CommentForm.css'
-
-
 
 function CommentForm() {
 
@@ -19,16 +16,15 @@ function CommentForm() {
                         <input type="checkbox"id="anonymous" /> 
                     </div>
 
-
                     <div className='comment-div'>
                         <label htmlFor="comment"></label>
                         <textarea id="comment" placeholder='ange din kommentar' cols={20} rows={5} />
                     </div>
+
                     <div className='button-container'>
                         <button type="submit">Ange kommentar</button>
                         <button type='submit'>Tillbaka</button>
                     </div>
-
                 </form>
             </div>
         </div>

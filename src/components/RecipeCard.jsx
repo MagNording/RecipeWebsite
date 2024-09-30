@@ -1,8 +1,7 @@
 import React from 'react';
 
 function RecipeCard(props) {
-
-
+  
   function categorizeDifficulty(minutes) {
     if (minutes <= 30) {
       return 'enkel';
@@ -24,7 +23,7 @@ function RecipeCard(props) {
           <p className='desc'>{props.description}</p>
           <p className='stars'>★★★★★</p>
           <div className='details'>
-            <p><strong>under {props.time} min {categorizeDifficulty(props.time)}</strong></p>
+            <p><strong>Tar {props.time} min, {categorizeDifficulty(props.time)}</strong></p>
           </div>
         </li>
       </ul>
