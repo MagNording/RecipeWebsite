@@ -1,5 +1,8 @@
 import React from 'react';
 import './RecipeCard.css';
+// Kör npm install @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faClock, faSignal } from '@fortawesome/free-solid-svg-icons';
 
 function RecipeCard(props) {
 
@@ -24,8 +27,8 @@ function RecipeCard(props) {
           <p className='desc'>{props.description}</p>
           <p className='stars'>★★★★★</p>
           <div className='details'>
-            <p>{props.time} min</p>
-            <p>Tar {categorizeDifficulty(props.time)}</p>
+            <p><FontAwesomeIcon icon={faClock} /> Tar {props.time} min</p>
+            <p><FontAwesomeIcon icon={faSignal} /> {categorizeDifficulty(props.time)}</p>
           </div>
         </li>
       </ul>
