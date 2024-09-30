@@ -2,7 +2,7 @@ import React from 'react';
 import './RecipeCard.css';
 // Kör npm install @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClock, faSignal } from '@fortawesome/free-solid-svg-icons';
+import { faClock } from '@fortawesome/free-solid-svg-icons';
 
 function RecipeCard(props) {
 
@@ -18,6 +18,27 @@ function RecipeCard(props) {
     }
   }
 
+  function renderDifficultyBars(minutes) {
+    const difficultyLevels = categorizeDifficulty(minutes);
+    const numberOfBars = {
+      Enkel: 1,
+      Medelsvår: 2,
+      Svår: 3,
+      Komplicerad: 4
+    }[difficultyLevels];
+  
+    return (
+      <div className="difficulty-level">
+        <span className="difficulty-text">{difficultyLevels}</span>
+        <div className="difficulty-bars">
+          {[...Array(4)].map((_, i) => (
+            <div key={i} className={`bar ${i < numberOfBars ? 'filled' : ''}`}></div>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
   return (
     <section className='card'>
       <img src={props.imageUrl} alt={props.title} width={250} height={250} />
@@ -28,7 +49,7 @@ function RecipeCard(props) {
           <p className='stars'>★★★★★</p>
           <div className='details'>
             <p><FontAwesomeIcon icon={faClock} /> Tar {props.time} min</p>
-            <p><FontAwesomeIcon icon={faSignal} /> {categorizeDifficulty(props.time)}</p>
+            <p>{renderDifficultyBars(props.time)}</p>
           </div>
         </li>
       </ul>
