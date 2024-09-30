@@ -38,12 +38,12 @@
 
 .details {
     display: flex;
-    align-items: center;
-    gap: 1.5em;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 1em;
     background-color: #33333311;
     padding: 0.5rem;
     border-radius: 10px;
-    text-align: center;
     height: auto;
 
     transition: 0.2s;
@@ -51,7 +51,7 @@
 
 /* Time and difficulty icons */
 .details svg {
-    color: #4f5559;
+    color: #013c68;
     font-size: 1.4em;
   }
 
