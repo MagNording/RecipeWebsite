@@ -49,11 +49,32 @@
     transition: 0.2s;
 }
 
-/* Time and difficulty icons */
+.difficulty-level {
+    display: flex;
+    align-items: bottom;
+    gap: 10px;
+  }
+
+.difficulty-bars {
+    display: flex;
+    gap: 3.5px; /* Mellanrum mellan staplarna */
+  }
+  
+  .bar {
+    width: 5px;
+    height: 20px;
+    background-color: lightgray; /* Tom stapel */
+  }
+  
+  .bar.filled {
+    background-color: #013c68; /* Fylld stapel */
+  }
+
+/* Time icon */
 .details svg {
     color: #013c68;
     font-size: 1.4em;
-  }
+  } 
 
 .details:hover {
     transform: scale(1.1);
