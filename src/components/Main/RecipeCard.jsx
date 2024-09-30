@@ -9,9 +9,9 @@ function RecipeCard(props) {
   function categorizeDifficulty(minutes) {
     if (minutes <= 30) {
       return 'Enkel';
-    } else if (minutes > 30 && minutes <= 40) {
+    } else if (minutes > 30 && minutes <= 60) {
       return 'Medelsvår';
-    } else if (minutes > 40 && minutes <= 60) {
+    } else if (minutes > 60 && minutes <= 90) {
       return 'Svår';
     } else {
       return 'Komplicerad';
