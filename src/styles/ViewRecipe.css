@@ -104,6 +104,10 @@ p {
     overflow: hidden;
 }
 
+.card > h2 {
+    background-color: #fff;
+}
+
 .card:hover,
 .card-last:hover {
     transform: scale(1.05);
@@ -121,6 +125,11 @@ p {
     box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.203);
     margin: 10px 0;
     padding: 1rem;
+}
+
+.description-container > h2 {
+    background-color: #fff;
+
 }
 
 .description {

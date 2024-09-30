@@ -3,10 +3,10 @@ import React from 'react';
 function RecipeCard(props) {
 
 
-  function categorizeTime(minutes) {
-    if (minutes <=  30) {
+  function categorizeDifficulty(minutes) {
+    if (minutes <= 30) {
       return 'enkel';
-    } else if (minutes >30 && minutes <= 40) {
+    } else if (minutes > 30 && minutes <= 40) {
       return 'medelsvår';
     } else if (minutes > 40 && minutes <= 60) {
       return 'svår';
@@ -16,8 +16,10 @@ function RecipeCard(props) {
   }
 
  
+
+
   return (
-    <section className='card' /* onClick={viewRecipe} */>
+    <section className='card'>
       <img src={props.imageUrl} alt={props.title} width={250} height={250} />
       <ul className='recipe-list'>
         <li key={props._id}>
@@ -27,8 +29,7 @@ function RecipeCard(props) {
 
 
           <div className='details'>
-            <p><strong>Tillagnings tid: 15 min</strong></p>
-
+          <p><strong>under {props.time} min {categorizeDifficulty(props.time)}</strong></p>
           </div>
         </li>
 

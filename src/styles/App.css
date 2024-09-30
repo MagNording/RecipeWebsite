@@ -45,8 +45,7 @@ body {
   font-size: 4rem;
   color: var(--white-color);
 }
-
-h2 {
+main > h2 {
   font-size: 2rem;
   background-color: var(--primary-accent);
   padding: 2rem 0 0 0;
@@ -142,7 +141,7 @@ button:hover {
   justify-content: center;
 }
 
-.search-div>* {
+.search-div > * {
   border-radius: 10px;
   padding: 0.8rem;
   margin: 1rem;
@@ -172,13 +171,15 @@ button:hover {
   text-align: center;
 }
 
-.stars {
-  font-size: 2rem;
-  color: gold;
+.details {
+  background-color: #33333322;
+  padding: 0.5rem;
+  border-radius: 10px;
+  text-align: center;
+
 }
 
-.details {
-  background-color: #5151511b;
-  padding: 0.8rem;
-  border-radius: 10px;
+.stars {
+  color: #ec9b19;
+  font-size: 2em;
 }
