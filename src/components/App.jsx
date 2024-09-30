@@ -12,9 +12,11 @@ function App() {
       <NavBar />
       <SearchBar />
 
-      <h2>Populära Bakverk</h2>
-      <main className='card-container'>
-        <AvailableRecipes />
+      <main>
+        <h2>Populära Bakverk</h2>
+        <div className='card-container'>
+          <AvailableRecipes />
+        </div>
       </main>
 
       <Footer />
