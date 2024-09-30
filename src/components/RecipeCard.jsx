@@ -15,9 +15,6 @@ function RecipeCard(props) {
     }
   }
 
- 
-
-
   return (
     <section className='card'>
       <img src={props.imageUrl} alt={props.title} width={250} height={250} />
@@ -26,14 +23,10 @@ function RecipeCard(props) {
           <h3>{props.title}</h3>
           <p className='desc'>{props.description}</p>
           <p className='stars'>★★★★★</p>
-
-
           <div className='details'>
-          <p><strong>under {props.time} min {categorizeDifficulty(props.time)}</strong></p>
+            <p><strong>under {props.time} min {categorizeDifficulty(props.time)}</strong></p>
           </div>
         </li>
-
-
       </ul>
 
     </section>
