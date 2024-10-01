@@ -93,6 +93,12 @@ button:active {
     transform: translateY(2px);
 }
 
+
+.message p {
+    color: #fff;
+    font-size: 2rem;
+}
+
 @media (max-width: 768px) {
     
     

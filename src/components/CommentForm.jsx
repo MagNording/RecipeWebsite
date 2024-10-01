@@ -20,7 +20,7 @@ function CommentForm() {
         setMessage('tack för din kommentar!')
 
 
-    
+
 
         setFirstName('');
         setComment('');
@@ -51,7 +51,7 @@ function CommentForm() {
                             id="name"
                             placeholder='ange namn'
                             value={firstName}
-                            onChange={(e) => setFirstName(e.target.value)}
+                            onChange={(e) => setFirstName(e.target.value.trim())}
                             disabled={anonymous}
                             required={!anonymous} /> <br />
 
@@ -64,7 +64,11 @@ function CommentForm() {
 
                     <div className='comment-div'>
                         <label htmlFor="comment"></label>
-                        <textarea id="comment" placeholder='ange din kommentar' cols={20} rows={5} value={comment} onChange={(e) => setComment(e.target.value)} />
+                        <textarea id="comment"
+                            placeholder='din kommentar'
+                            cols={20} rows={5}
+                            value={comment}
+                            onChange={(e) => setComment(e.target.value.trim())} required />
                     </div>
 
                     <div className='button-container'>
@@ -74,7 +78,7 @@ function CommentForm() {
 
                 </form>
                 <br />
-                <div>
+                <div className='message'>
                     {message && <p>{message}</p>}
                 </div>
 
