@@ -1,4 +1,7 @@
 import React from 'react';
+
+import { Link } from 'react-router-dom';
+
 import './RecipeCard.css';
 // Kör npm install @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -47,11 +50,12 @@ function RecipeCard(props) {
           <h3>{props.title}</h3>
           <p className='desc'>{props.description}</p>
           <p className='stars'>★★★★★</p>
+          <button className='button recipe-button'><Link to={`recipes/${props._id}`}>Visa Recept</Link></button>
           <div className='details'>
             <p><FontAwesomeIcon icon={faClock} />
               <span>{props.time} min</span>
             </p>
-            <p>{renderDifficultyBars(props.time)}</p>
+            <div>{renderDifficultyBars(props.time)}</div>
           </div>
         </li>
       </ul>
