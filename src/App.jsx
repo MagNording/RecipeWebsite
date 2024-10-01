@@ -5,13 +5,6 @@ import RootLayout from './pages/Root'
 import ErrorPage from './pages/Error';
 import HomePage from './pages/Home';
 import ViewRecipe from '../src/components/ViewRecipe';
-{ /*
-import HomeHeader from './Header/HomeHeader.jsx';
-import NavBar from './NavBar/NavBar.jsx';
-import SearchBar from './NavBar/SearchBar.jsx';
-import Footer from './Footer/Footer.jsx';
-import Main from './Main/Main.jsx';
-import CommentForm from '../components/CommentForm'   */ }
 
 const browserRouter = createBrowserRouter([
   {
@@ -19,7 +12,7 @@ const browserRouter = createBrowserRouter([
     element: <RootLayout />,
     errorElement: <ErrorPage />,
     children: [
-      { path: '/', element: <HomePage />},
+      { index: true, element: <HomePage />},    /* (index: true) if the path is same as the parent path */
       { path: '/recipes/:recipeId', element: <ViewRecipe />}
     ]
   }
