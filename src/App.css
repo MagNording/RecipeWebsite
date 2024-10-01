@@ -11,6 +11,12 @@
 body {
   margin: 0;
   font-family: "Montserrat", sans-serif;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 button {
@@ -24,4 +30,21 @@ button {
 
 button:hover {
   background-color: var(--hover-color);
+}
+
+/* error-handling for wrong url */
+
+.error-box {
+  background-color: #f8d7da;  
+  color: #721c24; 
+  border: 1px solid #f5c6cb;
+  padding: 15px;
+  border-radius: 5px;
+  margin: 20px 0;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+.error-box strong {
+  font-weight: bold;
 }
