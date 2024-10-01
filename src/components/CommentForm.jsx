@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './CommentForm.css';
 
 function CommentForm() {
@@ -12,15 +12,33 @@ function CommentForm() {
 
     function handleSubmit(event) {
         event.preventDefault();
+
         const displayName = anonymous ? 'Anonymous' : firstName
         console.log(`name ${displayName}, comment ${comment}`)
+        // här ska funktion finnas för att spara i databasen i swagger 
+
         setMessage('tack för din kommentar!')
 
+
+    
 
         setFirstName('');
         setComment('');
         setAnonymous(false);
     }
+
+    useEffect(() => {
+        // Clear the message after 3 seconds
+        if (message) {
+            const timer = setTimeout(() => {
+                setMessage('');
+            }, 3000);
+            return () => clearTimeout(timer)
+
+        }
+
+
+    }, [message])
 
     return (
         <div className='main'>
