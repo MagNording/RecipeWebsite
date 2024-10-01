@@ -4,14 +4,15 @@ main > h2 {
     padding: 2rem 0 0 0;
     margin: 0;
     text-align: center;
-  }
-  
-  .card-container {
+}
+
+.body > main > .card-container {
     background-color: var(--primary-accent);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
     grid-gap: 20px;
     padding: 20px;
+    margin-top: 0;
   }  
 
 /* ------ Scroll-to-Top function ------ */

@@ -1,7 +1,7 @@
-.header-top {
+#root > .body > .header-top {
     background-image: url("../../images/home-page.jpg");
     background-repeat: no-repeat;
-    background-size: cover;
+    width: 100%;
     background-position: center;
     background-blend-mode: darken;
   
