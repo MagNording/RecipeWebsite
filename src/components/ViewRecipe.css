@@ -2,7 +2,7 @@
     background-color: rgba(0, 255, 255, 0.078);
     display: flex;
     justify-content: center;
-    padding: 2rem 0;
+    padding: 1rem 0;
     font-family: Arial, sans-serif;
     min-height: 100vh;
     height: auto;
@@ -16,8 +16,8 @@ p {
 .container {
     max-width: 60%;
     width: 100%;
-    margin: 1rem;
-    padding: 30px;
+    margin: 0.5rem 1rem 0.5rem 1rem;
+    padding: 0 30px 30px 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.323);
     border-radius: 10px;
     display: flex;
@@ -29,6 +29,7 @@ p {
     width: 100%;
     display: flex;
     justify-content: center;
+    margin-bottom: 8px;
 }
 
 .recipe-image {
@@ -44,7 +45,7 @@ p {
     font-size: 3em;
     font-weight: bold;
     text-align: center;
-    margin-bottom: 3rem;
+    margin: 1rem 0 1rem 0;
     color: #ec9b19;
     text-shadow: 2px 0px 3px #fff;
     -webkit-text-stroke: 1px #000;
@@ -86,9 +87,13 @@ p {
     flex-direction: column;
     justify-content: space-evenly;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 12px;
+    gap: 10px;
 }
 
+.card {
+    margin-bottom: 15px;
+}
 
 .card,
 .card-last {
@@ -166,17 +171,14 @@ button:active {
 
 .ingredient-list,
 .instruction-list {
-    text-align: center;
     list-style-type: none;
     padding: 0;
-    margin-bottom: 20px;
     width: 100%;
 }
 
 .ingredient-list li,
 .instruction-list li {
     font-size: 1.1rem;
-    color: #555;
     margin-bottom: 5px;
 }
 
@@ -196,6 +198,11 @@ button:active {
     font-size: 1.2rem;
     font-weight: bold;
     color: #000000;
+}
+
+.no-underline {
+    text-decoration: none; 
+    color: var(--white-color); 
 }
 
 @media (max-width: 768px) {

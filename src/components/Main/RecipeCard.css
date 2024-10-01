@@ -101,3 +101,12 @@
     color: #ec9b19;
     font-size: 2em;
 }
+
+.no-underline {
+    text-decoration: none; 
+    color: var(--white-color); 
+}
+
+.recipe-button {
+    background-color: var(--secondary-accent);
+}

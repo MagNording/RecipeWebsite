@@ -46,11 +46,11 @@ function RecipeCard(props) {
     <section className='card'>
       <img src={props.imageUrl} alt={props.title} width={250} height={250} />
       <ul className='recipe-list'>
-        <li key={props._id}>
+        <li key={props.id}>
           <h3>{props.title}</h3>
           <p className='desc'>{props.description}</p>
           <p className='stars'>★★★★★</p>
-          <button className='button recipe-button'><Link to={`recipes/${props._id}`}>Visa Recept</Link></button>
+          <button className='button recipe-button'><Link to={`/recipes/${props.id}`} className="no-underline">Visa Recept</Link></button>
           <div className='details'>
             <p><FontAwesomeIcon icon={faClock} />
               <span>{props.time} min</span>
