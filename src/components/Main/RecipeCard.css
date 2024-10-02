@@ -98,7 +98,7 @@
 }
 
 .stars {
-    color: #ec9b19;
+    color: var(--rating-stars-color);
     font-size: 2em;
 }
 
