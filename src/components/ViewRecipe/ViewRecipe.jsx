@@ -66,7 +66,7 @@ export default function ViewRecipe() {
                         <ul className={style['ingredient-list']}>
                             {desiredRecipe.ingredients.map((ingredient) => (
                                 <li key={ingredient._id}>
-                                    <strong>{ingredient.amount} {getShortUnit(ingredient.unit)}</strong> {ingredient.name} 
+                                    <strong>{ingredient.amount} {getShortUnit(ingredient.unit)}  </strong>{ingredient.name}
                                 </li>
                             ))}
                         </ul>
@@ -78,7 +78,9 @@ export default function ViewRecipe() {
                             {desiredRecipe.instructions.map((step, index) => <li key={index}>{step}</li>)}
                         </ol>
                     </div>
+                </div>
 
+                <div className={style['card-container']}>
                     <div className={ `${style['card']} ${style['button-card-container']}`}>
                         <div>
                             <h2>Kommentarer</h2>

@@ -4,7 +4,7 @@
     display: flex;
     justify-content: center;
     padding: 2rem 0;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     min-height: 100vh;
     height: auto;
     overflow-x: hidden;
@@ -112,7 +112,6 @@ p {
 
 .card {
     background-color: #F1FAEE;
-    margin-bottom: 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     padding: 1.5rem;
