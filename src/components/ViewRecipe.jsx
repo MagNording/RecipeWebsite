@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 
+import RecipeRating from './Ratings';
 import './ViewRecipe.css'
 
 const unitConversionMap = {
@@ -98,7 +99,7 @@ export default function ViewRecipe() {
 
                     <div className='card'>
                         <h2>Stjärnor</h2>
-                        <p className='stars'>★★★★★</p>
+                        <RecipeRating />
                         <button >Recensera</button>
                     </div>
                 </div>
