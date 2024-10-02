@@ -1,8 +1,7 @@
 import React from 'react';
-
+import '../Main/RecipeCard.css'
 import { Link } from 'react-router-dom';
 
-import './RecipeCard.css';
 // Kör npm install @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock } from '@fortawesome/free-solid-svg-icons';
@@ -29,7 +28,7 @@ function RecipeCard(props) {
       Svår: 3,
       Komplicerad: 4
     }[difficultyLevels];
-  
+
     return (
       <div className="difficulty-level">
         <span className="difficulty-text">{difficultyLevels}</span>
@@ -51,12 +50,14 @@ function RecipeCard(props) {
           <p className='desc'>{props.description}</p>
           <p className='stars'>★★★★★</p>
           <button className='button recipe-button'><Link to={`/recipes/${props.id}`} className="no-underline">Visa Recept</Link></button>
-          <div className='details'>
-            <p><FontAwesomeIcon icon={faClock} />
-              <span>{props.time} min</span>
-            </p>
-            <div>{renderDifficultyBars(props.time)}</div>
-          </div>
+          <ul className='details'>
+            <li>  <FontAwesomeIcon icon={faClock} />
+              <span> {props.time} min</span>
+            </li>
+            <li>
+              {renderDifficultyBars(props.time)}
+            </li>
+          </ul>
         </li>
       </ul>
     </section>

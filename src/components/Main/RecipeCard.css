@@ -9,6 +9,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+
+
 }
 
 .card:hover {
@@ -37,27 +39,17 @@
 }
 
 .details {
+    list-style-type: none;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-around;
     gap: 1em;
     background-color: #33333311;
-    padding: 0.5rem;
+    padding: 0.8rem;
     border-radius: 10px;
     height: auto;
-
     transition: 0.2s;
 }
 
-.details > p:nth-child(1) {
-    display: flex;
-    align-content: flex-end;
-    gap: 8px;
-}
-
-.details > p:nth-child(1) > span{
-    align-content: flex-end;
-}
 
 .difficulty-level {
     display: flex;
@@ -70,17 +62,20 @@
 
 .difficulty-bars {
     display: flex;
-    gap: 3.5px; /* Mellanrum mellan staplarna */
+    gap: 3.5px;
+    /* Mellanrum mellan staplarna */
 }
-  
+
 .bar {
     width: 5px;
     height: 22px;
-    background-color: lightgray; /* Tom stapel */
+    background-color: lightgray;
+    /* Tom stapel */
 }
-  
+
 .bar.filled {
-    background-color: #013c68; /* Fylld stapel */
+    background-color: #013c68;
+    /* Fylld stapel */
 }
 
 /* Time icon */
@@ -91,7 +86,7 @@
 .details svg {
     color: #013c68;
     font-size: 1.4em;
-} 
+}
 
 .details:hover {
     transform: scale(1.1);
@@ -103,8 +98,8 @@
 }
 
 .no-underline {
-    text-decoration: none; 
-    color: var(--white-color); 
+    text-decoration: none;
+    color: var(--white-color);
 }
 
 .recipe-button {

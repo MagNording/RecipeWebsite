@@ -1,4 +1,4 @@
-main > h2 {
+main>h2 {
     font-size: 2rem;
     background-color: var(--primary-accent);
     padding: 2rem 0 0 0;
@@ -6,51 +6,54 @@ main > h2 {
     text-align: center;
 }
 
-.body > main > .card-container {
+.body>main>.card-container {
     background-color: var(--primary-accent);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
     grid-gap: 20px;
     padding: 20px;
     margin-top: 0;
-  }  
+}
+
+
 
 /* ------ Scroll-to-Top function ------ */
 
 main {
     position: relative;
 }
-  
+
 .scroll-container {
     position: absolute;
     top: 0;
-    right:0;
+    right: 0;
     height: 100%;
 }
-  
-.scroll-container:before {          /*  to hide the button when page first loaded  */
+
+.scroll-container:before {
+    /*  to hide the button when page first loaded  */
     content: '';
     display: block;
     height: 100vh;
     pointer-events: none;
 }
-  
-.scroll-container a {            /*   fixed to right bottom of page  */
+
+.scroll-container a {
+    /*   fixed to right bottom of page  */
     position: sticky;
     top: 88vh;
     cursor: pointer;
     font-size: 14px;
 }
-  
+
 .scroll-container a span {
     font-size: 1.2rem;
 }
-  
+
 .scroll-button {
     padding: 0.8rem;
     text-decoration: none;
     background-color: var(--hover-color);
     color: var(--white-color);
     margin-bottom: 0.4rem;
-} 
-  
+}
