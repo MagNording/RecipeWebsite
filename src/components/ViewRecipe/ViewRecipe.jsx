@@ -2,8 +2,8 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 
-/* import './ViewRecipe.css'
- */
+ import '../ViewRecipe/ViewRecipe.css'
+  
 const unitConversionMap = {
     "gram": "gm",
     "deciliter": "dl",
