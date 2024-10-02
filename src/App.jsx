@@ -4,7 +4,7 @@ import './App.css';
 import RootLayout from './pages/Root'
 import ErrorPage from './pages/Error';
 import HomePage from './pages/Home';
-import ViewRecipe from '../src/components/ViewRecipe';
+import ViewRecipe from '../src/components/ViewRecipe/ViewRecipe';
 
 const browserRouter = createBrowserRouter([
   {

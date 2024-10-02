@@ -1,8 +1,8 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import style from './ViewRecipe.module.css';
 
-import './ViewRecipe.css'
 
 const unitConversionMap = {
     "gram": "gm",
@@ -40,27 +40,27 @@ export default function ViewRecipe() {
     };
 
     return (
-        <div className='main'>
-            <div className='container'>
+        <div className={style.main}>
+            <div className={style.container}>
 
-                <h1 className='recipe-title'>{desiredRecipe.title}</h1>
+                <h1 className={style['recipe-title']}>{desiredRecipe.title}</h1>
 
-                <div className='image-container'>
-                    <img src={desiredRecipe.imageUrl} alt={desiredRecipe.title} className="recipe-image" />
+                <div className={style['image-container']}>
+                    <img src={desiredRecipe.imageUrl} alt={desiredRecipe.title} className={style['recipe-image']} />
                 </div>
 
 
-                <div className='description-container'>
+                <div className={style['description-container']}>
                     <h2>Beskrivning</h2>
-                    <p className='description'>
+                    <p className={style.description}>
                         {desiredRecipe.description}
                     </p>
                 </div>
 
-                <div className='card-container'>
-                    <div className='card'>
-                        <h2 className='section-title'>Ingredienser</h2>
-                        <ul className='ingredient-list'>
+                <div className={style['card-container']}>
+                    <div className={style.card}>
+                        <h2 className={style['section-title']}>Ingredienser</h2>
+                        <ul className={style['ingredient-list']}>
                             {desiredRecipe.ingredients.map((ingredient) => (
                                 <li key={ingredient._id}>
                                     <strong>{ingredient.amount} {getShortUnit(ingredient.unit)}</strong> {ingredient.name} 
@@ -69,16 +69,16 @@ export default function ViewRecipe() {
                         </ul>
                     </div>
 
-                    <div className='card'>
-                        <h2 className='section-title'>Instruktioner</h2>
-                        <ol className='instruction-list'>
+                    <div className={style.card}>
+                        <h2 className={style['section-title']}>Instruktioner</h2>
+                        <ol className={style['instruction-list']}>
                             {desiredRecipe.instructions.map(step => <li key={desiredRecipe._id}>{step}</li>)}
                         </ol>
                     </div>
 
-                    <div className='card'>
+                    <div className={style.card}>
                         <h2>Kommentarer</h2>
-                        <ul className='scroll-list comments'>
+                        <ul className={` ${style['scroll-list']} ${style.comments}`}>
                             <li><p>kommentar 1 ugfudfgduigug</p></li>
                             <li><p>kommentar 1</p></li>
                             <li><p>kommentar 1</p></li>
@@ -96,14 +96,14 @@ export default function ViewRecipe() {
                         <button>Kommentera här!</button>
                     </div>
 
-                    <div className='card'>
+                    <div className={style.card}>
                         <h2>Stjärnor</h2>
-                        <p className='stars'>★★★★★</p>
+                        <p className={style.stars}>★★★★★</p>
                         <button >Recensera</button>
                     </div>
                 </div>
 
-                <button><Link to="/" className="no-underline">Hem</Link></button>
+                <button><Link to="/" className={style['no-underline']}>Hem</Link></button>
             </div>
         </div>
     )
