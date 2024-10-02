@@ -3,8 +3,8 @@ import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import style from './ViewRecipe.module.css';
 
-import RecipeRating from './Ratings';
-import './ViewRecipe.css'
+import RecipeRating from '../../components/Ratings';
+import './ViewRecipe.module.css'
 
 const unitConversionMap = {
     "gram": "gm",
