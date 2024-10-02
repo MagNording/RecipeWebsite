@@ -41,7 +41,7 @@ p {
     height: auto;
     border-radius: 12px;
     object-fit: cover;
-    border: solid 4px #457B9D; 
+    border: solid 4px #A8DADC; 
     box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
 }
 
@@ -52,6 +52,18 @@ p {
     margin: 1.5rem 0;
     color: #E63946; 
     text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.button-card-container > div {
+    width: 100%;
+}
+
+.button-card-container > div > h2 {
+    text-align: center;
+}
+
+.container2 > div > p {
+    text-align: center;
 }
 
 .scroll-list {
@@ -82,6 +94,10 @@ p {
     color: #FFD700; 
 }
 
+.rating-text {
+    padding-bottom: 1rem;
+}
+
 .card-container {
     background-color: #A8DADC; 
     border-radius: 12px;
@@ -89,6 +105,7 @@ p {
     grid-template-columns: repeat(2, minmax(200px, 1fr));
     width: 100%;
     margin-top: 1.5rem;
+    margin-bottom: 1rem;
     gap: 1.5rem;
     padding: 1.5rem;
 }
@@ -111,7 +128,7 @@ p {
 }
 
 .description-container {
-    background-color: #FFFFFF;
+    background-color: #F1FAEE;
     max-width: 80%;
     width: 100%;
     border-radius: 12px;
@@ -149,7 +166,6 @@ button:active {
 
 .section-title {
     font-size: 1.8rem;
-    color: #333;
     margin-bottom: 1.5rem;
     text-align: center;
 }
@@ -165,6 +181,7 @@ button:active {
 .instruction-list li {
     font-size: 1.2rem;
     margin-bottom: 10px;
+    color: #333;
 }
 
 .instruction-list {
@@ -174,7 +191,7 @@ button:active {
 .instruction-list li {
     margin-bottom: 15px;
     position: relative;
-    padding-left: 30px;
+    padding-left: 10px;
 }
 
 .instruction-list li::before {
@@ -188,6 +205,11 @@ button:active {
 .no-underline {
     text-decoration: none;
     color: #FFF;
+}
+
+.button-card-container {
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 @media (max-width: 768px) {

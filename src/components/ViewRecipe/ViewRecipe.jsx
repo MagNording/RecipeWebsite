@@ -55,13 +55,14 @@ export default function ViewRecipe() {
                 <div className={style['description-container']}>
                     <h2>Beskrivning</h2>
                     <p className={style.description}>
-                        {desiredRecipe.description}
+                        "{desiredRecipe.description}"
                     </p>
                 </div>
 
                 <div className={style['card-container']}>
                     <div className={style.card}>
                         <h2 className={style['section-title']}>Ingredienser</h2>
+                        <p className={style['section-text']}>4 portioner</p>
                         <ul className={style['ingredient-list']}>
                             {desiredRecipe.ingredients.map((ingredient) => (
                                 <li key={ingredient._id}>
@@ -74,34 +75,40 @@ export default function ViewRecipe() {
                     <div className={style.card}>
                         <h2 className={style['section-title']}>Instruktioner</h2>
                         <ol className={style['instruction-list']}>
-                            {desiredRecipe.instructions.map(step => <li key={desiredRecipe._id}>{step}</li>)}
+                            {desiredRecipe.instructions.map((step, index) => <li key={index}>{step}</li>)}
                         </ol>
                     </div>
 
-                    <div className={style.card}>
-                        <h2>Kommentarer</h2>
-                        <ul className={` ${style['scroll-list']} ${style.comments}`}>
-                            <li><p>kommentar 1 ugfudfgduigug</p></li>
-                            <li><p>kommentar 1</p></li>
-                            <li><p>kommentar 1</p></li>
-                            <li><p>kommentar 1</p></li>
-                            <li><p>kommentar 1</p></li>
-                            <li><p>kommentar 1</p></li>
-                            <li><p>kommentar 1</p></li>
-                            <li><p>kommentar 1</p></li>
-                            <li><p>kommentar 1</p></li>
-                            <li><p>kommentar 1</p></li>
-                            <li><p>kommentar 1</p></li>
-                            <li><p>kommentar 1</p></li>
-
-                        </ul>
-                        <button>Kommentera här!</button>
+                    <div className={ `${style['card']} ${style['button-card-container']}`}>
+                        <div>
+                            <h2>Kommentarer</h2>
+                            <ul className={` ${style['scroll-list']} ${style.comments}`}>
+                                <li><p>kommentar 1 ugfudfgduigug</p></li>
+                                <li><p>kommentar 1</p></li>
+                                <li><p>kommentar 1</p></li>
+                                <li><p>kommentar 1</p></li>
+                                <li><p>kommentar 1</p></li>
+                                <li><p>kommentar 1</p></li>
+                                <li><p>kommentar 1</p></li>
+                                <li><p>kommentar 1</p></li>
+                                <li><p>kommentar 1</p></li>
+                                <li><p>kommentar 1</p></li>
+                                <li><p>kommentar 1</p></li>
+                                <li><p>kommentar 1</p></li>
+                            </ul>
+                        </div>
+                        
+                        <button>Kommentera</button>
                     </div>
 
-                    <div className={style.card}>
-                        <h2>Stjärnor</h2>
-                        <RecipeRating />
-                        <button >Recensera</button>
+                    <div className={ `${style['card']} ${style['button-card-container']} ${style['container2']}` }>
+                        <div>
+                            <h2>Vad tycker du ?</h2>
+                            <p className={style['rating-text']}><i>Glöm inte att recensera eller lämna en kommentar.</i></p>
+                            <p><i>Det kommer att hjälpa oss att bli ännu bättre.</i></p>
+                            <RecipeRating />
+                        </div>
+                        <button className={style['rating-button']}>Recensera</button>
                     </div>
                 </div>
 
