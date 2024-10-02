@@ -81,6 +81,10 @@
     margin-top: 0.8rem;
 }
 
+.details > li {
+    margin-top: 0;
+}
+
 .details svg {
     color: #013c68;
     font-size: 1.4em;
@@ -93,6 +97,8 @@
 .stars {
     color: var(--rating-stars-color);
     font-size: 2em;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
 }
 
 .no-underline {

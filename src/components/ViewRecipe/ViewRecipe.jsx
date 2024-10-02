@@ -81,7 +81,7 @@ export default function ViewRecipe() {
                 </div>
 
                 <div className={style['card-container']}>
-                    <div className={ `${style['card']} ${style['button-card-container']}`}>
+                    <div className={ `${style['card']} ${style['button-card-container']} ${style['container1']}`}>
                         <div>
                             <h2>Kommentarer</h2>
                             <ul className={` ${style['scroll-list']} ${style.comments}`}>

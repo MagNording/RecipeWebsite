@@ -10,11 +10,6 @@
     overflow-x: hidden;
 }
 
-p {
-    margin: 0;
-    color: #333;
-}
-
 .container {
     background-color: #FFDDD2; 
     max-width: 80%;
@@ -64,6 +59,11 @@ p {
 
 .container2 > div > p {
     text-align: center;
+}
+
+.container1 > div > ul > li > p {
+    margin: 0;
+    color: #333;
 }
 
 .scroll-list {
