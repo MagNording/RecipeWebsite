@@ -65,7 +65,7 @@ export default function ViewRecipe() {
         })
             .then(response => {
                 if (response.ok) {
-                    alert("Tack för din kommentar")
+                    alert("Tack för din recension")
                     console.log('Rating saved successfully');
                 }
             })
