@@ -121,7 +121,7 @@
     }
 
     .details {
-        flex-direction: column;
+        flex-direction: wrap;
         gap: 0.5em; 
         padding: 0.5rem; 
     }
