@@ -10,8 +10,8 @@ main>h2 {
     background-color: var(--primary-accent);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
-    grid-gap: 20px;
-    padding: 20px;
+    grid-gap: 1.5rem;
+    padding: 2em;
     margin-top: 0;
 }
 
@@ -58,16 +58,42 @@ main {
     margin-bottom: 0.4rem;
 }
 
-@media only screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {
     main>h2 {
         font-size: 1.5rem; 
         padding: 1.5rem 0 0 0;
     }
 
-    .body>main>.card-container {
+   .body>main>.card-container {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
         grid-gap: 15px;
-        padding: 10px; 
+        padding: 10px;
+    }
+
+    .scroll-container a {
+        font-size: 12px;
+    }
+
+    .scroll-container a span {
+        font-size: 1rem; 
+    }
+
+    .scroll-button {
+        padding: 0.6rem; 
+        margin-bottom: 0.3rem;
+    }
+}
+
+@media only  screen and ((min-width: 601px) and (max-width: 880px)) {
+    main>h2 {
+        font-size: 1.5rem; 
+        padding: 1.5rem 0 0 0;
+    }
+
+   .body>main>.card-container {
+        grid-template-columns: repeat(1, minmax(200px, 1fr)); 
+        grid-gap: 15px;
+        padding: 1em 9em;
     }
 
     .scroll-container a {
