@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './CommentForm.css';
+import style from './CommentForm.module.css';
 
 function CommentForm() {
 
@@ -41,11 +41,11 @@ function CommentForm() {
     }, [message])
 
     return (
-        <div className='main'>
-            <div className='container'>
+        <div className={style.main}>
+            <div className={style.container}>
                 <form onSubmit={handleSubmit}>
                     <h2>Kommentar</h2>
-                    <div className='name-div'>
+                    <div className={style['name-div']}>
                         <label htmlFor="name"></label>
                         <input type="text"
                             id="name"
@@ -55,14 +55,14 @@ function CommentForm() {
                             disabled={anonymous}
                             required={!anonymous} /> <br />
 
-                        <label htmlFor="anonymous" className='anonymous-label'>förbli anonym?</label>
+                        <label htmlFor="anonymous" className={style['anonymous-label']}>förbli anonym?</label>
                         <input type="checkbox"
                             id="anonymous"
                             checked={anonymous}
                             onChange={(e) => setAnonymous(e.target.checked)} />
                     </div>
 
-                    <div className='comment-div'>
+                    <div className={style['comment-div']}>
                         <label htmlFor="comment"></label>
                         <textarea id="comment"
                             placeholder='din kommentar'
@@ -71,14 +71,14 @@ function CommentForm() {
                             onChange={(e) => setComment(e.target.value.trim())} required />
                     </div>
 
-                    <div className='button-container'>
+                    <div className={style['button-container']}>
                         <button type="submit">Ange kommentar</button>
                         <button type='submit'>Tillbaka</button>
                     </div>
 
                 </form>
                 <br />
-                <div className='message'>
+                <div className={style.message}>
                     {message && <p>{message}</p>}
                 </div>
 
