@@ -47,9 +47,7 @@
     height: auto;
     transition: 0.2s;
     margin-top: 0.8rem;
-
 }
-
 
 .difficulty-level {
     display: flex;
@@ -79,8 +77,6 @@
 }
 
 /* Time icon */
-
-
 .details > li {
     margin-top: 0;
 }
@@ -95,10 +91,16 @@
 }
 
 .stars {
-    color: var(--rating-stars-color);
-    font-size: 2em;
-    margin-top: 0;
-    margin-bottom: 0.5rem;
+    margin-top: 0.6rem;
+}
+
+.stars > div {
+    display: flex;
+    align-items: center;
+}
+
+.stars svg {
+    shape-rendering: geometricPrecision;
 }
 
 .no-underline {
@@ -107,6 +109,7 @@
 }
 
 .recipe-button {
+    font-size: 1rem;
     background-color: var(--secondary-accent);
 }
 

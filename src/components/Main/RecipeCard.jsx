@@ -4,8 +4,43 @@ import style from './RecipeCard.module.css'
 // Kör npm install @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock } from '@fortawesome/free-solid-svg-icons';
+import { FaStar } from "react-icons/fa";
 
-function RecipeCard(props) {
+function displayStarRating(rating) {
+  const colors = {
+    orange: "#ec9b19",
+    grey: "rgb(192,192,192)"
+  }
+  const stars = Array(5).fill(0);
+
+  return (
+    <div>
+          {stars.map((_, index) => {
+              const starFill = Math.min(Math.max(rating - index, 0), 1); // calculate how full this star should be
+
+              return (
+                  <div key={index} style={{ position: 'relative', width: '24px', height: '24px' }}>
+                      {/* full grey star as background */}
+                      <FaStar size={24} color={colors.grey} />
+                      {/* partially filled star */}
+                      <FaStar
+                          size={24}
+                          color={colors.orange}
+                          style={{
+                              position: 'absolute',
+                              top: 0,
+                              left: 0,
+                              clipPath: `inset(0 ${(1 - starFill) * 100}% 0 0)`, // Clip the star based on the fill percentage
+                          }}
+                      />
+                  </div>
+              );
+          })}
+    </div>
+  );
+}
+
+export default function RecipeCard(props) {
 
   function categorizeDifficulty(minutes) {
     if (minutes <= 30) {
@@ -47,7 +82,9 @@ function RecipeCard(props) {
         <li key={props.id}>
           <h3>{props.title}</h3>
           <p className={style['desc']}>{props.description}</p>
-          <p className={style['stars']}>★★★★★</p>
+          <div className={style['stars']}>
+            {displayStarRating(props.rating)} 
+          </div>
           <button className={`${style.button} ${style['recipe-button']}`}><Link to={`/recipes/${props.id}`} className={style['no-underline']}>Visa Recept</Link></button>
           <ul className={style.details}>
             <li>  <FontAwesomeIcon icon={faClock} />
@@ -62,5 +99,3 @@ function RecipeCard(props) {
     </section>
   );
 }
-
-export default RecipeCard;

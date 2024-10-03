@@ -6,6 +6,7 @@ function createRecipeCard(content) {
       <RecipeCard
         key={content._id}
         id={content._id}
+        rating={content.avgRating}
         imageUrl={content.imageUrl}
         title={content.title}
         description={content.description}
