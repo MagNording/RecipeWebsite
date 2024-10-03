@@ -2,8 +2,15 @@ import React, { useState } from "react";
 import { FaStar } from "react-icons/fa";
 import './Ratings.css';
 
-export default function RecipeRating() {
+export default function RecipeRating({setRecipeRatings}) {
     const [recipeRating, setRecipeRating] = useState(0);
+
+
+    const handleRatingClick = (e) => {
+        setRecipeRating(e)
+        setRecipeRatings(e)    
+    };
+
     return (
         <div className="rating-container">
             {[...Array(5)].map((item, index) => {
@@ -14,9 +21,8 @@ export default function RecipeRating() {
                             type="radio"
                             value={givenRating}
                             className="rating-input"
-                            onClick={() => {
-                                setRecipeRating(givenRating);
-                            }}
+                            onClick={
+                                () => {handleRatingClick(givenRating)}}
                         />
                             
                         <FaStar
