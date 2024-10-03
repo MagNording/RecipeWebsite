@@ -93,16 +93,18 @@ button:active {
     transform: translateY(2px);
 }
 
-
 .message p {
     color: #fff;
     font-size: 2rem;
 }
 
+.no-underline {
+    text-decoration: none;
+    color: #FFF;
+}
+
 @media (max-width: 768px) {
     
-    
-
     .container {
         padding: 2rem;
     }

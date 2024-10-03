@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import style from './CommentForm.module.css';
 
 function CommentForm() {
 
     const [message, setMessage] = useState('')
-
     const [firstName, setFirstName] = useState('')
     const [anonymous, setAnonymous] = useState(false)
     const [comment, setComment] = useState('')
-
 
     function handleSubmit(event) {
         event.preventDefault();
@@ -18,9 +17,6 @@ function CommentForm() {
         // här ska funktion finnas för att spara i databasen i swagger 
 
         setMessage('tack för din kommentar!')
-
-
-
 
         setFirstName('');
         setComment('');
@@ -34,9 +30,7 @@ function CommentForm() {
                 setMessage('');
             }, 3000);
             return () => clearTimeout(timer)
-
         }
-
 
     }, [message])
 
@@ -73,7 +67,11 @@ function CommentForm() {
 
                     <div className={style['button-container']}>
                         <button type="submit">Ange kommentar</button>
-                        <button type='submit'>Tillbaka</button>
+                        <button type='submit'>
+                            <Link to=".." relative="path" className={style['no-underline']}>
+                                Tillbaka
+                            </Link>
+                        </button>
                     </div>
 
                 </form>
@@ -81,7 +79,6 @@ function CommentForm() {
                 <div className={style.message}>
                     {message && <p>{message}</p>}
                 </div>
-
             </div>
         </div>
     )

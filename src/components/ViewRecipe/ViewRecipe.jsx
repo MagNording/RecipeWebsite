@@ -4,7 +4,6 @@ import { useParams, Link } from 'react-router-dom';
 import style from './ViewRecipe.module.css';
 
 import RecipeRating from '../../components/Ratings';
-import './ViewRecipe.module.css'
 
 const unitConversionMap = {
     "gram": "gm",
@@ -19,7 +18,6 @@ const unitConversionMap = {
 export default function ViewRecipe() {
     const [desiredRecipe, setDesiredRecipe] = useState(null);
     const [recipeRating, setRecipeRating] = useState(0);
-
 
     const params = useParams();
     console.log(params.recipeId);
@@ -85,7 +83,6 @@ export default function ViewRecipe() {
                     <img src={desiredRecipe.imageUrl} alt={desiredRecipe.title} className={style['recipe-image']} />
                 </div>
 
-
                 <div className={style['description-container']}>
                     <h2>Beskrivning</h2>
                     <p className={style.description}>
@@ -123,18 +120,14 @@ export default function ViewRecipe() {
                                 <li><p>kommentar 1</p></li>
                                 <li><p>kommentar 1</p></li>
                                 <li><p>kommentar 1</p></li>
-                                <li><p>kommentar 1</p></li>
-                                <li><p>kommentar 1</p></li>
-                                <li><p>kommentar 1</p></li>
-                                <li><p>kommentar 1</p></li>
-                                <li><p>kommentar 1</p></li>
-                                <li><p>kommentar 1</p></li>
-                                <li><p>kommentar 1</p></li>
-                                <li><p>kommentar 1</p></li>
                             </ul>
                         </div>
 
-                        <button>Kommentera</button>
+                        <button>
+                            <Link to={`/recipes/${params.recipeId}/comments`} className={style['no-underline']}>
+                                Kommentera
+                            </Link>
+                        </button>
                     </div>
 
                     <div className={`${style['card']} ${style['button-card-container']} ${style['container2']}`}>
