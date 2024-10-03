@@ -46,6 +46,8 @@
     border-radius: 10px;
     height: auto;
     transition: 0.2s;
+    margin-top: 0.8rem;
+
 }
 
 
@@ -77,9 +79,7 @@
 }
 
 /* Time icon */
-.details {
-    margin-top: 0.8rem;
-}
+
 
 .details > li {
     margin-top: 0;
@@ -108,4 +108,38 @@
 
 .recipe-button {
     background-color: var(--secondary-accent);
+}
+
+@media only screen and (max-width: 600px) {
+    .card {
+        padding: 15px; 
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .recipe-list h3 {
+        font-size: 1.1em; 
+    }
+
+    .details {
+        flex-direction: column;
+        gap: 0.5em; 
+        padding: 0.5rem; 
+    }
+
+    .details svg {
+        font-size: 1.2em;
+    }
+
+    .stars {
+        font-size: 1.5em; 
+    }
+
+    .recipe-button {
+        padding: 0.6rem 1rem;
+    }
+
+    .difficulty-bars .bar {
+        width: 4px;
+        height: 18px; 
+    }
 }

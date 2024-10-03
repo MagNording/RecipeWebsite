@@ -32,3 +32,21 @@
     color: var(--white-color);
 }
   
+@media only screen and (max-width: 600px) {
+    #root > .body > .header-top {
+        padding: 8rem 5rem; 
+        background-size: cover;
+    }
+
+    .header-title {
+        font-size: 2.5em;
+    }
+
+    .header-citation {
+        font-size: 1em;
+    }
+
+    .arrow {
+        font-size: 2.5rem; 
+    }
+}
