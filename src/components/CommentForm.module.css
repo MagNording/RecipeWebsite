@@ -102,22 +102,41 @@ button:active {
     text-decoration: none;
     color: #FFF;
 }
+@media only screen and (max-width: 600px) {
+    .main {
+        padding: 0.5rem;
+    }
 
-@media (max-width: 768px) {
-    
     .container {
-        padding: 2rem;
+        padding: 2rem; 
+        width: 90%; 
     }
 
-    h2 {
-        font-size: 1.8rem;
+    .main h2 {
+        font-size: 1.5rem; 
+        margin-bottom: 1rem; 
     }
 
-    input[type="text"], textarea {
+    input[type="text"], 
+    textarea {
+        font-size: 1rem;
+        padding: 8px; 
+    }
+
+    textarea {
+        height: 100px; 
+    }
+
+    .anonymous-label {
         font-size: 0.9rem;
     }
 
     button {
-        font-size: 1rem;
+        font-size: 1rem; 
+        padding: 8px 15px; 
+    }
+
+    .message p {
+        font-size: 1.5rem;
     }
 }
