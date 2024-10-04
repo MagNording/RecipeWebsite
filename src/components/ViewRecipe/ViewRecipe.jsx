@@ -1,6 +1,9 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUtensils } from '@fortawesome/free-solid-svg-icons';
+
 import style from './ViewRecipe.module.css';
 
 import RecipeRating from '../../components/Ratings';
@@ -18,6 +21,7 @@ const unitConversionMap = {
 export default function ViewRecipe() {
     const [desiredRecipe, setDesiredRecipe] = useState(null);
     const [recipeRating, setRecipeRating] = useState(0);
+    const [thankYouMessage, setThankYouMessage] = useState(false);
 
     const params = useParams();
     console.log(params.recipeId);
@@ -63,8 +67,7 @@ export default function ViewRecipe() {
         })
             .then(response => {
                 if (response.ok) {
-                    alert("Tack för din recension")
-                    console.log('Rating saved successfully');
+                    setThankYouMessage(true);
                 }
             })
             .catch(err => {
@@ -93,7 +96,7 @@ export default function ViewRecipe() {
                 <div className={style['card-container']}>
                     <div className={style.card}>
                         <h2 className={style['section-title']}>Ingredienser</h2>
-                        <p className={style['section-text']}>4 portioner</p>
+                        <p className={style['section-text']}>(4 portioner)</p>
                         <ul className={style['ingredient-list']}>
                             {desiredRecipe.ingredients.map((ingredient) => (
                                 <li key={ingredient._id}>
@@ -108,6 +111,7 @@ export default function ViewRecipe() {
                         <ol className={style['instruction-list']}>
                             {desiredRecipe.instructions.map((step, index) => <li key={index}>{step}</li>)}
                         </ol>
+                        <FontAwesomeIcon icon={faUtensils} size="2x" style={{ marginTop: '20px', color: '#E63946' }} />
                     </div>
                 </div>
 
@@ -133,11 +137,19 @@ export default function ViewRecipe() {
                     <div className={`${style['card']} ${style['button-card-container']} ${style['container2']}`}>
                         <div>
                             <h2>Vad tycker du ?</h2>
-                            <p className={style['rating-text']}><i>Glöm inte att recensera eller lämna en kommentar.</i></p>
-                            <p><i>Det kommer att hjälpa oss att bli ännu bättre.</i></p>
+                            <div>
+                                <p className={style['rating-text']}><i>Glöm inte att recensera eller lämna en kommentar.</i></p>
+                                <p><i>Det kommer att hjälpa oss att bli ännu bättre.</i></p>
+                            </div>
                             <RecipeRating setRecipeRatings={setRecipeRating} />
                         </div>
-                        <button className={style['rating-button']} onClick={handleStarReview}>Recensera</button>
+                        {thankYouMessage ? (
+                            <p className={style['thank-you-message']}>Tack för din recension!</p>
+                        ) : (
+                            <button className={style['rating-button']} onClick={handleStarReview}>
+                                Recensera
+                            </button>
+                        )}
                     </div>
                 </div>
 
