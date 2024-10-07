@@ -9,7 +9,6 @@ export default function HomePage() {
         <div className='body'>
             <HomeHeader />
             <NavBar />
-            <SearchBar />
             <Main />
             <Footer />
         </div>

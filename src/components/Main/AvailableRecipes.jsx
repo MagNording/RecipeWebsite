@@ -1,40 +1,42 @@
 import { useState, useEffect } from 'react';
 import RecipeCard from './RecipeCard';
 
-function createRecipeCard(content) {
-    return(
-      <RecipeCard
-        key={content._id}
-        id={content._id}
-        rating={content.avgRating}
-        imageUrl={content.imageUrl}
-        title={content.title}
-        description={content.description}
-        time={content.timeInMins}
-      />
-    );
-}  
-
-export default function AvailableRecipes() {
+export default function AvailableRecipes({ searchTerm }) {
     const [availableRecipes, setAvailableRecipes] = useState([]);
+    const [filteredRecipes, setFilteredRecipes] = useState([]);
 
     useEffect(() => {
         fetch('https://recept3-bolen.reky.se/recipes')
-        .then((response) => {
-            return response.json();
-        })
+        .then((response) => response.json())
         .then((responseData) => {
-            console.log(responseData);
             setAvailableRecipes(responseData);
+            setFilteredRecipes(responseData);
         })
     }, []);
 
+    useEffect(() => {
+        const filtered = availableRecipes.filter(recipe =>
+            recipe.title.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+        setFilteredRecipes(filtered);
+    }, [searchTerm, availableRecipes]);
+
     return (
         <>
-            {availableRecipes.length > 0 ? (
-                availableRecipes.map(createRecipeCard)
+            {filteredRecipes.length > 0 ? (
+                filteredRecipes.map((recipe) => (
+                    <RecipeCard
+                        key={recipe._id}
+                        id={recipe._id}
+                        rating={recipe.avgRating}
+                        imageUrl={recipe.imageUrl}
+                        title={recipe.title}
+                        description={recipe.description}
+                        time={recipe.timeInMins}
+                    />
+                ))
             ) : (
-                <p>Loading recipes...</p>
+                <p>Inga recept hittades. Prova en annan sökterm.</p>
             )}
         </>
     );
