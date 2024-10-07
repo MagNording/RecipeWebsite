@@ -1,40 +1,17 @@
-import { useState, useEffect } from 'react';
 import './AvailableCategories.css';
 
-export default function AvailableCategories() {
-    const [availableCategories, setAvailableCategories] = useState([]);
-
-    useEffect(() => {
-        fetch('https://recept3-bolen.reky.se/recipes')
-        .then((response) => {
-            return response.json();
-        })
-        .then((responseData) => {
-            const categoriesArray =  responseData.map(recipe => recipe.categories) ;
-            let mergedCategories = [];
-        
-            categoriesArray.forEach(element => {
-                mergedCategories.push(...element);
-            });
-                       
-            let availableCategories = [];
-
-            mergedCategories.forEach(category => {
-                if(!availableCategories.includes(category)) {
-                    availableCategories.push(category);
-                }
-            })
-
-            setAvailableCategories(availableCategories);
-        })
-    }, []);
+export default function AvailableCategories(props) {
+    
+    const handleCategoryClick = (event) => {
+        props.categoryHandler(event.currentTarget.value);
+    }
 
     return (
         <>
-            {availableCategories.length > 0 ? (
+            {props.availableCategories.length > 0 ? (
                 <ul className='nav-list'>
-                    {availableCategories.map((item, index) => {
-                    return <li key={index}><button className='category'>{item}</button></li>;
+                    {props.availableCategories.map((item, index) => {
+                    return <li key={index}><button className='category' onClick={handleCategoryClick} value={item}>{item}</button></li>;
                     })}
                 </ul>
             ) : (

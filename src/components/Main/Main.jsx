@@ -1,12 +1,12 @@
 import AvailableRecipes from './AvailableRecipes';
 import './Main.css';
 
-export default function Main() {
+export default function Main(props) {
     return (
         <main>
             <h2>Populära Bakverk</h2>
             <div className='card-container'>
-                <AvailableRecipes />
+                <AvailableRecipes availableRecipes={props.recipes}/>
             </div>
 
             <div className="scroll-container">                  {/* upwards arrow symbol */}
