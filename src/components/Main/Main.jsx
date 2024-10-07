@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import AvailableRecipes from './AvailableRecipes';
-import SearchBar from '../NavBar/SearchBar';
+import SearchBar from '../Search/SearchBar';
 import './Main.css';
 
 export default function Main(props) {
