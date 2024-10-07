@@ -6,7 +6,7 @@ import { faUtensils } from '@fortawesome/free-solid-svg-icons';
 
 import style from './ViewRecipe.module.css';
 
-import RecipeRating from '../../components/Ratings';
+import RecipeRating from './Ratings';
 
 const unitConversionMap = {
     "gram": "gm",

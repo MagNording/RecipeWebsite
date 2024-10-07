@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 
 import HomeHeader from "../components/Header/HomeHeader";
-import CategoriesBar from "../components/NavBar/CategoriesBar";
-import SearchBar from "../components/NavBar/SearchBar";
+import CategoriesBar from "../components/Categories/CategoriesBar";
+import SearchBar from "../components/Search/SearchBar";
 import Main from "../components/Main/Main";
 import Footer from "../components/Footer/Footer";
 
