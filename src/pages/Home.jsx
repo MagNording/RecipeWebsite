@@ -56,11 +56,7 @@ export default function HomePage() {
         })
 
         const selectedRecipes = availableRecipes.filter(recipe => recipe.categories.includes(selectedCategory));
-        if(selectedRecipes.length > 0) {
-            setAvailableRecipes(selectedRecipes);
-        } else {
-            setAvailableRecipes(availableRecipes);
-        }   
+        setAvailableRecipes(selectedRecipes);
     }
 
     return (
