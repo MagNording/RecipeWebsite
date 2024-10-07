@@ -16,7 +16,7 @@ function CommentForm() {
         console.log(`name ${displayName}, comment ${comment}`)
         // här ska funktion finnas för att spara i databasen i swagger 
 
-        setMessage('tack för din kommentar!')
+        setMessage('Tack för din kommentar!')
 
         setFirstName('');
         setComment('');
