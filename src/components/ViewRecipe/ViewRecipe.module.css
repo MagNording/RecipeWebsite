@@ -27,7 +27,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .recipe-image {
@@ -44,9 +44,13 @@
     font-size: 3rem;
     font-weight: bold;
     text-align: center;
-    margin: 1.5rem 0;
     color: #E63946;
     text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.1);
+}
+
+.main > .container > h5 {
+    font-size: 0.9em;
+    color: #028f94;
 }
 
 .button-card-container>div {
@@ -154,11 +158,10 @@
     padding: 1.5rem;
 }
 
-.description {
+.description-container > .description {
     font-size: 1.2rem;
     line-height: 1.6;
     color: #333;
-    margin-bottom: 1.5rem;
     text-align: center;
 }
 
