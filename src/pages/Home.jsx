@@ -19,32 +19,48 @@ export default function HomePage() {
         .then((responseData) => {
             console.log(responseData);
             setAvailableRecipes(responseData);      // get all available recipes from database
-
             getAllCategories(responseData);
         })
     }, []);
 
+    // get all available categories from database
     function getAllCategories(data) {
         const categoriesArray =  data.map(recipe => recipe.categories) ;
-            let mergedCategories = [];
+        let mergedCategories = [];
         
-            categoriesArray.forEach(element => {
-                mergedCategories.push(...element);
-            });
+        categoriesArray.forEach(element => {
+            mergedCategories.push(...element);
+        });
                        
-            let availableCategories = [];
+        let availableCategories = [];
 
-            mergedCategories.forEach(category => {
-                if(!availableCategories.includes(category)) {
-                    availableCategories.push(category);
-                }
-            })
+        mergedCategories.forEach(category => {
+            if(!availableCategories.includes(category)) {
+                availableCategories.push(category);
+            }
+        });
 
-            setAvailableCategories(availableCategories);     // get all available categories from database
+        setAvailableCategories(availableCategories);     
     }
 
     const handleCategoryClick = (selectedCategory) => {
-        console.log(selectedCategory);       
+        console.log(selectedCategory);
+
+        fetch('https://recept3-bolen.reky.se/categories/' + selectedCategory + '/recipes')
+        .then((response) => {
+            return response.json();
+        })
+        .then((responseData) => {
+            console.log(responseData);
+            setAvailableRecipes(responseData);      // get all recipes in a specific category from database
+        })
+
+        const selectedRecipes = availableRecipes.filter(recipe => recipe.categories.includes(selectedCategory));
+        if(selectedRecipes.length > 0) {
+            setAvailableRecipes(selectedRecipes);
+        } else {
+            setAvailableRecipes(availableRecipes);
+        }   
     }
 
     return (
