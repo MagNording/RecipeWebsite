@@ -15,12 +15,20 @@
     margin: 10px;
     font-size: 1.5em;
     box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.595);
+    cursor: pointer;
+}
+
+/* button activated for a selected category */
+
+.activated-button {
+    background-color: #D62839;
+    color: white;
+    border-color: #D62839;
 }
   
 .category:hover {
     transform: translateY(-2px);
 }  
-  
 
 @media only screen and (max-width: 600px) {
     .nav-list {
