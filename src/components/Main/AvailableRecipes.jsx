@@ -20,7 +20,7 @@ export default function AvailableRecipes(props) {
             {props.availableRecipes.length > 0 ? (
                 props.availableRecipes.map(createRecipeCard)
             ) : (
-                <p>Inga recept hittades. Prova en annan sökterm.</p>
+                <p>Loading recipes...</p>
             )}
         </>
     );
