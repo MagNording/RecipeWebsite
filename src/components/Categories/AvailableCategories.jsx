@@ -8,7 +8,7 @@ export default function AvailableCategories(props) {
     const handleCategoryClick = (event) => {
         const selectedCategory = event.currentTarget.value;
         setActiveCategory(selectedCategory);
-        props.categoryHandler(event.currentTarget.value);
+        props.categoryHandler(selectedCategory);
     }
 
     return (

@@ -19,7 +19,7 @@
   
 .search-button {
     background-color: var(--button-color);
-    width: 8rem;
+    max-width: 7rem;
     cursor: pointer;
 }
   

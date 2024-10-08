@@ -59,11 +59,20 @@ export default function HomePage() {
         setAvailableRecipes(selectedRecipes);
     }
 
+    const handleSearch = (input) => {
+        console.log(input);
+        const filteredRecipes = availableRecipes.filter(recipe =>
+            recipe.title.toLowerCase().includes(input.toLowerCase())
+        );
+        
+        setAvailableRecipes(filteredRecipes);
+    };
+
     return (
         <div className='body'>
             <HomeHeader />
             <CategoriesBar categories={availableCategories} onCategorySelection={handleCategoryClick}/>
-            <SearchBar />
+            <SearchBar onSearch={handleSearch}/>
             <Main recipes={availableRecipes}/>
             <Footer />
         </div>

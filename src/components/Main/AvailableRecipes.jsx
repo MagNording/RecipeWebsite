@@ -15,12 +15,18 @@ function createRecipeCard(content) {
 }  
 
 export default function AvailableRecipes(props) {
+    let content = <p>Loading recipes...</p>;
+    
+    if(props.availableRecipes.length === 0) {
+        content = <p>No recipes available</p>;
+    }
+
     return (
         <>
             {props.availableRecipes.length > 0 ? (
                 props.availableRecipes.map(createRecipeCard)
             ) : (
-                <p>Loading recipes...</p>
+                content
             )}
         </>
     );

@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import './SearchBar.css';
 
-function SearchBar({ onSearch }) {
+function SearchBar(props) {
     const [searchTerm, setSearchTerm] = useState('');
 
     const handleInputChange = (e) => {
-        setSearchTerm(e.target.value);
+        const searchTerm = e.target.value;
+        setSearchTerm(searchTerm);
     };
 
-    const handleSubmit = (e) => {
+    const handleSearchClick = (e) => {
         e.preventDefault();
-        onSearch(searchTerm);
+        props.onSearch(searchTerm);
     };
 
     return (
@@ -21,7 +22,7 @@ function SearchBar({ onSearch }) {
                 value={searchTerm}
                 onChange={handleInputChange}
             />
-            <button onClick={handleSubmit} className='search-button'>Search</button>
+            <button onClick={handleSearchClick} className='search-button'>Search</button>
         </div>
     );
 }
