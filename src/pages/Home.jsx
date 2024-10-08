@@ -63,7 +63,6 @@ export default function HomePage() {
         <div className='body'>
             <HomeHeader />
             <CategoriesBar categories={availableCategories} onCategorySelection={handleCategoryClick}/>
-            <SearchBar />
             <Main recipes={availableRecipes}/>
             <Footer />
         </div>

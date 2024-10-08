@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import RecipeCard from './RecipeCard';
 
 function createRecipeCard(content) {
@@ -14,13 +15,32 @@ function createRecipeCard(content) {
     );
 }  
 
-export default function AvailableRecipes(props) {
+export default function AvailableRecipes({ searchTerm }) {
+    const [availableRecipes, setAvailableRecipes] = useState([]);
+    const [filteredRecipes, setFilteredRecipes] = useState([]);
+
+    useEffect(() => {
+        fetch('https://recept3-bolen.reky.se/recipes')
+        .then((response) => response.json())
+        .then((responseData) => {
+            setAvailableRecipes(responseData);
+            setFilteredRecipes(responseData);
+        })
+    }, []);
+
+    useEffect(() => {
+        const filtered = availableRecipes.filter(recipe =>
+            recipe.title.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+        setFilteredRecipes(filtered);
+    }, [searchTerm, availableRecipes]);
+
     return (
         <>
-            {props.availableRecipes.length > 0 ? (
-                props.availableRecipes.map(createRecipeCard)
+            {filteredRecipes.length > 0 ? (
+                filteredRecipes.map(createRecipeCard)
             ) : (
-                <p>Loading recipes...</p>
+                <p>No recipes found. Try a different search term.</p>
             )}
         </>
     );
