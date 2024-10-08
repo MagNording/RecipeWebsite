@@ -3,17 +3,12 @@ import AvailableRecipes from './AvailableRecipes';
 import SearchBar from '../Search/SearchBar';
 import './Main.css';
 
-export default function Main() {
-    const [searchTerm, setSearchTerm] = useState('');
-
-    const handleSearch = (term) => {
-        setSearchTerm(term);
-    };
-
+export default function Main(props) {
+    const numberOfRecipes = props.recipes.length;
     return (
-        <main>
+        <main className="landing-main">
             <h2>Populära Bakverk</h2>
-            <SearchBar onSearch={handleSearch} />
+            {numberOfRecipes > 0 && <p>(Visar {numberOfRecipes} recept)</p>}
             <div className='card-container'>
                 <AvailableRecipes searchTerm={searchTerm} />
             </div>

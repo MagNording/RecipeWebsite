@@ -15,32 +15,19 @@ function createRecipeCard(content) {
     );
 }  
 
-export default function AvailableRecipes({ searchTerm }) {
-    const [availableRecipes, setAvailableRecipes] = useState([]);
-    const [filteredRecipes, setFilteredRecipes] = useState([]);
-
-    useEffect(() => {
-        fetch('https://recept3-bolen.reky.se/recipes')
-        .then((response) => response.json())
-        .then((responseData) => {
-            setAvailableRecipes(responseData);
-            setFilteredRecipes(responseData);
-        })
-    }, []);
-
-    useEffect(() => {
-        const filtered = availableRecipes.filter(recipe =>
-            recipe.title.toLowerCase().includes(searchTerm.toLowerCase())
-        );
-        setFilteredRecipes(filtered);
-    }, [searchTerm, availableRecipes]);
+export default function AvailableRecipes(props) {
+    let content = <p>Loading recipes...</p>;
+    
+    if(props.availableRecipes.length === 0) {
+        content = <p>No recipes available</p>;
+    }
 
     return (
         <>
             {filteredRecipes.length > 0 ? (
                 filteredRecipes.map(createRecipeCard)
             ) : (
-                <p>No recipes found. Try a different search term.</p>
+                content
             )}
         </>
     );

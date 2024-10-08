@@ -1,12 +1,27 @@
-main>h2 {
+.landing-main>h2 {
     font-size: 2rem;
     background-color: var(--primary-accent);
-    padding: 2rem 0 0 0;
+    padding: 2rem 0 0.5rem 0;
     margin: 0;
     text-align: center;
 }
 
-.body>main>.card-container {
+.landing-main > p {
+    font-size: 1.2rem;
+    background-color: var(--primary-accent);
+    color: #585858;
+    text-align: center;
+}
+
+.landing-main > div > p {
+    font-size: 1.5rem;
+    background-color: #f8d7da;
+    text-align: center;
+    padding: 1rem 0;
+    color: #721c24;
+}
+
+.body>.landing-main>.card-container {
     background-color: var(--primary-accent);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
@@ -15,11 +30,9 @@ main>h2 {
     margin-top: 0;
 }
 
-
-
 /* ------ Scroll-to-Top function ------ */
 
-main {
+.landing-main {
     position: relative;
 }
 
@@ -59,12 +72,16 @@ main {
 }
 
 @media screen and (max-width: 600px) {
-    main>h2 {
+    .landing-main>h2 {
         font-size: 1.5rem; 
         padding: 1.5rem 0 0 0;
     }
 
-   .body>main>.card-container {
+    .landing-main>p {
+        font-size: 1rem; 
+    }
+
+   .body>.landing-main>.card-container {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
         grid-gap: 15px;
         padding: 10px;
@@ -85,12 +102,16 @@ main {
 }
 
 @media only  screen and ((min-width: 601px) and (max-width: 880px)) {
-    main>h2 {
+    .landing-main>h2 {
         font-size: 1.5rem; 
-        padding: 1.5rem 0 0 0;
+        padding: 1rem 0 0 0;
     }
 
-   .body>main>.card-container {
+    .landing-main>p {
+        font-size: 1rem; 
+    }
+
+   .body>.landing-main>.card-container {
         grid-template-columns: repeat(1, minmax(200px, 1fr)); 
         grid-gap: 15px;
         padding: 1em 9em;
