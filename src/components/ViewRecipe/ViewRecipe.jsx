@@ -81,11 +81,10 @@ export default function ViewRecipe() {
             <div className={style.container}>
 
                 <h1 className={style['recipe-title']}>{desiredRecipe.title}</h1>
-
                 <div className={style['image-container']}>
                     <img src={desiredRecipe.imageUrl} alt={desiredRecipe.title} className={style['recipe-image']} />
                 </div>
-
+                <h5>Kategorier: {desiredRecipe.categories.join(', ')}</h5>
                 <div className={style['description-container']}>
                     <h2>Beskrivning</h2>
                     <p className={style.description}>
