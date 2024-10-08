@@ -24,8 +24,8 @@ export default function AvailableRecipes(props) {
 
     return (
         <>
-            {filteredRecipes.length > 0 ? (
-                filteredRecipes.map(createRecipeCard)
+            {props.availableRecipes.length > 0 ? (
+                props.availableRecipes.map(createRecipeCard)
             ) : (
                 content
             )}

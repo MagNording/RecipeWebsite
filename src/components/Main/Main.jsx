@@ -1,6 +1,4 @@
-import { useState } from 'react';
 import AvailableRecipes from './AvailableRecipes';
-import SearchBar from '../Search/SearchBar';
 import './Main.css';
 
 export default function Main(props) {
@@ -10,7 +8,7 @@ export default function Main(props) {
             <h2>Populära Bakverk</h2>
             {numberOfRecipes > 0 && <p>(Visar {numberOfRecipes} recept)</p>}
             <div className='card-container'>
-                <AvailableRecipes searchTerm={searchTerm} />
+                <AvailableRecipes availableRecipes={props.recipes} />
             </div>
 
             <div className="scroll-container">
