@@ -77,7 +77,7 @@ function CommentForm() {
                             id="name"
                             placeholder='ange namn'
                             value={firstName}
-                            onChange={(e) => setFirstName(e.target.value.trim())}
+                            onChange={(e) => setFirstName(e.target.value)}
                             disabled={anonymous}
                             required={!anonymous} /> <br />
 
@@ -94,7 +94,7 @@ function CommentForm() {
                             placeholder='din kommentar'
                             cols={20} rows={5}
                             value={comment}
-                            onChange={(e) => setComment(e.target.value.trim())} required />
+                            onChange={(e) => setComment(e.target.value)} required />
                     </div>
 
                     <div className={style['button-container']}>
