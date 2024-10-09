@@ -120,7 +120,7 @@ export default function ViewRecipe() {
                     </div>
 
                     <div className={style.card}>
-                        <h2 className={style['section-title']}>Instruktioner</h2>
+                        <h2 className={style['section-title']}>Gör så här</h2>
                         <ol className={style['instruction-list']}>
                             {desiredRecipe.instructions.map((step, index) => <li key={index}>{step}</li>)}
                         </ol>

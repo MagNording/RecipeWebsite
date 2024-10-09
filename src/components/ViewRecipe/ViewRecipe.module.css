@@ -70,7 +70,7 @@
 
 .main>.container>.card-container>.card>.section-text {
     font-style: italic;
-    padding-bottom: 1rem;
+    padding-bottom: 0.5rem;
 }
 
 .container1>div>ul>li>p {
@@ -188,8 +188,12 @@ button:active {
 
 .section-title {
     font-size: 1.8rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.4rem;
     text-align: center;
+}
+
+.card-container > .card:nth-child(2) > .section-title {
+    margin-bottom: 1.3rem;
 }
 
 .ingredient-list,
@@ -376,7 +380,11 @@ button:active {
 
     .ingredient-list li,
     .instruction-list li {
-        font-size: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .instruction-list li::before {
+        font-size: 0.9rem;
     }
 
     .section-title {
