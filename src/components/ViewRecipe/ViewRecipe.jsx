@@ -49,9 +49,6 @@ export default function ViewRecipe() {
                 console.log(responseData);
                 setDesiredRecipe(responseData);
             });
-
-
-
     }, [params.recipeId]);
 
     if (!desiredRecipe) {
@@ -127,7 +124,7 @@ export default function ViewRecipe() {
                         <ol className={style['instruction-list']}>
                             {desiredRecipe.instructions.map((step, index) => <li key={index}>{step}</li>)}
                         </ol>
-                        <FontAwesomeIcon icon={faUtensils} size="2x" style={{ marginTop: '20px', color: '#E63946' }} />
+                        <FontAwesomeIcon icon={faUtensils} className="utensils-icon" size="2x" style={{ marginTop: '0.3em', color: '#E63946', fontSize: '2rem' }} />
                     </div>
                 </div>
 
