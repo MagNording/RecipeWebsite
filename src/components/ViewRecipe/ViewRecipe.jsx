@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUtensils } from '@fortawesome/free-solid-svg-icons';
+import CommentList from './CommentList.jsx';
 
 import style from './ViewRecipe.module.css';
 
@@ -22,9 +23,23 @@ export default function ViewRecipe() {
     const [desiredRecipe, setDesiredRecipe] = useState(null);
     const [recipeRating, setRecipeRating] = useState(0);
     const [thankYouMessage, setThankYouMessage] = useState(false);
+    const [comments, setComments] = useState([]);
+
 
     const params = useParams();
     console.log(params.recipeId);
+    
+    useEffect(() => {
+
+        fetch('https://recept3-bolen.reky.se/recipes/' + params.recipeId + '/comments')
+        .then((response) => response.json())
+        .then((responseData) => {
+            setComments(responseData);
+        })
+        .catch((error) => {
+            console.error("Error fetching comments:", error);
+        });
+    }, []);
 
     useEffect(() => {
         fetch('https://recept3-bolen.reky.se/recipes/' + params.recipeId)
@@ -35,6 +50,9 @@ export default function ViewRecipe() {
                 console.log(responseData);
                 setDesiredRecipe(responseData);
             });
+
+
+
     }, [params.recipeId]);
 
     if (!desiredRecipe) {
@@ -44,6 +62,11 @@ export default function ViewRecipe() {
     const getShortUnit = (unit) => {
         return unitConversionMap[unit] || unit;             // Default to original unit if not in map
     };
+
+  
+    
+
+
 
     const handleStarReview = () => {
 
@@ -115,15 +138,10 @@ export default function ViewRecipe() {
                 </div>
 
                 <div className={style['card-container']}>
-                    <div className={ `${style['card']} ${style['button-card-container']} ${style['container1']}`}>
+                    <div className={`${style['card']} ${style['button-card-container']} ${style['container1']}`}>
                         <div>
                             <h2>Kommentarer</h2>
-                            <ul className={` ${style['scroll-list']} ${style.comments}`}>
-                                <li><p>kommentar 1 ugfudfgduigug</p></li>
-                                <li><p>kommentar 1</p></li>
-                                <li><p>kommentar 1</p></li>
-                                <li><p>kommentar 1</p></li>
-                            </ul>
+                            <CommentList comments={comments} />
                         </div>
 
                         <button>
@@ -157,3 +175,4 @@ export default function ViewRecipe() {
         </div>
     )
 }
+
