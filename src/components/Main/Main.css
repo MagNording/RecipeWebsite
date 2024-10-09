@@ -1,3 +1,7 @@
+.landing-main{
+    overflow: hidden;
+}
+
 .landing-main>h2 {
     font-size: 2rem;
     background-color: var(--primary-accent);
@@ -28,47 +32,6 @@
     grid-gap: 1.5rem;
     padding: 2em;
     margin-top: 0;
-}
-
-/* ------ Scroll-to-Top function ------ */
-
-.landing-main {
-    position: relative;
-    overflow: hidden;
-}
-
-.landing-main > .scroll-container {
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100%;
-}
-
-.scroll-container:before {
-    /*  to hide the button when page first loaded  */
-    content: '';
-    display: block;
-    height: 100vh;
-    pointer-events: none;
-}
-
-.scroll-container a {
-    /*   fixed to right bottom of page  */
-    position: sticky;
-    top: 88vh;
-    cursor: pointer;
-    font-size: 14px;
-}
-
-.scroll-container a span {
-    font-size: 1.2rem;
-}
-
-.scroll-button {
-    padding: 0.8rem;
-    text-decoration: none;
-    background-color: var(--hover-color);
-    color: var(--white-color);
 }
 
 @media screen and (max-width: 500px) {
