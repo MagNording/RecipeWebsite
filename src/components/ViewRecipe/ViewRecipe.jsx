@@ -131,7 +131,7 @@ export default function ViewRecipe() {
                 <div className={style['card-container']}>
                     <div className={`${style['card']} ${style['button-card-container']} ${style['container1']}`}>
                         <div>
-                            <h2>Kommentarer</h2>
+                            <h2>Kommentarer ({comments.length})</h2>
                             <CommentList comments={comments} />
                         </div>
 

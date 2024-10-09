@@ -17,7 +17,6 @@ export default function HomePage() {
             return response.json();
         })
         .then((responseData) => {
-            console.log(responseData);
             setAvailableRecipes(responseData);      // get all available recipes from database
             getAllCategories(responseData);
         })
