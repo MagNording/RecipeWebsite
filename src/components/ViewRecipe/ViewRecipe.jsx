@@ -26,7 +26,6 @@ export default function ViewRecipe() {
     const [comments, setComments] = useState([]);
 
     const params = useParams();
-    console.log(params.recipeId);
     
     useEffect(() => {
 
@@ -46,7 +45,6 @@ export default function ViewRecipe() {
                 return response.json();
             })
             .then((responseData) => {
-                console.log(responseData);
                 setDesiredRecipe(responseData);
             });
     }, [params.recipeId]);
@@ -64,8 +62,6 @@ export default function ViewRecipe() {
         if (recipeRating === 0) {
             return
         }
-
-        console.log(recipeRating + " stars");
 
         // Här ska en fetch-request göra till en API som sparar ratingen
 
@@ -131,7 +127,7 @@ export default function ViewRecipe() {
                 <div className={style['card-container']}>
                     <div className={`${style['card']} ${style['button-card-container']} ${style['container1']}`}>
                         <div>
-                            <h2>Kommentarer ({comments.length})</h2>
+                            <h2>Kommentarer <span>({comments.length})</span></h2>
                             <CommentList comments={comments} />
                         </div>
 
