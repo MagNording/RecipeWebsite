@@ -238,6 +238,11 @@ button:active {
     justify-content: space-between;
 }
 
+.container1 > div > h2 > span {
+    color: #444444;
+    font-weight: 300;
+}
+
 @media (max-width: 600px) {
     .main > .container {
         max-width: 75%;
