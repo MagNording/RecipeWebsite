@@ -1,6 +1,15 @@
+.card-link {
+    text-decoration: none;  /* Remove the underline */
+    color: inherit; /* Inherit the color to keep it consistent */
+    display: block; /* the link takes full width of its container */
+}
+
 .card {
     /* if a single card is on screen, to not be strecthed set a max width if its a single or few cards with alot of space */
+    width: 300px;
     max-width: 400px;
+    height: auto;
+    overflow: hidden;
     background-color: var(--white-color);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.259);
@@ -21,8 +30,9 @@
 }
 
 .card img {
-    width: 100%;
-    max-height: 200;
+    width: 100%; /* Take up the full width of the card */
+    height: 200px; /* Fixed height for uniformity */
+    object-fit: cover;
     border-radius: 10px;
 }
 
@@ -41,6 +51,10 @@
     margin: 10px 0;
 }
 
+.card > .recipe-list > li > p {
+    margin-bottom: 0.3rem;
+}
+
 .details {
     list-style-type: none;
     display: flex;
@@ -54,6 +68,7 @@
     margin-top: 0.8rem;
 }
 
+/*
 .time {
     transition: 0.8s;
 }
@@ -61,6 +76,7 @@
     cursor: pointer;
     transform: scale(1.2);
 }
+    */
 
 .difficulty-level {
     display: flex;
@@ -105,7 +121,7 @@
 }
 
 
-
+/*
 .stars {
     transition: 1s;
     margin-top: 0.6rem;
@@ -114,6 +130,7 @@
 .stars:hover {
     transform: scale(1.05);
 }
+    */
 
 .stars>div {
     display: flex;
@@ -124,43 +141,157 @@
     shape-rendering: geometricPrecision;
 }
 
-
 .no-underline {
     text-decoration: none;
     color: var(--white-color);
 }
 
-.recipe-button {
-    font-size: 1rem;
-    background-color: var(--secondary-accent);
-}
-
-@media only screen and (max-width: 600px) {
+@media (max-width: 500px) {
     .card {
+        width: 75%;
+        max-width: 300px;;
         padding: 15px;
         box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .card > .recipe-list {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    
+    .recipe-list > li {
+        width: 100%;
+        margin-top: 0;
     }
 
     .recipe-list h3 {
         font-size: 1.1em;
     }
 
+    .card > img {
+        width: 100%;
+        height: auto;
+        max-height: 150px
+    }
+
+    .card > .recipe-list > li > p {
+        display: none;
+    }
+
     .details {
-        flex-direction: wrap;
-        gap: 0.5em;
-        padding: 0.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        list-style-type: none;
     }
 
     .details svg {
         font-size: 1.2em;
     }
 
+    .difficulty-text {
+        display: none;
+    }
+
+    .time {
+        display: flex;
+        flex-direction: row;
+        justify-content: end; /* Center the icon and text vertically */
+    }
+
+    .time span {
+        margin-left: 5px;             /* adds space with time-icon */
+    }
+
     .stars {
-        font-size: 1.5em;
+        font-size: 1em;
     }
 
     .recipe-button {
-        padding: 0.6rem 1rem;
+        font-size: 1rem;
+        padding: 0.5rem 0.9rem;
+        display: none;
+    }
+
+    .difficulty-bars .bar {
+        width: 4px;
+        height: 18px;
+    }
+}
+
+@media (min-width: 501px) and (max-width: 780px) {
+    .card {
+        width: 90%;
+        max-width: 300px;
+        padding: 15px;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .card > .recipe-list {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    
+    .recipe-list > li {
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .card > .recipe-list > button {
+        display: none;
+    }
+
+    .recipe-list h3 {
+        font-size: 1.1em;
+    }
+
+    .card > img {
+        width: 100%;
+        height: 200px;
+        max-height: 150px
+    }
+
+    .card > .recipe-list > li > p {
+        display: none;
+    }
+
+    .details {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        list-style-type: none;
+    }
+
+    .details svg {
+        font-size: 1.2em;
+    }
+
+    .difficulty-text {
+        display: none;
+    }
+
+    .time {
+        display: flex;
+        flex-direction: row;
+        justify-content: end; /* Center the icon and text vertically */
+    }
+
+    .time span {
+        margin-left: 5px;             /* adds space with time-icon */
+    }
+
+    .stars {
+        font-size: 1em;
+    }
+
+    .recipe-button {
+        font-size: 1rem;
+        padding: 0.5rem 0.9rem;
+        display: none;
     }
 
     .difficulty-bars .bar {

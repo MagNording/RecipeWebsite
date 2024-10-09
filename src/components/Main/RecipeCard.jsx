@@ -76,26 +76,27 @@ export default function RecipeCard(props) {
   }
 
   return (
-    <section className={style.card}>
-      <img src={props.imageUrl} alt={props.title} width={250} height={250} />
-      <ul className={style['recipe-list']}>
-        <li key={props.id}>
-          <h3>{props.title}</h3>
-          <p className={style['desc']}>{props.description}</p>
-          <div className={style['stars']}>
-            {displayStarRating(props.rating)}
-          </div>
-          <button className={`${style.button} ${style['recipe-button']}`}><Link to={`/recipes/${props.id}`} className={style['no-underline']}>Visa Recept</Link></button>
-          <ul className={style.details}>
-            <li className={style.time}>  <FontAwesomeIcon icon={faClock} />
-              <span> {props.time} min</span>
-            </li>
-            <li>
-              {renderDifficultyBars(props.time)}
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </section>
+    <Link to={`/recipes/${props.id}`} className={style['card-link']}>
+      <section className={style.card}>
+        <img src={props.imageUrl} alt={props.title} />
+        <ul className={style['recipe-list']}>
+          <li key={props.id}>
+            <h3>{props.title}</h3>
+            <p className={style['desc']}>{props.description}</p>
+            <div className={style['stars']}>
+              {displayStarRating(props.rating)}
+            </div>
+            <ul className={style.details}>
+              <li className={style.time}>  <FontAwesomeIcon icon={faClock} />
+                <span> {props.time} min</span>
+              </li>
+              <li>
+                {renderDifficultyBars(props.time)}
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+    </Link>
   );
 }
