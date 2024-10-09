@@ -95,7 +95,7 @@ export default function ViewRecipe() {
                 <div className={style['card-container']}>
                     <div className={style.card}>
                         <h2 className={style['section-title']}>Ingredienser</h2>
-                        <p className={style['section-text']}>(4 portioner)</p>
+                        <p className={style['section-text']}>(8 portioner)</p>
                         <ul className={style['ingredient-list']}>
                             {desiredRecipe.ingredients.map((ingredient) => (
                                 <li key={ingredient._id}>
