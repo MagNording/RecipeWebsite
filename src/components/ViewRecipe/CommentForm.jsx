@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
+
 import style from './CommentForm.module.css';
 
 function CommentForm() {
@@ -9,6 +10,8 @@ function CommentForm() {
     const [anonymous, setAnonymous] = useState(false)
     const [comment, setComment] = useState('')
 
+    const params = useParams();
+
     function handleSubmit(event) {
         event.preventDefault();
 
@@ -16,12 +19,41 @@ function CommentForm() {
         console.log(`name ${displayName}, comment ${comment}`)
         // här ska funktion finnas för att spara i databasen i swagger 
 
+        const commentData = {
+            name: displayName,
+            comment: comment
+        }
+
+        fetch('https://recept3-bolen.reky.se/recipes/' + params.recipeId + '/comments', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(commentData),
+        })
+            .then(response => {
+                if (response.ok) {
+                    setMessage('Tack för din kommentar!');
+                } else {
+                    setMessage('Något gick fel. Försök igen.');
+                }
+            })
+            .catch(err => {
+                console.error('Error saving comment:', err);
+                setMessage('Ett fel uppstod vid sparning av kommentaren.');
+
+            })
+
+
         setMessage('Tack för din kommentar!')
 
+        //restore the inputs after successful save
         setFirstName('');
         setComment('');
         setAnonymous(false);
     }
+
+
 
     useEffect(() => {
         // Clear the message after 3 seconds
