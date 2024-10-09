@@ -25,7 +25,6 @@ export default function ViewRecipe() {
     const [thankYouMessage, setThankYouMessage] = useState(false);
     const [comments, setComments] = useState([]);
 
-
     const params = useParams();
     console.log(params.recipeId);
     
@@ -62,11 +61,6 @@ export default function ViewRecipe() {
     const getShortUnit = (unit) => {
         return unitConversionMap[unit] || unit;             // Default to original unit if not in map
     };
-
-  
-    
-
-
 
     const handleStarReview = () => {
 
