@@ -30,7 +30,7 @@ export default function HomePage() {
         categoriesArray.forEach(element => {
             mergedCategories.push(...element);
         });
-                       
+                    
         let availableCategories = [];
 
         mergedCategories.forEach(category => {
@@ -45,17 +45,28 @@ export default function HomePage() {
     const handleCategoryClick = (selectedCategory) => {
         console.log(selectedCategory);
 
-        fetch('https://recept3-bolen.reky.se/categories/' + selectedCategory + '/recipes')
-        .then((response) => {
-            return response.json();
-        })
-        .then((responseData) => {
-            console.log(responseData);
-            setAvailableRecipes(responseData);      // get all recipes in a specific category from database
-        })
-
-        const selectedRecipes = availableRecipes.filter(recipe => recipe.categories.includes(selectedCategory));
-        setAvailableRecipes(selectedRecipes);
+        if (selectedCategory == null) {
+            fetch('https://recept3-bolen.reky.se/recipes')
+            .then((response) => {
+                return response.json();
+            })
+            .then((responseData) => {
+                setAvailableRecipes(responseData);      // get all available recipes from database
+                getAllCategories(responseData);
+            })
+        } else {
+            fetch('https://recept3-bolen.reky.se/categories/' + selectedCategory + '/recipes')
+            .then((response) => {
+                return response.json();
+            })
+            .then((responseData) => {
+                console.log(responseData);
+                setAvailableRecipes(responseData);      // get all recipes in a specific category from database
+            })
+            
+            const selectedRecipes = availableRecipes.filter(recipe => recipe.categories.includes(selectedCategory));
+            setAvailableRecipes(selectedRecipes);
+        }
     }
 
     const handleSearch = (input) => {
