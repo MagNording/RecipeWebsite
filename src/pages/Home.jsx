@@ -12,7 +12,8 @@ export default function HomePage() {
 
     const [availableRecipes, setAvailableRecipes] = useState([]);
     const [availableCategories, setAvailableCategories] = useState([]);
-
+    const [selectedCategory, setSelectedCategory] = useState(null);   // to check state of selected category, when using search bar
+   
     useEffect(() => {
         loadRecipes();
     }, []);
@@ -23,25 +24,32 @@ export default function HomePage() {
         setAvailableCategories(getAllCategories(recipes));   // get categories from all recipes
     };
 
-    const handleCategoryClick = async (selectedCategory) => {
-        console.log(selectedCategory);
+    const handleCategoryClick = async (category) => {
 
-        if (selectedCategory == null) {
+        if (category == null) {
+            setSelectedCategory(null);
             loadRecipes();
         } else {
-            const recipes = await fetchRecipesByCategory(selectedCategory);
+            setSelectedCategory(category);
+            const recipes = await fetchRecipesByCategory(category);
             setAvailableRecipes(recipes);
         }
     };
 
-    const handleSearch = (input) => {
-        console.log(input);
-
-        if (input === '') {
-            loadRecipes();         // if the input is empty, i.e. no search term available
+    // two possibilities for search term-> empty or not-empty
+    // if search term is 'empty' -> check state of selected category, and display recipes accordingly
+    // if we 'have' a search term -> display recipes according to searched term
+    const handleSearch = async (searchTerm) => {
+        if (searchTerm === '') {
+            if (selectedCategory === null) {
+                loadRecipes();
+            } else {
+                const recipes = await fetchRecipesByCategory(selectedCategory);
+                setAvailableRecipes(recipes);
+            }        
         } else {
             const filteredRecipes = availableRecipes.filter(recipe =>
-                recipe.title.toLowerCase().includes(input.toLowerCase())
+                recipe.title.toLowerCase().includes(searchTerm.toLowerCase())
             );
             
             setAvailableRecipes(filteredRecipes);
