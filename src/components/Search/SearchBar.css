@@ -25,7 +25,7 @@
     position: absolute;
     right: 1rem;
     transform: translateY(-50%);    /* center the icon vertically */
-    color: #888;
+    color: var(--light-grey-icon);
     font-size: 1.2rem;
     pointer-events: none;
 }

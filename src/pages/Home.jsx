@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-import { fetchRecipes, getAllCategories, fetchRecipesByCategory } from '../components/Utils';
+import { fetchRecipes, getAllCategories, fetchRecipesByCategory } from '../components/Utils/HomePageUtil';
 
 import HomeHeader from "../components/Header/HomeHeader";
 import CategoriesBar from "../components/Categories/CategoriesBar";
@@ -25,7 +25,6 @@ export default function HomePage() {
     };
 
     const handleCategoryClick = async (category) => {
-
         if (category == null) {
             setSelectedCategory(null);
             loadRecipes();

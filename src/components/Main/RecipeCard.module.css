@@ -96,7 +96,7 @@
 }
 
 .bar.filled {
-    background-color: #013c68;
+    background-color: var(--secondary-accent);
     /* Fylld stapel */
 }
 
@@ -106,7 +106,7 @@
 }
 
 .details svg {
-    color: #013c68;
+    color: var(--secondary-accent);
     font-size: 1.4em;
 }
 

@@ -74,7 +74,6 @@ input[type="checkbox"] {
 }
 
 button {
-    background-color: #ec9b19;
     color: #fff;
     padding: 10px 20px;
     border-radius: 5px;
@@ -85,7 +84,6 @@ button {
 }
 
 button:hover {
-    background-color: #008f94;
     transform: scale(1.05);
 }
 

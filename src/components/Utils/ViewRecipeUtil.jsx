@@ -1,45 +1,3 @@
-export const fetchRecipes = async () => {
-    try {
-        const response = await fetch('https://recept3-bolen.reky.se/recipes');
-        const data = await response.json();
-        return data;
-    } catch (error) {
-        console.error('Error fetching recipes: ', error);
-        return [];
-    }
-}
-
-// get all available categories from database
-export function getAllCategories(data) {
-    const categoriesArray =  data.map(recipe => recipe.categories) ;
-    let mergedCategories = [];
-    
-    categoriesArray.forEach(element => {
-        mergedCategories.push(...element);
-    });
-                   
-    let availableCategories = [];
-
-    mergedCategories.forEach(category => {
-        if(!availableCategories.includes(category)) {
-            availableCategories.push(category);
-        }
-    });
-
-    return availableCategories;
-}
-
-export const fetchRecipesByCategory = async (selectedCategory) => {
-    try {
-        const response = await fetch('https://recept3-bolen.reky.se/categories/' + selectedCategory + '/recipes');
-        const data = await response.json();
-        return data;
-    } catch (error) {
-        console.error(`Error fetching recipes for category: ${category}`, error);
-        return [];
-    }
-}
-
 const unitConversionMap = {
     "gram": "gm",
     "deciliter": "dl",
@@ -87,10 +45,10 @@ export const saveRecipeRating = async (recipeId, recipeRating) => {
             body: JSON.stringify({ rating: recipeRating }),
         });
 
-        if (response.ok) {
+        if (response.status === 200) {
             return true;
         } else {
-            console.error('Error saving rating:', response.statusText);
+            console.error('Error saving rating:', error);
             return false;
         }
 
