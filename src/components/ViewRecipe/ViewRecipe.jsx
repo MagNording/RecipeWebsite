@@ -8,7 +8,7 @@ import style from './ViewRecipe.module.css';
 
 import RecipeRating from './Ratings';
 import CommentList from './CommentList.jsx';
-import { fetchCommentsByRecipeId, fetchRecipeById, saveRecipeRating, getShortUnit } from '../Utils/ViewRecipe.jsx';
+import { fetchCommentsByRecipeId, fetchRecipeById, saveRecipeRating, getShortUnit } from '../Utils/ViewRecipeUtil.jsx';
 
 export default function ViewRecipe() {
     const [desiredRecipe, setDesiredRecipe] = useState(null);

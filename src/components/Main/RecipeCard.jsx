@@ -6,7 +6,7 @@ import style from './RecipeCard.module.css';
 // Kör npm install @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock } from '@fortawesome/free-solid-svg-icons';
-import { displayStarRating, renderDifficultyBars } from '../Utils/RecipeCard.jsx';
+import { displayStarRating, renderDifficultyBars } from '../Utils/RecipeCardUtil.jsx';
 
 export default function RecipeCard(props) {
 

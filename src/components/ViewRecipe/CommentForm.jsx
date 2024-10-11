@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 
-import { submitComment, resetFormFields } from '../Utils/CommentForm';
+import { submitComment, resetFormFields } from '../Utils/CommentFormUtil';
 
 import style from './CommentForm.module.css';
 

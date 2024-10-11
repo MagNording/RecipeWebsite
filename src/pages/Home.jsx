@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-import { fetchRecipes, getAllCategories, fetchRecipesByCategory } from '../components/Utils/HomePage';
+import { fetchRecipes, getAllCategories, fetchRecipesByCategory } from '../components/Utils/HomePageUtil';
 
 import HomeHeader from "../components/Header/HomeHeader";
 import CategoriesBar from "../components/Categories/CategoriesBar";
