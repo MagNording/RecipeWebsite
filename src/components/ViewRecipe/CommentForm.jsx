@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 
+import { submitComment, resetFormFields } from '../Utils';
+
 import style from './CommentForm.module.css';
 
-function CommentForm() {
-
+export default function CommentForm() {
     const [message, setMessage] = useState('')
     const [firstName, setFirstName] = useState('')
     const [anonymous, setAnonymous] = useState(false)
@@ -12,48 +13,26 @@ function CommentForm() {
 
     const params = useParams();
 
-    function handleSubmit(event) {
+    async function handleSubmit(event) {
         event.preventDefault();
 
         const displayName = anonymous ? 'Anonymous' : firstName
         console.log(`name ${displayName}, comment ${comment}`)
-        // här ska funktion finnas för att spara i databasen i swagger 
 
+        // här ska funktion finnas för att spara i databasen i swagger 
         const commentData = {
             name: displayName,
             comment: comment
         }
 
-        fetch('https://recept3-bolen.reky.se/recipes/' + params.recipeId + '/comments', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(commentData),
-        })
-            .then(response => {
-                if (response.ok) {
-                    setMessage('Tack för din kommentar!');
-                } else {
-                    setMessage('Något gick fel. Försök igen.');
-                }
-            })
-            .catch(err => {
-                console.error('Error saving comment:', err);
-                setMessage('Ett fel uppstod vid sparning av kommentaren.');
+        const result = await submitComment(params.recipeId, commentData);
+        setMessage(result.message);
 
-            })
-
-
-        setMessage('Tack för din kommentar!')
-
-        //restore the inputs after successful save
-        setFirstName('');
-        setComment('');
-        setAnonymous(false);
+        // to restore the inputs after saving successfully
+        if (result.success) {
+            resetFormFields(setFirstName, setComment, setAnonymous);
+        }
     }
-
-
 
     useEffect(() => {
         // Clear the message after 3 seconds
@@ -61,9 +40,8 @@ function CommentForm() {
             const timer = setTimeout(() => {
                 setMessage('');
             }, 3000);
-            return () => clearTimeout(timer)
+            return () => clearTimeout(timer);
         }
-
     }, [message])
 
     return (
@@ -115,5 +93,3 @@ function CommentForm() {
         </div>
     )
 }
-
-export default CommentForm;
