@@ -1,50 +1,43 @@
-.search-div {
-    background-color: var(--primary-accent);
+.search-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    justify-content: center;       /* to center horizontally */
+    background-color: var(--primary-accent);
 }
-  
-.search-div > * {
+
+.search-div {
+    display: flex;
+    position: relative;
+    width: 100%;
+    max-width: 40%;
+    align-items: center;           /* to center the items vertically */
+}
+
+.search-div > input {
+    width: 100%;
+    padding: 0.8rem 2.5rem 0.8rem 0.8rem;    /* padding for the icon space */
+    border: 1px solid #ccc;
     border-radius: 10px;
-    padding: 0.8rem;
-    margin: 1rem;
-    font-size: 1.5em;
+    box-sizing: border-box;       /* so that the padding doesn't affect width */
+    margin-bottom: 0;
+}
+
+.search-icon {
+    position: absolute;
+    right: 1rem;
+    transform: translateY(-50%);    /* center the icon vertically */
+    color: #888;
+    font-size: 1.2rem;
+    pointer-events: none;
 }
   
-.search-div input[type="text"] {
-    margin: 1rem;
-    width: 40%;
-}
-  
-.search-button {
-    background-color: var(--button-color);
-    max-width: 7rem;
-    cursor: pointer;
-}
-  
-.search-button:active {
-    transform: translateY(2px);
-}
 @media only screen and (max-width: 600px) {
-    .search-div {
-        flex-direction: column; 
-        align-items: center; 
+    .search-div > input {
+        max-width: 100%;
+        font-size: 0.8rem; 
+        margin-bottom: 0;
     }
 
-    .search-div > * {
-        font-size: 1.2em; 
-        margin: 0.5rem; 
-    }
-
-    .search-div input[type="text"] {
-        width: 80%; 
-        margin: 0.5rem;
-    }
-
-    .search-button {
-        width: 90%;
-        padding: 0.8rem; 
-        font-size: 1em; 
+    .search-icon {
+        font-size: 0.9rem;
     }
 }
