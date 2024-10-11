@@ -5,7 +5,6 @@ import './Ratings.css';
 export default function RecipeRating({setRecipeRatings}) {
     const [recipeRating, setRecipeRating] = useState(0);
 
-
     const handleRatingClick = (e) => {
         setRecipeRating(e)
         setRecipeRatings(e)    

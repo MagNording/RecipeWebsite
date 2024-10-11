@@ -5,8 +5,13 @@ function SearchBar(props) {
     const [searchTerm, setSearchTerm] = useState('');
 
     const handleInputChange = (e) => {
-        const searchTerm = e.target.value;
-        setSearchTerm(searchTerm);
+        const newSearchTerm = e.target.value;
+        setSearchTerm(newSearchTerm);
+
+        // If the search term is empty
+        if (newSearchTerm === '') {
+            props.onSearch('');
+        }
     };
 
     const handleSearchClick = (e) => {

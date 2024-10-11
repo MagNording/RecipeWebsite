@@ -36,11 +36,16 @@ export default function HomePage() {
 
     const handleSearch = (input) => {
         console.log(input);
-        const filteredRecipes = availableRecipes.filter(recipe =>
-            recipe.title.toLowerCase().includes(input.toLowerCase())
-        );
-        
-        setAvailableRecipes(filteredRecipes);
+
+        if (input === '') {
+            loadRecipes();         // if the input is empty, i.e. no search term available
+        } else {
+            const filteredRecipes = availableRecipes.filter(recipe =>
+                recipe.title.toLowerCase().includes(input.toLowerCase())
+            );
+            
+            setAvailableRecipes(filteredRecipes);
+        }
     };
 
     return (
