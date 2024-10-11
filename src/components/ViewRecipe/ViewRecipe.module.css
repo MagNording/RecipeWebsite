@@ -357,13 +357,22 @@ button:active {
         padding: 1rem;
     }
 
-    .recipe-title {
-        font-size: 2.5rem;
-        margin: 1rem 0;
+    .main > .container > h5 {
+        font-size: 1rem;;
     }
 
-    .description {
+    .recipe-title {
+        font-size: 2.5rem;
+        margin: 0.5rem 0;
+        padding: 0;
+    }
+
+    .container > .description-container > h2 {
         font-size: 1rem;
+    }
+
+    .container > .description-container > p {
+        font-size: .9rem;
     }
 
     button {
