@@ -5,7 +5,10 @@ function CategoriesBar(props) {
     return (
         <nav className='nav'>
           <hr />
-          <AvailableCategories availableCategories={props.categories} categoryHandler={props.onCategorySelection}/>
+          <AvailableCategories 
+            availableCategories={props.categories} 
+            categoryHandler={props.onCategorySelection}
+          />
           <hr />
         </nav>
     );

@@ -3,21 +3,12 @@ import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUtensils } from '@fortawesome/free-solid-svg-icons';
-import CommentList from './CommentList.jsx';
 
 import style from './ViewRecipe.module.css';
 
 import RecipeRating from './Ratings';
-
-const unitConversionMap = {
-    "gram": "gm",
-    "deciliter": "dl",
-    "teskedar": "tsk",
-    "tesked": "tsk",
-    "matsked": "msk",
-    "matskedar": "msk",
-    "stycken": "st"
-};
+import CommentList from './CommentList.jsx';
+import { fetchCommentsByRecipeId, fetchRecipeById, saveRecipeRating, getShortUnit } from '../Utils.jsx';
 
 export default function ViewRecipe() {
     const [desiredRecipe, setDesiredRecipe] = useState(null);
@@ -27,63 +18,40 @@ export default function ViewRecipe() {
 
     const params = useParams();
     
+    // getting recipe by Id
     useEffect(() => {
+        const loadRecipe = async () => {
+            const recipe = await fetchRecipeById(params.recipeId);
+            setDesiredRecipe(recipe);
+        };
 
-        fetch('https://recept3-bolen.reky.se/recipes/' + params.recipeId + '/comments')
-        .then((response) => response.json())
-        .then((responseData) => {
-            setComments(responseData);
-        })
-        .catch((error) => {
-            console.error("Error fetching comments:", error);
-        });
-    }, []);
+        loadRecipe();
+    }, [params.recipeId]);
 
+    // getting comments of a recipe by recipeId
     useEffect(() => {
-        fetch('https://recept3-bolen.reky.se/recipes/' + params.recipeId)
-            .then((response) => {
-                return response.json();
-            })
-            .then((responseData) => {
-                setDesiredRecipe(responseData);
-            });
+        const loadComments = async () => {
+            const comments = await fetchCommentsByRecipeId(params.recipeId);
+            setComments(comments);
+        }
+
+        loadComments();
     }, [params.recipeId]);
 
     if (!desiredRecipe) {
         return <p>Loading recipe...</p>;
     }
 
-    const getShortUnit = (unit) => {
-        return unitConversionMap[unit] || unit;             // Default to original unit if not in map
-    };
-
-    const handleStarReview = () => {
-
+    // handling star-ratings
+    const handleStarRating = async () => {
         if (recipeRating === 0) {
-            return
+            return;
         }
 
-        // Här ska en fetch-request göra till en API som sparar ratingen
-
-        fetch('https://recept3-bolen.reky.se/recipes/' + params.recipeId + '/ratings', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                rating: recipeRating
-            })
-
-        })
-            .then(response => {
-                if (response.ok) {
-                    setThankYouMessage(true);
-                }
-            })
-            .catch(err => {
-                console.error('Error saving rating:', err);
-            })
-
+        const isSaved = await saveRecipeRating(params.recipeId, recipeRating);
+        if (isSaved) {
+            setThankYouMessage(true);
+        }
     }
 
     return (
@@ -105,7 +73,7 @@ export default function ViewRecipe() {
                 <div className={style['card-container']}>
                     <div className={style.card}>
                         <h2 className={style['section-title']}>Ingredienser</h2>
-                        <p className={style['section-text']}>(8 portioner)</p>
+                        <p className={style['section-text']}>(6 portioner)</p>
                         <ul className={style['ingredient-list']}>
                             {desiredRecipe.ingredients.map((ingredient) => (
                                 <li key={ingredient._id}>
@@ -150,7 +118,7 @@ export default function ViewRecipe() {
                         {thankYouMessage ? (
                             <p className={style['thank-you-message']}>Tack för din recension!</p>
                         ) : (
-                            <button className={style['rating-button']} onClick={handleStarReview}>
+                            <button className={style['rating-button']} onClick={handleStarRating}>
                                 Recensera
                             </button>
                         )}
@@ -162,4 +130,3 @@ export default function ViewRecipe() {
         </div>
     )
 }
-
