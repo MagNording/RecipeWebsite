@@ -10,12 +10,6 @@ export default function Main(props) {
             <div className='card-container'>
                 <AvailableRecipes availableRecipes={props.recipes} />
             </div>
-
-            <div className="scroll-container">
-                <a className="scroll-button" href="#top">
-                    <span>&uarr;</span>
-                </a>       
-            </div>
         </main>
     );
 }
