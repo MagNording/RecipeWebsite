@@ -9,7 +9,7 @@
 
 .category {
     padding: 10px;
-    background-color: var(--button-color);
+    background-color: var(--yellow-color);
     color: var(--white-color);
     border-radius: 5px;
     margin: 10px;
@@ -21,9 +21,9 @@
 /* button activated for a selected category */
 
 .activated-button {
-    background-color: #D62839;
-    color: white;
-    border-color: #D62839;
+    background-color: var(--activated-red-button);
+    color: var(--white-color);
+    border-color: var(--activated-red-button);
 }
   
 .category:hover {

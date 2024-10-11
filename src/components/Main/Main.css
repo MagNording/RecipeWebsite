@@ -13,16 +13,16 @@
 .landing-main > p {
     font-size: 1.2rem;
     background-color: var(--primary-accent);
-    color: #585858;
+    color: var(--light-grey-text);
     text-align: center;
 }
 
 .landing-main > div > p {
     font-size: 1.5rem;
-    background-color: #f8d7da;
+    background-color: var(--pink-background);
     text-align: center;
     padding: 1rem 0;
-    color: #721c24;
+    color: var(--red-msg-color);
 }
 
 .body>.landing-main>.card-container {
