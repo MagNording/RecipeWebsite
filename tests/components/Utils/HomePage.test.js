@@ -1,4 +1,4 @@
-import { fetchRecipes, getAllCategories, fetchRecipesByCategory } from "../src/components/Utils/HomePage";
+import { fetchRecipes, getAllCategories, fetchRecipesByCategory } from "../../../src/components/Utils/HomePage";
 
 describe('fetchRecipes', () => {
     // mock the global fetch function before each test
