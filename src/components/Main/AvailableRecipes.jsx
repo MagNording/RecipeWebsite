@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import RecipeCard from './RecipeCard';
 
 function createRecipeCard(content) {
