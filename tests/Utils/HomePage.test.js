@@ -1,16 +1,16 @@
 import { fetchRecipes, getAllCategories, fetchRecipesByCategory } from "../../src/components/Utils/HomePage";
 
+// mock the global fetch function before each test
+beforeEach(() => {
+    global.fetch = jest.fn();
+});
+
+// clear the mocks after each test
+afterEach(() => {
+    jest.clearAllMocks(); 
+});
+
 describe('fetchRecipes', () => {
-    // mock the global fetch function before each test
-    beforeEach(() => {
-        global.fetch = jest.fn();
-    });
-
-    // clear the mocks after each test
-    afterEach(() => {
-        jest.clearAllMocks(); 
-    });
-
     test('should return data when fetch is successful', async () => {
         const mockData = [{ id: 1, title: 'Pasta' }, { id: 2, title: 'Pizza' }, { id: 3, title: 'Mac n Cheese'}];
         fetch.mockResolvedValueOnce({
@@ -60,16 +60,6 @@ describe('getAllCategories', () => {
 });
 
 describe('fetchRecipesByCategory', () => {
-    // mock the global fetch function before each test
-    beforeEach(() => {
-        global.fetch = jest.fn();
-    });
-
-    // clear the mocks after each test
-    afterEach(() => {
-        jest.clearAllMocks(); 
-    });
-
     test('should return data when fetch is successful', async () => {
         const mockData = [{ id: 1, title: 'Pasta', category: 'Italian' },
             { id: 2, title: 'Pizza', category: 'Italian' },
