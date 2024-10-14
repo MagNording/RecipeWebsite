@@ -1,4 +1,4 @@
-import { submitComment } from "../../../src/components/Utils/CommentForm";
+import { submitComment } from "../../src/components/Utils/CommentForm";
 import {jest} from '@jest/globals'
 
 // Mock the global fetch function

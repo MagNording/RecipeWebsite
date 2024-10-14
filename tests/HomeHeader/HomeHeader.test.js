@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
-import HomeHeader from '../../../src/components/Header/HomeHeader';
+import HomeHeader from '../../src/components/Header/HomeHeader';
 
 describe('HomeHeader component', () => {
     test('renders "Dessert Heaven" as a text', () => {
