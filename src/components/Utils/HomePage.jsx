@@ -35,7 +35,7 @@ export const fetchRecipesByCategory = async (selectedCategory) => {
         const data = await response.json();
         return data;
     } catch (error) {
-        console.error(`Error fetching recipes for category: ${category}`, error);
+        console.error(`Error fetching recipes for category: ${selectedCategory}`, error);
         return [];
     }
 }
