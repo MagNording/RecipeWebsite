@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import { displayStarRating, categorizeDifficulty, renderDifficultyBars } from '../src/components/Utils/RecipeCardUtil';
+import { displayStarRating, categorizeDifficulty, renderDifficultyBars } from '../../../src/components/Utils/RecipeCard';
 
 // Mock the react-icons/fa import
 jest.mock('react-icons/fa', () => ({
