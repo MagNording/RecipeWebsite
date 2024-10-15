@@ -1,5 +1,6 @@
 import React from 'react';
 import style from './ViewRecipe.module.css';
+import { formatDate } from '../Utils/CommentList';
 
 export default function CommentList({ comments }) {
     if (comments.length === 0) {
@@ -10,7 +11,12 @@ export default function CommentList({ comments }) {
         <ul className={`${style['scroll-list']} ${style.comments}`}>
             {comments.map((comment, index) => (
                 <li key={index}>
-                    <strong>{comment.name}</strong>: {comment.comment}
+                    <div>
+                        <strong>{comment.name}</strong>: {comment.comment}
+                    </div>
+                    <div className={`${style['comment-item']}`}>
+                        {formatDate(comment.createdAt)}
+                    </div>
                 </li>
             ))}
         </ul>

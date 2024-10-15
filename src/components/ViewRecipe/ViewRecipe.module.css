@@ -243,6 +243,12 @@ button:active {
     font-weight: 300;
 }
 
+.scroll-list > li > .comment-item {
+    font-size: 0.9em; 
+    color: gray;
+    margin-top: 0.3em;
+}
+
 @media (max-width: 600px) {
     .main > .container {
         max-width: 75%;
