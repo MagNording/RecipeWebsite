@@ -15,6 +15,7 @@ export default function ViewRecipe() {
     const [recipeRating, setRecipeRating] = useState(0);
     const [thankYouMessage, setThankYouMessage] = useState(false);
     const [comments, setComments] = useState([]);
+    const [ingredientStates, setIngredientStates] = useState([]);
 
     const params = useParams();
     
@@ -23,6 +24,20 @@ export default function ViewRecipe() {
         const loadRecipe = async () => {
             const recipe = await fetchRecipeById(params.recipeId);
             setDesiredRecipe(recipe);
+
+            if (recipe) {
+                setIngredientStates(
+                    recipe.ingredients.map((ingredient) => {
+                        return {
+                            _id: ingredient._id,
+                            name: ingredient.name,
+                            amount: ingredient.amount,
+                            unit: ingredient.unit,
+                            checked: false
+                        };
+                    })
+                );        
+            }
         };
 
         loadRecipe();
@@ -54,6 +69,16 @@ export default function ViewRecipe() {
         }
     }
 
+    const handleCheckboxChange = (ingredientId) => {
+        setIngredientStates((prevState) =>
+            prevState.map((ingredient) =>
+                ingredient._id === ingredientId
+                    ? { ...ingredient, checked: !ingredient.checked }      // spread operator means all other properties of the ingredient object
+                    : ingredient
+            )
+        );
+    };
+
     return (
         <div className={style.main}>
             <div className={style.container}>
@@ -75,9 +100,16 @@ export default function ViewRecipe() {
                         <h2 className={style['section-title']}>Ingredienser</h2>
                         <p className={style['section-text']}>(6 portioner)</p>
                         <ul className={style['ingredient-list']}>
-                            {desiredRecipe.ingredients.map((ingredient) => (
-                                <li key={ingredient._id}>
-                                    <strong>{ingredient.amount} {getShortUnit(ingredient.unit)}  </strong>{ingredient.name}
+                            {ingredientStates.map((ingredient) => (
+                                <li key={ingredient._id} className={style['ingredient-item']}>
+                                    <input 
+                                        type="checkbox" 
+                                        className={style['ingredient-checkbox']}
+                                        checked={ingredient.checked}
+                                        onChange={() => handleCheckboxChange(ingredient._id)} 
+                                    />
+                                    <strong>{ingredient.amount} {getShortUnit(ingredient.unit)} </strong>
+                                    <span>{ingredient.name}</span>
                                 </li>
                             ))}
                         </ul>
