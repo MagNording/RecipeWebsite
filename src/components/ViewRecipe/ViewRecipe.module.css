@@ -249,6 +249,58 @@ button:active {
     margin-top: 0.3em;
 }
 
+.ingredient-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.ingredient-list > .ingredient-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5em;
+}
+
+.ingredient-list > .ingredient-item > .ingredient-checkbox {
+    margin-right: 0.9em; 
+}
+
+.ingredient-list > .ingredient-item > span {
+    margin-left: 0.5em;
+}
+
+/* hide the default checkbox */
+.ingredient-checkbox {
+    appearance: none;
+    width: 0.8em;
+    height: 0.8em;
+    border: 1px solid #999;
+    border-radius: 0.4em; 
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+}
+
+/* change the color of the checkbox when checked */
+.ingredient-checkbox:checked {
+    background-color: #E63946;
+    border-color: #E63946;
+}
+
+/* adding a checkmark when the checkbox is checked */
+.ingredient-checkbox:checked::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0.15em;
+    height: 0.35em;
+    border: solid white;
+    border-width: 0 0.12em 0.12em 0;
+    transform: rotate(45deg);
+    transform: translate(-50%, -50%) rotate(45deg); /* to place it in the center and rotate */
+    display: inline-block;
+}
+
 @media (max-width: 600px) {
     .main > .container {
         max-width: 75%;
@@ -355,6 +407,17 @@ button:active {
         font-size: 0.7rem;
     }
     
+    .ingredient-checkbox {
+        width: 0.8em; /* Smaller width for mobile */
+        height: 0.8em; /* Smaller height for mobile */
+        border-width: 1.5px; /* Adjust border size */
+    }
+
+    .ingredient-checkbox:checked::after {
+        width: 0.15em; /* Smaller width */
+        height: 0.35em; /* Smaller height */
+        border-width: 0 0.1em 0.1em 0; /* Adjust border width */
+    }    
 }
 
 @media (min-width: 601px) and (max-width: 880px) {
