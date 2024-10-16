@@ -465,7 +465,7 @@ button:active {
     }    
 }
 
-@media (min-width: 601px) and (max-width: 880px) {
+@media (min-width: 601px) and (max-width: 780px) {
     .container {
         max-width: 75%;
         padding: 1rem;
