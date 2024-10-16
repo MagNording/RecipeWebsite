@@ -34,7 +34,7 @@
     margin-top: 0;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 678px) {
     .landing-main>h2 {
         font-size: 1.5rem; 
         padding: 1.5rem 0 0 0;
@@ -63,7 +63,7 @@
     }
 }
 
-@media only  screen and ((min-width: 501px) and (max-width: 680px)) {
+@media only  screen and ((min-width: 501px) and (max-width: 678px)) {
     .landing-main>h2 {
         font-size: 1.5rem; 
         padding: 1rem 0 0 0;
