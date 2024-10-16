@@ -118,7 +118,19 @@ export default function ViewRecipe() {
                     <div className={style.card}>
                         <h2 className={style['section-title']}>Gör så här</h2>
                         <ol className={style['instruction-list']}>
-                            {desiredRecipe.instructions.map((step, index) => <li key={index}>{step}</li>)}
+                            {desiredRecipe.instructions.map((step, index) => (
+                                <li key={index} className={style['instruction-item']}>
+                                    <input
+                                        type="checkbox"
+                                        className={style['instruction-checkbox']}
+                                        id={`step-${index}`}
+                                    />
+                                    <label htmlFor={`step-${index}`} className={style['instruction-label']}>
+                                        <span className={style['step-number']}>{index + 1}. </span>
+                                        {step}
+                                    </label>
+                                </li>
+                            ))}
                         </ol>
                         <FontAwesomeIcon icon={faUtensils} className="utensils-icon" size="2x" style={{ marginTop: '0.3em', color: '#E63946', fontSize: '2rem' }} />
                     </div>

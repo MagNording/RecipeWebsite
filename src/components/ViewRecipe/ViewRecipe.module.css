@@ -196,36 +196,16 @@ button:active {
     margin-bottom: 1.3rem;
 }
 
-.ingredient-list,
-.instruction-list {
+.ingredient-list {
     list-style-type: none;
     padding: 0;
     width: 100%;
 }
 
-.ingredient-list li,
-.instruction-list li {
-    font-size: 1.2rem;
+.ingredient-list li, .instruction-list li {
+    font-size: 1.1rem;
     margin-bottom: 10px;
     color: #333;
-}
-
-.instruction-list {
-    counter-reset: step;
-}
-
-.instruction-list li {
-    margin-bottom: 15px;
-    position: relative;
-    padding-left: 10px;
-}
-
-.instruction-list li::before {
-    counter-increment: step;
-    content: counter(step) ". ";
-    font-size: 1.3rem;
-    font-weight: bold;
-    color: #E63946;
 }
 
 .no-underline {
@@ -268,37 +248,88 @@ button:active {
     margin-left: 0.5em;
 }
 
-/* hide the default checkbox */
 .ingredient-checkbox {
     appearance: none;
     width: 0.8em;
     height: 0.8em;
-    border: 1px solid #999;
+    border: 1.5px solid #999;
     border-radius: 0.4em; 
-    display: inline-block;
     cursor: pointer;
     position: relative;
+    margin-top: 0;
 }
 
-/* change the color of the checkbox when checked */
-.ingredient-checkbox:checked {
+.ingredient-checkbox:checked::after {
+    content: "\2713"; /* Unicode checkmark character */
+    color: #E63946; /* Or any other color */
+    font-size: 1em; /* Matches the font size */
+    display: inline-block;
+}
+
+.instruction-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    counter-reset: step-counter;
+}
+
+.instruction-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+    position: relative;
+    padding-left: 2em; /* Space for the custom checkbox */
+}
+
+.instruction-checkbox {
+    appearance: none;
+    width: 0.8em;
+    height: 0.8em;
+    border: 1.5px solid #999;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 1em;
+    top: 0;
+    position: absolute;
+    left: 0;
+}
+
+.instruction-item > .instruction-checkbox {
+    margin-top: 0.6em;
+}
+
+.instruction-checkbox:checked, .ingredient-checkbox:checked {
     background-color: #E63946;
     border-color: #E63946;
 }
 
-/* adding a checkmark when the checkbox is checked */
-.ingredient-checkbox:checked::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0.15em;
-    height: 0.35em;
-    border: solid white;
-    border-width: 0 0.12em 0.12em 0;
-    transform: rotate(45deg);
-    transform: translate(-50%, -50%) rotate(45deg); /* to place it in the center and rotate */
-    display: inline-block;
+.instruction-checkbox:checked::after, .ingredient-checkbox:checked::after {
+    content: "\2713";   /* Unicode checkmark */
+    font-size: 0.8em;
+    color: white;
+    display: block;
+    text-align: center;
+    line-height: 1em;
+}
+
+.instruction-label {
+    cursor: pointer;
+    display: flex;
+    align-items: flex-start;
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+.instruction-label .step-number {
+    font-weight: bold;
+    margin-right: 0.5em;
+}
+
+/* For completed steps */
+.instruction-checkbox:checked + .instruction-label {
+    color: #999;
+    text-decoration: line-through;
 }
 
 @media (max-width: 600px) {
@@ -407,16 +438,21 @@ button:active {
         font-size: 0.7rem;
     }
     
-    .ingredient-checkbox {
-        width: 0.8em; /* Smaller width for mobile */
-        height: 0.8em; /* Smaller height for mobile */
-        border-width: 1.5px; /* Adjust border size */
+    .ingredient-checkbox, .instruction-checkbox {
+        width: 0.6em; 
+        height: 0.6em;
+        border-width: 1px;
     }
 
-    .ingredient-checkbox:checked::after {
-        width: 0.15em; /* Smaller width */
-        height: 0.35em; /* Smaller height */
-        border-width: 0 0.1em 0.1em 0; /* Adjust border width */
+    .instruction-item > .instruction-checkbox {
+        margin-top: 0.3em;
+    }
+
+    .ingredient-checkbox:checked::after, .instruction-checkbox:checked::after {
+        width: 0.13em;
+        height: 0.31em; 
+        font-size: 0.6em;
+        border-width: 0 0.07em 0.07em 0;
     }    
 }
 
@@ -473,4 +509,21 @@ button:active {
     .section-title {
         font-size: 1.5rem;
     }
+
+    .ingredient-checkbox, .instruction-checkbox {
+        width: 0.7em; 
+        height: 0.7em; 
+        border-width: 1px; 
+    }
+
+    .instruction-item > .instruction-checkbox {
+        margin-top: 0.45em;
+    }
+
+    .ingredient-checkbox:checked::after {
+        width: 0.18em;
+        height: 0.38em;
+        font-size: 0.7em;
+        border-width: 0 0.1em 0.1em 0;
+    }    
 }
