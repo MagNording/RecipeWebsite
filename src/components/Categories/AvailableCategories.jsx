@@ -15,7 +15,6 @@ export default function AvailableCategories(props) {
             setActiveCategory(selectedCategory);
             props.categoryHandler(selectedCategory);
         }
-
     }
 
     return (

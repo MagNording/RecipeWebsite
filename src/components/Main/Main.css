@@ -5,7 +5,7 @@
 .landing-main>h2 {
     font-size: 2rem;
     background-color: var(--primary-accent);
-    padding: 2rem 0 0.5rem 0;
+    padding: 0 0 0.5rem 0;
     margin: 0;
     text-align: center;
 }
@@ -37,7 +37,7 @@
 @media screen and (max-width: 678px) {
     .landing-main>h2 {
         font-size: 1.5rem; 
-        padding: 1.5rem 0 0 0;
+        padding: 0;
     }
 
     .landing-main>p {
