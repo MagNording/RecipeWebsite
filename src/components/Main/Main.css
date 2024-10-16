@@ -46,7 +46,7 @@
 
     .landing-main>.card-container {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        padding: 10px;
+        padding: 10em;
     }
 
     .scroll-container a {
@@ -76,7 +76,7 @@
    .body>.landing-main>.card-container {
         grid-template-columns: repeat(1, minmax(200px, 1fr)); 
         grid-gap: 15px;
-        padding: 1em 9em;
+        padding: 1em 2em;
     }
 
     .scroll-container a {
