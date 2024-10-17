@@ -3,9 +3,8 @@
 }
 
 .landing-main>h2 {
-
     font-size: 2rem;
-    background-color: #FFDDD2;
+    background-color: var(--background-color);
     padding: 0 0 0.5rem 0;
     margin: 0;
     text-align: center;
@@ -13,28 +12,27 @@
 
 .landing-main>p {
     font-size: 1.2rem;
-    background-color: #FFDDD2;
+    background-color: var(--background-color);
     color: var(--light-grey-text);
     text-align: center;
 }
 
 .landing-main>div>p {
     font-size: 1.5rem;
-    background-color: var(--pink-background);
+    background-color: var(--background-color);
     text-align: center;
     padding: 1rem 0;
     color: var(--red-msg-color);
 }
 
 .body>.landing-main>.card-container {
-    background-color: #FFDDD2;
+    background-color: var(--background-color);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
     grid-gap: 2rem;
     padding: 2em 1em;
     margin-top: 0;
 }
-
 
 @media screen and (max-width: 678px) {
     .landing-main>h2 {

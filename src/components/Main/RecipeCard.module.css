@@ -60,7 +60,7 @@
     display: flex;
     justify-content: space-around;
     gap: 1em;
-    background-color: #33333311;
+    background-color: #eaefef;
     padding: 0.8rem;
     border-radius: 5px;
     width: 100%;
@@ -101,7 +101,7 @@
 }
 
 .bar.filled {
-    background-color: var(--secondary-accent);
+    background-color: var(--icon-color);
     /* Fylld stapel */
 }
 
@@ -111,7 +111,7 @@
 }
 
 .details svg {
-    color: var(--secondary-accent);
+    color: var(--icon-color);
     font-size: 1.4em;
 }
 

@@ -2,8 +2,12 @@
     display: flex;
     justify-content: center;
     /* to center horizontally */
-    background-color: #FFDDD2;
+    background-color: var(--background-color);
     padding:1em;
+}
+
+.search-container > .search-div > input {
+    background-color: var(--light-pink-color);
 }
 
 .search-div {
@@ -34,7 +38,7 @@
     margin-top: 1.5em;
     transform: translateY(-50%);
     /* center the icon vertically */
-    color: var(--light-grey-icon);
+    color: var(--activated-red-button);
     font-size: 1.2rem;
     pointer-events: none;
 }
