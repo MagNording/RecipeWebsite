@@ -11,9 +11,8 @@
     height: auto;
     overflow: hidden;
     background-color: var(--white-color);
-    border-radius: 10px;
-    box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.445);
-    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.445);
     transition: transform 0.3s;
 
     display: flex;
@@ -22,6 +21,7 @@
     justify-content: space-between;
     /* center the few cards if alot of space exists */
     margin: auto;
+    padding: .4em 1em;
 }
 
 .card:hover {
@@ -32,7 +32,8 @@
     width: 100%; /* Take up the full width of the card */
     height: 200px; /* Fixed height for uniformity */
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 5px;
+
 }
 
 .recipe-list {
@@ -61,7 +62,8 @@
     gap: 1em;
     background-color: #33333311;
     padding: 0.8rem;
-    border-radius: 10px;
+    border-radius: 5px;
+    width: 100%;
     height: auto;
     transition: 0.2s;
     margin-top: 0.8rem;

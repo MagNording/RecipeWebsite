@@ -3,6 +3,7 @@
     justify-content: center;
     /* to center horizontally */
     background-color: #FFDDD2;
+    padding:1em;
 }
 
 .search-div {
