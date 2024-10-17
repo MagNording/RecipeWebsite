@@ -1,12 +1,10 @@
 .nav-list {
-
     margin: 0;
     list-style-type: none;
     padding: 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-
 }
 
 .category {
@@ -14,28 +12,25 @@
     padding: 12px 24px;
     margin: 0.4rem;
     background-color: #E63946;
-    color: #fff;
+    color: #FFDDD2;
     border-radius: 25px;
     font-size: 1.2em;
     box-shadow: 0 4px 3px rgba(0, 0, 0, 0.421);
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.1s;
-    
 }
 
 /* button activated for a selected category */
 
 .activated-button {
-    background-color: var(--activated-red-button);
-    color: var(--white-color);
-    border-color: var(--activated-red-button);
-    transform: translateY(3px);
+    background-color: #FFDDD2;
+    color: var(--activated-red-button);
+    border-color: #FFDDD2;
 }
 
-
-  
 .category:hover {
-    background-color: #D62839;
+    background-color: #FFDDD2;
+    color: #E63946;
     transform: translateY(-2px);
 }  
 
