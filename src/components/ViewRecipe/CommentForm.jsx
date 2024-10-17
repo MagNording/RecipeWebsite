@@ -47,8 +47,8 @@ export default function CommentForm() {
     return (
         <div className={style.main}>
             <div className={style.container}>
-                <form onSubmit={handleSubmit}>
-                    <h2>Kommentar</h2>
+                <form onSubmit={handleSubmit} className={style.form}>
+                    <h2>Kommentera</h2>
                     <div className={style['name-div']}>
                         <label htmlFor="name"></label>
                         <input type="text"

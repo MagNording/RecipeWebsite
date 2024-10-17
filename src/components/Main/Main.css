@@ -1,23 +1,24 @@
-.landing-main{
+.landing-main {
     overflow: hidden;
 }
 
 .landing-main>h2 {
+
     font-size: 2rem;
-    background-color: var(--primary-accent);
+    background-color: #FFDDD2;
     padding: 0 0 0.5rem 0;
     margin: 0;
     text-align: center;
 }
 
-.landing-main > p {
+.landing-main>p {
     font-size: 1.2rem;
-    background-color: var(--primary-accent);
+    background-color: #FFDDD2;
     color: var(--light-grey-text);
     text-align: center;
 }
 
-.landing-main > div > p {
+.landing-main>div>p {
     font-size: 1.5rem;
     background-color: var(--pink-background);
     text-align: center;
@@ -26,7 +27,7 @@
 }
 
 .body>.landing-main>.card-container {
-    background-color: var(--primary-accent);
+    background-color: #FFDDD2;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
     grid-gap: 1.5rem;
@@ -34,14 +35,16 @@
     margin-top: 0;
 }
 
+
 @media screen and (max-width: 678px) {
     .landing-main>h2 {
-        font-size: 1.5rem; 
+        font-size: 1.5rem;
         padding: 0;
     }
 
     .landing-main>p {
-        font-size: 1rem; 
+        font-size: 1rem;
+
     }
 
     .landing-main>.card-container {
@@ -54,27 +57,27 @@
     }
 
     .scroll-container a span {
-        font-size: 1rem; 
+        font-size: 1rem;
     }
 
     .scroll-button {
-        padding: 0.6rem; 
+        padding: 0.6rem;
         margin-bottom: 0.3rem;
     }
 }
 
-@media only  screen and ((min-width: 501px) and (max-width: 678px)) {
+@media only screen and ((min-width: 501px) and (max-width: 678px)) {
     .landing-main>h2 {
-        font-size: 1.5rem; 
+        font-size: 1.5rem;
         padding: 1rem 0 0 0;
     }
 
     .landing-main>p {
-        font-size: 1rem; 
+        font-size: 1rem;
     }
 
-   .body>.landing-main>.card-container {
-        grid-template-columns: repeat(1, minmax(200px, 1fr)); 
+    .body>.landing-main>.card-container {
+        grid-template-columns: repeat(1, minmax(200px, 1fr));
         grid-gap: 15px;
         padding: 1em 2em;
     }
@@ -84,11 +87,11 @@
     }
 
     .scroll-container a span {
-        font-size: 1rem; 
+        font-size: 1rem;
     }
 
     .scroll-button {
-        padding: 0.6rem; 
+        padding: 0.6rem;
         margin-bottom: 0.3rem;
     }
 }

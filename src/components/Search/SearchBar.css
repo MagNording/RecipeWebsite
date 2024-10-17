@@ -1,7 +1,8 @@
 .search-container {
     display: flex;
-    justify-content: center;       /* to center horizontally */
-    background-color: var(--primary-accent);
+    justify-content: center;
+    /* to center horizontally */
+    background-color: #FFDDD2;
 }
 
 .search-div {
@@ -9,35 +10,42 @@
     position: relative;
     width: 100%;
     max-width: 40%;
-    align-items: center;           /* to center the items vertically */
+    align-items: center;
+    /* to center the items vertically */
 }
 
-.search-div > input {
+.search-div>input[type="text"] {
     width: 100%;
-    padding: 0.8rem 2.5rem 0.8rem 0.8rem;    /* padding for the icon space */
-    border: 1px solid #ccc;
+    padding: 0.8rem 2.5rem 0.8rem 0.8rem;
+    /* padding for the icon space */
+    border: none;
     border-radius: 10px;
-    box-sizing: border-box;       /* so that the padding doesn't affect width */
+    box-sizing: border-box;
+    /* so that the padding doesn't affect width */
     margin-bottom: 0;
 }
+
+
 
 .search-icon {
     position: absolute;
     right: 1rem;
-    transform: translateY(-50%);    /* center the icon vertically */
+    margin-top: 1.5em;
+    transform: translateY(-50%);
+    /* center the icon vertically */
     color: var(--light-grey-icon);
     font-size: 1.2rem;
     pointer-events: none;
 }
-  
+
 @media only screen and (max-width: 678px) {
     .search-div {
         max-width: 70%;
     }
 
-    .search-div > input {
+    .search-div>input {
         max-width: 100%;
-        font-size: 0.8rem; 
+        font-size: 0.8rem;
         margin-bottom: 0;
     }
 
