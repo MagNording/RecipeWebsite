@@ -30,8 +30,8 @@
     background-color: #FFDDD2;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
-    grid-gap: 1.5rem;
-    padding: 2em;
+    grid-gap: 2rem;
+    padding: 2em 1em;
     margin-top: 0;
 }
 

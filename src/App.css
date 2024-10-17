@@ -2,14 +2,14 @@
 
 :root {
   --primary-accent: rgba(0, 255, 255, 0.078);
-  --secondary-accent: #013c68;
+  --secondary-accent: #2e6b6d;
   --yellow-color: #ec9b19;
   --hover-color: #008f94;
   --white-color: rgb(255, 255, 255);
   --red-msg-color: #721c24;
   --pink-background: #f8d7da;
   --pink-border: #f5c6cb;
-  --activated-red-button: #D62839; 
+  --activated-red-button: #D62839;
   --light-grey-text: #585858;
   --light-grey-icon: #888;
 }
@@ -40,8 +40,8 @@ button:hover {
 /* error-handling for wrong url */
 
 .error-box {
-  background-color: var(--pink-background);  
-  color: var(--red-msg-color); 
+  background-color: var(--pink-background);
+  color: var(--red-msg-color);
   border: 1px solid var(--pink-border);
   padding: 15px;
   border-radius: 5px;
