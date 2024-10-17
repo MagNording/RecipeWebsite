@@ -29,12 +29,12 @@
     background-color: var(--background-color);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
-    grid-gap: 2rem;
-    padding: 2em 1em;
+    grid-gap: 1.5rem;
+    padding: 2em 6em;
     margin-top: 0;
 }
 
-@media screen and (max-width: 678px) {
+@media screen and (max-width: 500px) {
     .landing-main>h2 {
         font-size: 1.5rem;
         padding: 0;
@@ -42,12 +42,11 @@
 
     .landing-main>p {
         font-size: 1rem;
-
     }
 
-    .landing-main>.card-container {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        padding: 10em;
+    .body>.landing-main>.card-container {
+        grid-template-columns: repeat(auto, minmax(200px, 1fr));
+        padding: 0.5em 2em;
     }
 
     .scroll-container a {
