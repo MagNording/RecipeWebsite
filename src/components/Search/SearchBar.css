@@ -7,7 +7,7 @@
 }
 
 .search-container > .search-div > input {
-    background-color: var(--light-pink-color);
+    background-color: var(--white-color);
 }
 
 .search-div {
@@ -19,18 +19,22 @@
     /* to center the items vertically */
 }
 
-.search-div>input[type="text"] {
+.search-div>input[type="text"], .search-div>input[type="text"]:focus {
     width: 100%;
     padding: 0.8rem 2.5rem 0.8rem 0.8rem;
     /* padding for the icon space */
-    border: none;
+    border: solid 1px var(--light-pink-color);
     border-radius: 10px;
     box-sizing: border-box;
     /* so that the padding doesn't affect width */
     margin-bottom: 0;
+    outline: none;
 }
 
-
+::placeholder {
+    color: var(--activated-red-button);
+    opacity: .5;
+}
 
 .search-icon {
     position: absolute;
