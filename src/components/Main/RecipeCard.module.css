@@ -356,6 +356,10 @@
         max-height: 150px
     }
 
+    .card > div > .recipe-list > li > p {
+        display: none;
+    }
+
     .details {
         display: flex;
         justify-content: space-between;
@@ -468,7 +472,7 @@
 
     .details {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
         width: 100%;
         list-style-type: none;

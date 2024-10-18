@@ -80,7 +80,7 @@ export default function ViewRecipe() {
     };
 
     return (
-        <div className={style.main}>
+        <div className={style['recipe-main']}>
             <div className={style.container}>
 
                 <h1 className={style['recipe-title']}>{desiredRecipe.title}</h1>

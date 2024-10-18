@@ -12,6 +12,7 @@
   --red-msg-color: #721c24;
   --pink-background: #f8d7da;
   --pink-border: #f5c6cb;
+  --red-color: #E63946;
   --activated-red-button: #D62839;
   --light-grey-text: #585858;
   --light-grey-icon: #888;
@@ -34,10 +35,6 @@ button {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
-}
-
-button:hover {
-  background-color: var(--hover-color);
 }
 
 /* error-handling for wrong url */
