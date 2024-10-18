@@ -45,7 +45,7 @@ export default function CommentForm() {
     }, [message])
 
     return (
-        <div className={style.main}>
+        <div className={style['comment-main']}>
             <div className={style.container}>
                 <form onSubmit={handleSubmit} className={style.form}>
                     <h2>Kommentera</h2>
