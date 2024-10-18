@@ -51,7 +51,7 @@
 .form>.name-div>input[type="text"]:focus,
 .form>.comment-div>textarea:focus {
     width: 100%;
-    border: 1px solid #333;
+    border: 1px solid var(--light-pink-color);
     border-radius: 10px;
     padding: 10px;
     font-size: 1rem;
