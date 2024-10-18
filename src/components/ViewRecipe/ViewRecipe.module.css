@@ -37,7 +37,7 @@
     height: auto;
     border-radius: 12px;
     object-fit: cover;
-    border: solid 4px #A8DADC;
+    border: solid 2px #A8DADC;
     box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
 }
 
@@ -52,7 +52,7 @@
 
 .main > .container > h5 {
     font-size: 0.9em;
-    color: #028f94;
+    color: var(--icon-color);
 }
 
 .button-card-container>div {
