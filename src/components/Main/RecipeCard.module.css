@@ -6,7 +6,7 @@
 
 .card {
     /* if a single card is on screen, to not be strecthed set a max width if its a single or few cards with alot of space */
-    width: 300px;
+    width: 400px;
     max-width: 400px;
     height: 100%;
     overflow: hidden;
@@ -83,6 +83,7 @@
 
 .difficulty-text {
     align-content: flex-end;
+    display: visible;
 }
 
 .difficulty-bars {
@@ -97,8 +98,8 @@
 }
 
 .bar {
-    width: 5px;
-    height: 20px;
+    width: 4px;
+    height: 18px;
     background-color: lightgray;
     /* Tom stapel */
 }
@@ -118,9 +119,17 @@
     font-size: 1.4em;
 }
 
+.time span {
+    margin-left: 5px;             /* adds space with time-icon */
+}
+
 .stars>div {
     display: flex;
     align-items: center;
+}
+
+.stars {
+    font-size: 1em;
 }
 
 .stars svg {
@@ -192,17 +201,8 @@
         justify-content: end; /* Center the icon and text vertically */
     }
 
-    .time span {
-        margin-left: 5px;             /* adds space with time-icon */
-    }
-
     .stars {
         font-size: 1em;
-    }
-
-    .difficulty-bars .bar {
-        width: 4px;
-        height: 18px;
     }
 }
 
@@ -264,25 +264,6 @@
         flex-direction: row;
         justify-content: end; /* Center the icon and text vertically */
     }
-
-    .time span {
-        margin-left: 5px;             /* adds space with time-icon */
-    }
-
-    .stars {
-        font-size: 1em;
-    }
-
-    .recipe-button {
-        font-size: 1rem;
-        padding: 0.5rem 0.9rem;
-        display: none;
-    }
-
-    .difficulty-bars .bar {
-        width: 4px;
-        height: 18px;
-    }
 }
 
 @media (min-width: 781px) and (max-width: 980px) {
@@ -343,25 +324,6 @@
         flex-direction: row;
         justify-content: end; /* Center the icon and text vertically */
     }
-
-    .time span {
-        margin-left: 5px;             /* adds space with time-icon */
-    }
-
-    .stars {
-        font-size: 1em;
-    }
-
-    .recipe-button {
-        font-size: 1rem;
-        padding: 0.5rem 0.9rem;
-        display: none;
-    }
-
-    .difficulty-bars .bar {
-        width: 4px;
-        height: 18px;
-    }
 }
 
 @media (min-width: 981px) and (max-width: 1180px) {
@@ -419,23 +381,110 @@
         flex-direction: row;
         justify-content: end; /* Center the icon and text vertically */
     }
+}
 
-    .time span {
-        margin-left: 5px;             /* adds space with time-icon */
+@media (min-width: 1181px) and (max-width: 1480px) {
+    .card {
+        width: 100%;
+        max-width: 300px;
+        height: 100%;
+        padding: 10px;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
     }
 
-    .stars {
-        font-size: 1em;
+    .card > .recipe-list {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    
+    .recipe-list > li {
+        width: 100%;
+        margin-top: 0;
     }
 
-    .recipe-button {
-        font-size: 1rem;
-        padding: 0.5rem 0.9rem;
-        display: none;
+    .recipe-list h3 {
+        font-size: 1.1em;
     }
 
-    .difficulty-bars .bar {
-        width: 4px;
-        height: 18px;
+    .card > img {
+        width: 100%;
+        height: 200px;
+        max-height: 150px
+    }
+
+    .details {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        list-style-type: none;
+    }
+
+    .details > * {
+        font-size: 0.9rem;
+    }
+
+    .details svg {
+        font-size: 1.2em;
+    }
+
+    .time {
+        display: flex;
+        flex-direction: row;
+        justify-content: end; /* Center the icon and text vertically */
+    }
+}
+
+@media (min-width: 1481px) and (max-width: 1780px) {
+    .card {
+        width: 100%;
+        max-width: 320px;
+        height: 100%;
+        padding: 10px;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .card > .recipe-list {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    
+    .recipe-list > li {
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .recipe-list h3 {
+        font-size: 1.1em;
+    }
+
+    .card > img {
+        width: 100%;
+        height: 200px;
+        max-height: 150px
+    }
+
+    .details {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        list-style-type: none;
+    }
+
+    .details > * {
+        font-size: 0.9rem;
+    }
+
+    .details svg {
+        font-size: 1.2em;
+    }
+
+    .time {
+        display: flex;
+        flex-direction: row;
+        justify-content: end; /* Center the icon and text vertically */
     }
 }
