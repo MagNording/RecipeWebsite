@@ -6,7 +6,7 @@ import style from './RecipeCard.module.css';
 // Kör npm install @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock } from '@fortawesome/free-solid-svg-icons';
-import { displayStarRating, renderDifficultyBars } from '../Utils/RecipeCard.jsx';
+import { displayStarRating, refactorRecipeTime, renderDifficultyBars } from '../Utils/RecipeCard.jsx';
 
 export default function RecipeCard(props) {
 
@@ -30,7 +30,7 @@ export default function RecipeCard(props) {
             <li key={props.id}>
               <ul className={style.details}>
                 <li className={style.time}>  <FontAwesomeIcon icon={faClock} />
-                  <span> {props.time} min</span>
+                  <span>{refactorRecipeTime(props.time)}</span>
                 </li>
                 <li>
                   {renderDifficultyBars(props.time, style)}

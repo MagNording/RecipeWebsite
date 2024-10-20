@@ -46,6 +46,22 @@ export function categorizeDifficulty(minutes) {
     }
 }
 
+export function refactorRecipeTime(minutes) {
+    let numOfHours = minutes/60;
+    let numOfMinutes = minutes % 60;
+    let formattedHours = Math.floor(numOfHours) + ' tim';
+    let formattedMinutes = numOfMinutes + ' min';
+    let data;
+    if (numOfHours < 1) {
+      data = formattedMinutes;
+    } else if (numOfMinutes === 0) {
+      data = formattedHours;
+    } else {
+      data = formattedHours + ' ' + formattedMinutes;
+    }
+    return data;
+}
+
 export function renderDifficultyBars(minutes, style) {
     const difficultyLevels = categorizeDifficulty(minutes);
     const numberOfBars = {
