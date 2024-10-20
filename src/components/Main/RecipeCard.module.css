@@ -6,8 +6,8 @@
 
 .card {
     /* if a single card is on screen, to not be strecthed set a max width if its a single or few cards with alot of space */
-    width: 400px;
-    max-width: 400px;
+    width: 300px;
+    max-width: 300px;
     height: 100%;
     overflow: hidden;
     background-color: var(--white-color);
@@ -209,7 +209,7 @@
 @media (min-width: 501px) and (max-width: 780px) {
     .card {
         width: 100%;
-        max-width: 300px;
+        max-width: 250px;
         padding: 15px;
         box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
     }
@@ -390,7 +390,7 @@
 @media (min-width: 1181px) and (max-width: 1480px) {
     .card {
         width: 100%;
-        max-width: 300px;
+        max-width: 240px;
         height: 100%;
         padding: 10px;
         box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
@@ -443,7 +443,7 @@
 @media (min-width: 1481px) and (max-width: 1780px) {
     .card {
         width: 100%;
-        max-width: 320px;
+        max-width: 270px;
         height: 100%;
         padding: 10px;
         box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);

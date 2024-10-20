@@ -28,9 +28,9 @@
 .body>.landing-main>.card-container {
     background-color: var(--background-color);
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    grid-gap: 1.5rem;
-    padding: 2em 6em;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 1.1rem;
+    padding: 2em 10em;
     margin-top: 0;
 }
 
@@ -111,16 +111,16 @@
 
 @media only screen and ((min-width: 1181px) and (max-width: 1480px)) {
     .body>.landing-main>.card-container {
-        grid-template-columns: repeat(3, minmax(300px, 1fr));
+        grid-template-columns: repeat(4, minmax(240px, 1fr));
         grid-gap: 15px;
-        padding: 1em 10em;
+        padding: 1em 8em;
     }
 }
 
 @media only screen and ((min-width: 1481px) and (max-width: 1780px)) {
     .body>.landing-main>.card-container {
-        grid-template-columns: repeat(4, minmax(320px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
         grid-gap: 15px;
-        padding: 1em 6em;
+        padding: 1em 10em;
     }
 }
