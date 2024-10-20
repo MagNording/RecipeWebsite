@@ -5,11 +5,11 @@
 }
 
 .comment-main {
-    background-color: var(--white-color);
+    background-color: #f7fdf4;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1.8rem 1rem 0.5rem 1rem;
+    min-height: 100vh;
 }
 
 .comment-main > .container {
