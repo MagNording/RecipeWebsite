@@ -150,7 +150,7 @@
 }
 
 .description-container {
-    background-image: linear-gradient(#F1FAEE,  #A8DADC);
+    background-color: #F1FAEE;
     max-width: 80%;
     width: 100%;
     border-radius: 12px;
