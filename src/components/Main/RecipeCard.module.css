@@ -295,8 +295,12 @@
         font-size: 1.1em;
     }
 
+    .details {
+        padding: 0.6rem;
+    }
+
     .details > *, .details > svg {
-        font-size: 0.75rem;
+        font-size: 0.7rem;
     }
 
     .bar {
