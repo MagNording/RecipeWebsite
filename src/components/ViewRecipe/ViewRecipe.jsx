@@ -25,8 +25,13 @@ export default function ViewRecipe() {
     const ref = useRef();
 
     function downloadPDF() {
+  
         const input = ref.current;
-        html2canvas(input).then(canvas => {
+
+        html2canvas(input,{
+            useCORS: true
+        }).then(canvas => {
+         
             const imgData = canvas.toDataURL("image/png")
             const psf = new jsPDF('p', 'mm', 'a4', true)
             const pdfWidth = psf.internal.pageSize.getWidth()
@@ -39,7 +44,9 @@ export default function ViewRecipe() {
             psf.addImage(imgData, 'PNG', imgX, imgY, imgWidth * ratio, imgHeight * ratio)
             psf.save(`${desiredRecipe.title}.pdf`)
 
+
         })
+   
     }
 
     // getting recipe by Id
@@ -196,7 +203,7 @@ export default function ViewRecipe() {
                 </div>
 
                 <button><Link to="/" className={style['no-underline']}>Hem</Link></button>
-                <button onClick={()=> downloadPDF()}>Ladda ned</button>
+                <button onClick={() => downloadPDF()}>Ladda ned</button>
             </div>
         </div>
     )
