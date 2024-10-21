@@ -2,13 +2,17 @@
 
 :root {
   --primary-accent: rgba(0, 255, 255, 0.078);
-  --secondary-accent: #2e6b6d;
+  --secondary-accent: #39878a;
+  --icon-color: #39878a;
   --yellow-color: #ec9b19;
-  --hover-color: #008f94;
+  --background-color: #F1FAEE;
+  --card-color: #FFDDD2;
+  --light-pink-color: #fbe6e0;
   --white-color: rgb(255, 255, 255);
   --red-msg-color: #721c24;
   --pink-background: #f8d7da;
   --pink-border: #f5c6cb;
+  --red-color: #E63946;
   --activated-red-button: #D62839;
   --light-grey-text: #585858;
   --light-grey-icon: #888;
@@ -31,10 +35,6 @@ button {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
-}
-
-button:hover {
-  background-color: var(--hover-color);
 }
 
 /* error-handling for wrong url */
