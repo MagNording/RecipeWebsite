@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUtensils } from '@fortawesome/free-solid-svg-icons';
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
 
 import style from './ViewRecipe.module.css';
 
@@ -18,7 +20,35 @@ export default function ViewRecipe() {
     const [ingredientStates, setIngredientStates] = useState([]);
 
     const params = useParams();
-    
+
+
+    const ref = useRef();
+
+    function downloadPDF() {
+  
+        const input = ref.current;
+
+        html2canvas(input,{
+            useCORS: true
+        }).then(canvas => {
+         
+            const imgData = canvas.toDataURL("image/png")
+            const psf = new jsPDF('p', 'mm', 'a4', true)
+            const pdfWidth = psf.internal.pageSize.getWidth()
+            const pdfHeight = psf.internal.pageSize.getHeight()
+            const imgWidth = canvas.width
+            const imgHeight = canvas.height
+            const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight)
+            const imgX = (pdfWidth - imgWidth * ratio) / 2
+            const imgY = 30
+            psf.addImage(imgData, 'PNG', imgX, imgY, imgWidth * ratio, imgHeight * ratio)
+            psf.save(`${desiredRecipe.title}.pdf`)
+
+
+        })
+   
+    }
+
     // getting recipe by Id
     useEffect(() => {
         const loadRecipe = async () => {
@@ -36,7 +66,7 @@ export default function ViewRecipe() {
                             checked: false
                         };
                     })
-                );        
+                );
             }
         };
 
@@ -79,8 +109,11 @@ export default function ViewRecipe() {
         );
     };
 
+
+
+
     return (
-        <div className={style['recipe-main']}>
+        <div className={style['recipe-main']} ref={ref}>
             <div className={style.container}>
 
                 <h1 className={style['recipe-title']}>{desiredRecipe.title}</h1>
@@ -102,11 +135,11 @@ export default function ViewRecipe() {
                         <ul className={style['ingredient-list']}>
                             {ingredientStates.map((ingredient) => (
                                 <li key={ingredient._id} className={style['ingredient-item']}>
-                                    <input 
-                                        type="checkbox" 
+                                    <input
+                                        type="checkbox"
                                         className={style['ingredient-checkbox']}
                                         checked={ingredient.checked}
-                                        onChange={() => handleCheckboxChange(ingredient._id)} 
+                                        onChange={() => handleCheckboxChange(ingredient._id)}
                                     />
                                     <strong>{ingredient.amount} {getShortUnit(ingredient.unit)} </strong>
                                     <span>{ingredient.name}</span>
@@ -170,6 +203,7 @@ export default function ViewRecipe() {
                 </div>
 
                 <button><Link to="/" className={style['no-underline']}>Hem</Link></button>
+                <button onClick={() => downloadPDF()}>Ladda ned</button>
             </div>
         </div>
     )
