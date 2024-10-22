@@ -14,7 +14,7 @@ export default function RecipeCard(props) {
   const [isFavorite, setIsFavorite] = useState(false);
 
   const toggleFavorite = (e) => {
-    e.preventDefault(); // Prevent the Link from being triggered when the heart is clicked
+    e.preventDefault();                // to prevent the Link from being triggered when the heart is clicked
     setIsFavorite(!isFavorite);
   };
 
@@ -23,9 +23,9 @@ export default function RecipeCard(props) {
       <section className={style.card}>
         <div className={style['image-container']}>
           <img src={props.imageUrl} alt={props.title} className={style['recipe-image']} />
-          {/* Heart Icon for Favorites */}
+          {/* Heart-Icon to mark a Favorite */}
           <FontAwesomeIcon
-            icon={isFavorite ? solidHeart : regularHeart}  // Toggle between outlined and solid heart
+            icon={isFavorite ? solidHeart : regularHeart}      // to toggle between outlined and solid heart
             className={`${style['favorite-icon']} ${isFavorite ? style['filled'] : ''}`}
             onClick={toggleFavorite}
           />
