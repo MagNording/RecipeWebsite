@@ -1,5 +1,4 @@
-import React, { useRef } from 'react';
-import { useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUtensils } from '@fortawesome/free-solid-svg-icons';
@@ -10,6 +9,7 @@ import style from './ViewRecipe.module.css';
 
 import RecipeRating from './Ratings';
 import CommentList from './CommentList.jsx';
+import { ScrollButton } from '../ScrollButton/ScrollButton.jsx';
 import { fetchCommentsByRecipeId, fetchRecipeById, saveRecipeRating, getShortUnit } from '../Utils/ViewRecipe.jsx';
 
 export default function ViewRecipe() {
@@ -25,13 +25,11 @@ export default function ViewRecipe() {
     const ref = useRef();
 
     function downloadPDF() {
-  
         const input = ref.current;
 
         html2canvas(input,{
             useCORS: true
         }).then(canvas => {
-         
             const imgData = canvas.toDataURL("image/png")
             const psf = new jsPDF('p', 'mm', 'a4', true)
             const pdfWidth = psf.internal.pageSize.getWidth()
@@ -41,12 +39,10 @@ export default function ViewRecipe() {
             const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight)
             const imgX = (pdfWidth - imgWidth * ratio) / 2
             const imgY = 30
+
             psf.addImage(imgData, 'PNG', imgX, imgY, imgWidth * ratio, imgHeight * ratio)
             psf.save(`${desiredRecipe.title}.pdf`)
-
-
         })
-   
     }
 
     // getting recipe by Id
@@ -108,9 +104,6 @@ export default function ViewRecipe() {
             )
         );
     };
-
-
-
 
     return (
         <div className={style['recipe-main']} ref={ref}>
@@ -205,6 +198,7 @@ export default function ViewRecipe() {
                 <button><Link to="/" className={style['no-underline']}>Hem</Link></button>
                 <button onClick={() => downloadPDF()}>Ladda ned</button>
             </div>
+            <ScrollButton />
         </div>
     )
 }
