@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import style from './RecipeCard.module.css';
@@ -6,28 +6,44 @@ import style from './RecipeCard.module.css';
 // Kör npm install @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock } from '@fortawesome/free-solid-svg-icons';
+import { faHeart as solidHeart } from '@fortawesome/free-solid-svg-icons';
+import { faHeart as regularHeart } from '@fortawesome/free-regular-svg-icons';
 import { displayStarRating, refactorRecipeTime, renderDifficultyBars } from '../Utils/RecipeCard.jsx';
 
 export default function RecipeCard(props) {
+  const [isFavorite, setIsFavorite] = useState(false);
+
+  const toggleFavorite = (e) => {
+    e.preventDefault(); // Prevent the Link from being triggered when the heart is clicked
+    setIsFavorite(!isFavorite);
+  };
 
   return (
     <Link to={`/recipes/${props.id}`} className={style['card-link']}>
       <section className={style.card}>
+        <div className={style['image-container']}>
+          <img src={props.imageUrl} alt={props.title} className={style['recipe-image']} />
+          {/* Heart Icon for Favorites */}
+          <FontAwesomeIcon
+            icon={isFavorite ? solidHeart : regularHeart}  // Toggle between outlined and solid heart
+            className={`${style['favorite-icon']} ${isFavorite ? style['filled'] : ''}`}
+            onClick={toggleFavorite}
+          />
+        </div>
         <div>
-          <img src={props.imageUrl} alt={props.title} />
           <ul className={style['recipe-list']}>
             <li key={props.id}>
               <h3>{props.title}</h3>
               <p className={style['desc']}>{props.description}</p>
-              <div className={style['stars']}>
-                {displayStarRating(props.rating)}
-              </div>
             </li>
           </ul>
         </div>
         <div>
           <ul className={style['recipe-list']}>
             <li key={props.id}>
+              <div className={style['stars']}>
+                {displayStarRating(props.rating)}
+              </div>
               <ul className={style.details}>
                 <li className={style.time}>  <FontAwesomeIcon icon={faClock} />
                   <span>{refactorRecipeTime(props.time)}</span>
