@@ -56,8 +56,9 @@
     border: 1px solid var(--light-pink-color);
     border-radius: 10px;
     padding: 10px;
-    font-size: 1rem;
+    font-size: 0.8rem;
     margin-top: 0.5rem;
+    opacity: 0.7;
     font-family: 'Montserrat', sans-serif;
     background-color: var(--white-color);
     outline: none;
@@ -119,7 +120,7 @@ button:active {
 
 .message p {
     color: var(--red-color);
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: 400;
 }
 
@@ -143,9 +144,9 @@ button:active {
         margin-bottom: 0.8rem;
     }
 
-    input[type="text"],
-    textarea {
-        font-size: 1rem;
+    .form>.name-div>input[type="text"],
+    .form>.comment-div>textarea {
+        font-size: 0.8rem;
         padding: 8px;
     }
 
@@ -158,11 +159,10 @@ button:active {
     }
 
     .comment-main>.container>.form>.button-container>button {
-        font-size: 1rem;
         padding: 8px 15px;
     }
 
     .message p {
-        font-size: 1.5rem;
+        font-size: 1.1rem;
     }
 }
