@@ -1,3 +1,4 @@
+import { ScrollButton } from '../ScrollButton/ScrollButton';
 import AvailableRecipes from './AvailableRecipes';
 import './Main.css';
 
@@ -10,6 +11,7 @@ export default function Main(props) {
             <div className='card-container'>
                 <AvailableRecipes availableRecipes={props.recipes} />
             </div>
+            <ScrollButton />
         </main>
     );
 }
