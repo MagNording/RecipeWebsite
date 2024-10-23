@@ -30,7 +30,7 @@ export default function ViewRecipe() {
         html2canvas(input,{
             useCORS: true
         }).then(canvas => {
-            const imgData = canvas.toDataURL("image/png")
+            const imgData = canvas.toDataURL("image/jpeg")
             const psf = new jsPDF('p', 'mm', 'a4', true)
             const pdfWidth = psf.internal.pageSize.getWidth()
             const pdfHeight = psf.internal.pageSize.getHeight()
@@ -40,7 +40,7 @@ export default function ViewRecipe() {
             const imgX = (pdfWidth - imgWidth * ratio) / 2
             const imgY = 30
 
-            psf.addImage(imgData, 'PNG', imgX, imgY, imgWidth * ratio, imgHeight * ratio)
+            psf.addImage(imgData, 'jpeg', imgX, imgY, imgWidth * ratio, imgHeight * ratio)
             psf.save(`${desiredRecipe.title}.pdf`)
         })
     }
