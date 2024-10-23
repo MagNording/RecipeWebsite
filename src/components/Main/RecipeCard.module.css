@@ -61,11 +61,12 @@
   
 .favorite-icon.filled {
     color: var(--red-color);           /* color of filled heart */
-    background-color: rgba(170, 170, 170, 0.6);    /* gray background when filled */
+    background-color: rgba(255, 255, 255, 0.8);    /* white background when filled */
 }
   
 .favorite-icon:hover {
-    background-color: rgba(128, 128, 128, 0.7);   /* darken the background on hover */
+    color: white;
+    background-color: var(--red-color);  
 }
 /* ---------------------------------------------------   */
 
