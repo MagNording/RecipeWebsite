@@ -21,7 +21,7 @@ export default function HomePage() {
     const loadRecipes = async () => {
         const recipes = await fetchRecipes();
         setAvailableRecipes(recipes);           // get all available recipes from database
-        setAvailableCategories(getAllCategories(recipes));   // get categories from all recipes
+        setAvailableCategories(getAllSortedCategories(recipes));   // get categories from all recipes
     };
 
     const handleCategoryClick = async (category) => {
