@@ -28,7 +28,8 @@ export default function ViewRecipe() {
         const input = ref.current;
 
         html2canvas(input,{
-            useCORS: true
+            useCORS: true,
+            scale: 2,
         }).then(canvas => {
             const imgData = canvas.toDataURL("image/png")
             const psf = new jsPDF('p', 'mm', 'a4', true)
