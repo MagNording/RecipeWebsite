@@ -68,7 +68,7 @@ export function renderDifficultyBars(minutes, style) {
       Enkel: 1,
       Medelsvår: 2,
       Svår: 3,
-      Komplicerad: 4
+      Avancerad: 4
     }[difficultyLevels];
 
     return (
