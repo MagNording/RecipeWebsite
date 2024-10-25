@@ -37,12 +37,12 @@ export function displayStarRating(rating) {
 export function categorizeDifficulty(minutes) {
     if (minutes <= 30) {
       return 'Enkel';
-    } else if (minutes > 30 && minutes <= 60) {
+    } else if (minutes > 30 && minutes <= 80) {
       return 'Medelsvår';
-    } else if (minutes > 60 && minutes <= 90) {
+    } else if (minutes > 80 && minutes <= 110) {
       return 'Svår';
     } else {
-      return 'Komplicerad';
+      return 'Avancerad';
     }
 }
 
