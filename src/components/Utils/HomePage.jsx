@@ -10,7 +10,7 @@ export const fetchRecipes = async () => {
 }
 
 // get all available categories from database
-export function getAllCategories(data) {
+export function getAllSortedCategories(data) {
     const categoriesArray =  data.map(recipe => recipe.categories) ;
     let mergedCategories = [];
     
@@ -26,7 +26,7 @@ export function getAllCategories(data) {
         }
     });
 
-    return availableCategories;
+    return availableCategories.sort();     // returns a sorted list of available categories
 }
 
 export const fetchRecipesByCategory = async (selectedCategory) => {
