@@ -489,13 +489,13 @@ button:active {
         padding: 0;
     }
 
-    .container > .description-container > h2, 
+    .container > .meta-data-container > .description-container > h2, 
     .card-container > .card > h2,
     .card-container > .card > div > h2 {
         font-size: 1.2rem;
     }
 
-    .container > .description-container > p {
+    .container > .meta-data-container > .description-container > p {
         font-size: .9rem;
     }
 
