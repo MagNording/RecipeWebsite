@@ -1,15 +1,15 @@
 import RecipeCard from './RecipeCard';
 
-function createRecipeCard(content) {
+function createRecipeCard(recipe) {
     return(
       <RecipeCard
-        key={content._id}
-        id={content._id}
-        rating={content.avgRating}
-        imageUrl={content.imageUrl}
-        title={content.title}
-        description={content.description}
-        time={content.timeInMins}
+        key={recipe._id}
+        id={recipe._id}
+        rating={recipe.avgRating}
+        imageUrl={recipe.imageUrl}
+        title={recipe.title}
+        description={recipe.description}
+        time={recipe.timeInMins}
       />
     );
 }  

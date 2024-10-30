@@ -11,6 +11,7 @@ import RecipeRating from './Ratings';
 import CommentList from './CommentList.jsx';
 import { ScrollButton } from '../ScrollButton/ScrollButton.jsx';
 import { fetchCommentsByRecipeId, fetchRecipeById, saveRecipeRating, getShortUnit } from '../Utils/ViewRecipe.jsx';
+import { RecipeMetaData } from './RecipeMetaData.jsx';
 
 export default function ViewRecipe() {
     const [desiredRecipe, setDesiredRecipe] = useState(null);
@@ -115,11 +116,17 @@ export default function ViewRecipe() {
                     <img src={desiredRecipe.imageUrl} alt={desiredRecipe.title} className={style['recipe-image']} />
                 </div>
                 <h5>Kategorier: {desiredRecipe.categories.join(', ')}</h5>
-                <div className={style['description-container']}>
-                    <h2>Beskrivning</h2>
-                    <p className={style.description}>
-                        "{desiredRecipe.description}"
-                    </p>
+
+                <div className={style['meta-data-container']}>
+                    <div className={style['meta-data']}>
+                        <RecipeMetaData recipe={desiredRecipe}/>
+                    </div>                 
+                    <div className={style['description-container']}>
+                        <h2>Beskrivning</h2>
+                        <p className={style.description}>
+                            "{desiredRecipe.description}"
+                        </p>
+                    </div>
                 </div>
 
                 <div className={style['card-container']}>
