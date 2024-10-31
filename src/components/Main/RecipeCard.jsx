@@ -9,6 +9,7 @@ import { faClock } from '@fortawesome/free-solid-svg-icons';
 import { faHeart as solidHeart } from '@fortawesome/free-solid-svg-icons';
 import { faHeart as regularHeart } from '@fortawesome/free-regular-svg-icons';
 import { displayStarRating, refactorRecipeTime, renderDifficultyBars } from '../Utils/RecipeCard.jsx';
+import { RecipeTime } from '../RecipeMetaData/RecipeTime/RecipeTime.jsx';
 
 export default function RecipeCard(props) {
   const [isFavorite, setIsFavorite] = useState(false);
@@ -45,8 +46,8 @@ export default function RecipeCard(props) {
                 {displayStarRating(props.rating)}
               </div>
               <ul className={style.details}>
-                <li className={style.time}>  <FontAwesomeIcon icon={faClock} />
-                  <span>{refactorRecipeTime(props.time)}</span>
+                <li>
+                  <RecipeTime timeInMins={ props.time }/>
                 </li>
                 <li>
                   {renderDifficultyBars(props.time, style)}
