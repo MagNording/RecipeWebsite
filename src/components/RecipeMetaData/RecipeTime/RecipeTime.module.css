@@ -1,0 +1,12 @@
+/* Time icon */
+.time {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;            /* to center the icon and text vertically */
+    font-size: 0.8rem;
+}
+
+.time span {
+    margin-left: 5px;             /* adds space with time-icon */
+}
+
