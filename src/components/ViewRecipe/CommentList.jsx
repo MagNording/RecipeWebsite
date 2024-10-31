@@ -2,6 +2,7 @@ import React from 'react';
 import style from './ViewRecipe.module.css';
 import { formatDate } from '../Utils/CommentList';
 
+// takes in comments and prints them out in a listed form
 export default function CommentList({ comments }) {
     if (comments.length === 0) {
         return <p>Inga kommentarer än, bli den första!!</p>

@@ -56,6 +56,8 @@ Ratings:
 Handle rating comment
 ViewRecipe:
 parent component for creating a new recipe page with all components and having a function to create a pdf from the recipe template
+RecipeMetaData:
+details about the recipe, rating, time to complete, ingredients
 
 ScrollToTop:
 button component for scrolling back up automatically
