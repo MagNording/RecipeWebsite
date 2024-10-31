@@ -167,17 +167,6 @@
     /* Fylld stapel */
 }
 
-/* Time icon */
-.time {
-    display: flex;
-    flex-direction: row;
-    justify-content: end; /* Center the icon and text vertically */
-}
-
-.time span {
-    margin-left: 5px;             /* adds space with time-icon */
-}
-
 .stars>div {
     display: flex;
     align-items: center;

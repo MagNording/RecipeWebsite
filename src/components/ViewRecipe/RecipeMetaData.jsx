@@ -1,9 +1,8 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCarrot } from '@fortawesome/free-solid-svg-icons';
 
 import { displayStarRating, renderDifficultyBars } from '../Utils/RecipeCard.jsx';
 import { RecipeTime } from '../RecipeMetaData/RecipeTime/RecipeTime.jsx';
+import { IngredientCount } from '../RecipeMetaData/IngredientCount/IngredientCount.jsx';
 import style from './RecipeMetaData.module.css';
 
 export function RecipeMetaData(props) {
@@ -15,11 +14,10 @@ export function RecipeMetaData(props) {
                     <li key={props.recipe.id}>
                     <ul className={style.details}>
                         <li>
-                            <RecipeTime timeInMins={ props.recipe.timeInMins }/>
+                            <RecipeTime timeInMins={ props.recipe.timeInMins } />
                         </li>
-                        <li className={style['ingredients-icon']}>
-                            <FontAwesomeIcon icon={faCarrot} size="lg" /> 
-                            <span>{numberOfIngredients} ingr</span>
+                        <li>
+                            <IngredientCount count= {numberOfIngredients} />
                         </li>    
                         <li>
                             {renderDifficultyBars(props.recipe.timeInMins, style)}

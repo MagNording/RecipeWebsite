@@ -23,7 +23,7 @@ div > .recipe-list {
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    gap: 1em;
+    gap: 0.6em;
     background-color: #eaefef;
 
     width: 100%;
@@ -81,17 +81,6 @@ div > .recipe-list {
     /* Fylld stapel */
 }
 
-/* Time icon */
-.time {
-    display: flex;
-    flex-direction: row;
-    justify-content: end; /* Center the icon and text vertically */
-}
-
-.time span, .ingredients-icon span {
-    margin-left: 5px;             /* adds space with time-icon */
-}
-
 .stars>div {
     display: flex;
     align-items: center;
@@ -121,12 +110,12 @@ div > .recipe-list {
     }
 
     .details > * {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
     }
 
     .bar {
         height: 1rem;
-    }
+    }    
 }
 
 @media (min-width: 501px) and (max-width: 780px) {
