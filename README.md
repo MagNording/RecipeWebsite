@@ -114,22 +114,16 @@ The following files can be found in the `src` folder as well-
 * <b>main.jsx</b>: This is the main entry point for a React application, responsible for rendering the root component.
 
 ## Useful Resources
-[Folder structure in a React project (1)](https://legacy.reactjs.org/docs/faq-structure.html
-)
+[Folder structure in a React project (1)](https://legacy.reactjs.org/docs/faq-structure.html)
 
-[Folder structure in a React project (2)](https://medium.com/@kthamodaran/react-8-best-practices-folder-structure-5dbda48a69e
-)
+[Folder structure in a React project (2)](https://medium.com/@kthamodaran/react-8-best-practices-folder-structure-5dbda48a69e)
 
 
-[Create recipe instructions as tick-able](https://www.geeksforgeeks.org/reactjs-htmlfor-attribute/
-)
+[Create recipe instructions as tickable](https://medium.com/@gbenleseun2016/creating-a-dynamic-checkbox-list-with-react-check-and-uncheck-with-ids-ea37eb3fc182)
 
 [Create a Scroll-to-top button](https://www.geeksforgeeks.org/how-to-create-a-scroll-to-top-button-in-react-js/)
 
-[How to write JEST test (1)](https://medium.com/@razita.afrina/testing-fetch-api-calls-in-react-7f047ac2d220
-)
+[How to write JEST test (1)](https://medium.com/@razita.afrina/testing-fetch-api-calls-in-react-7f047ac2d220)
 
-[How to write JEST test (2)](https://stackoverflow.com/questions/44596915/jest-mocking-console-error-tests-fails
-)
-
+[How to write JEST test (2)](https://stackoverflow.com/questions/44596915/jest-mocking-console-error-tests-fails)
 
