@@ -126,8 +126,9 @@ https://dessertheaven.netlify.app/
 
 [Folder structure in a React project (2)](https://medium.com/@kthamodaran/react-8-best-practices-folder-structure-5dbda48a69e)
 
+[Create recipe ingredients as tickable using React State](https://medium.com/@gbenleseun2016/creating-a-dynamic-checkbox-list-with-react-check-and-uncheck-with-ids-ea37eb3fc182)
 
-[Create recipe instructions as tickable](https://medium.com/@gbenleseun2016/creating-a-dynamic-checkbox-list-with-react-check-and-uncheck-with-ids-ea37eb3fc182)
+[Create recipe instructions as tickable using HTML DOM](https://www.geeksforgeeks.org/html-dom-label-htmlfor-property/)
 
 [Create a Scroll-to-top button](https://www.geeksforgeeks.org/how-to-create-a-scroll-to-top-button-in-react-js/)
 
