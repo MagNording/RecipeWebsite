@@ -6,6 +6,7 @@
 This project contains a source folder `src` which further contains the following-
 * `components` folder
 * `pages` folder
+* `images` folder
 * `App.jsx`, `App.css` and `main.jsx` files 
 
 Each of the above is explained below.
@@ -96,6 +97,9 @@ Navigate to the pages folder as follows-
 
 * <b>Root</b>: Root includes `React Outlet` which is a component provided by React `Router` that serves as a placeholder for child routes within a parent route.
 
+## Images
+The `images` folder in the `src` folder contains the image used on the landing page.
+
 ## Other files
 The following files can be found in the `src` folder as well-
 
@@ -104,6 +108,18 @@ The following files can be found in the `src` folder as well-
 * <b>App.css</b>: It serves as the main CSS file for the app and therefore contain the root styling.
 
 * <b>main.jsx</b>: This is the main entry point for a React application, responsible for rendering the root component.
+
+## Other relevant information
+
+[Swagger link](https://recept3-bolen.reky.se/swagger) to the backend api.
+
+This project has been deployed on Netlify: [open project on Netlify](https://dessertheaven.netlify.app/)
+
+You can even use the following link to open this project in any browser-
+
+```bat
+https://dessertheaven.netlify.app/
+```
 
 ## Useful Resources
 [Folder structure in a React project (1)](https://legacy.reactjs.org/docs/faq-structure.html)
