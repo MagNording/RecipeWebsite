@@ -25,7 +25,7 @@ Navigate to the components folder as follows-
 
 `Project` --> `src` --> `components`
 
-I) Within the components folder, the following sub-folders can be found (each of which contains respective components)-
+Within the components folder, the following sub-folders can be found (each of which contains respective components)-
 
 1) ### Categories
 * <b>CategoriesBar</b> is parent to the `AvailableCategories` component and uses it to get value for the selected category (if any category is selected by user).
@@ -94,10 +94,9 @@ details about the recipe, rating, time to complete, ingredients
 10) ### ScrollToTop:
 This component is used in the Root.jsx file in the pages folder so that we land at the top of the newly opened page.
 
-II) Navigate to the pages folder as follows-
+## Pages
+Navigate to the pages folder as follows-
 `Project` --> `src` --> `pages`
-
-### Pages
 
 * <b>Error</b>: When a page not found, send the error message
 
@@ -105,7 +104,8 @@ II) Navigate to the pages folder as follows-
 
 * <b>Root</b>: Root includes `React Outlet` which is a component provided by React `Router` that serves as a placeholder for child routes within a parent route.
 
-III) The following can be found in the `src` folder as well-
+## Other files
+The following files can be found in the `src` folder as well-
 
 * <b>App.jsx</b>: It contains the React-Router, which further provides route to different pages, eg. `ViewRecipe` page to view a recipe, `CommentForm` page to leave a comment, `ErrorPage` that displays en error.
 
