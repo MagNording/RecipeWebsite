@@ -162,6 +162,10 @@
     width: 80%;
 }
 
+.meta-data-container > .meta-data {
+    margin-bottom: 1rem;
+}
+
 .meta-data-container > .description-container {
     background-color: #F1FAEE;
     max-width: 80%;
