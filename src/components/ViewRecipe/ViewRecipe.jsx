@@ -22,30 +22,7 @@ export default function ViewRecipe() {
 
     const params = useParams();
 
-
     const ref = useRef();
-
-    function downloadPDF() {
-        const input = ref.current;
-
-        html2canvas(input,{
-            useCORS: true,
-            scale: 2,
-        }).then(canvas => {
-            const imgData = canvas.toDataURL("image/jpeg")
-            const psf = new jsPDF('p', 'mm', 'a4', true)
-            const pdfWidth = psf.internal.pageSize.getWidth()
-            const pdfHeight = psf.internal.pageSize.getHeight()
-            const imgWidth = canvas.width
-            const imgHeight = canvas.height
-            const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight)
-            const imgX = (pdfWidth - imgWidth * ratio) / 2
-            const imgY = 30
-
-            psf.addImage(imgData, 'jpeg', imgX, imgY, imgWidth * ratio, imgHeight * ratio)
-            psf.save(`${desiredRecipe.title}.pdf`)
-        })
-    }
 
     // getting recipe by Id
     useEffect(() => {
@@ -69,7 +46,17 @@ export default function ViewRecipe() {
         };
 
         loadRecipe();
-    }, [params.recipeId]);
+    }, []);
+    
+    const handleCheckboxChange = (ingredientId) => {
+        setIngredientStates((prevState) =>
+            prevState.map((ingredient) =>
+                ingredient._id === ingredientId
+                    ? { ...ingredient, checked: !ingredient.checked }      // spread operator means all other properties of the ingredient object
+                    : ingredient
+            )
+        );
+    };
 
     // getting comments of a recipe by recipeId
     useEffect(() => {
@@ -97,15 +84,27 @@ export default function ViewRecipe() {
         }
     }
 
-    const handleCheckboxChange = (ingredientId) => {
-        setIngredientStates((prevState) =>
-            prevState.map((ingredient) =>
-                ingredient._id === ingredientId
-                    ? { ...ingredient, checked: !ingredient.checked }      // spread operator means all other properties of the ingredient object
-                    : ingredient
-            )
-        );
-    };
+    function downloadPDF() {
+        const input = ref.current;
+
+        html2canvas(input,{
+            useCORS: true,
+            scale: 2,
+        }).then(canvas => {
+            const imgData = canvas.toDataURL("image/jpeg")
+            const psf = new jsPDF('p', 'mm', 'a4', true)
+            const pdfWidth = psf.internal.pageSize.getWidth()
+            const pdfHeight = psf.internal.pageSize.getHeight()
+            const imgWidth = canvas.width
+            const imgHeight = canvas.height
+            const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight)
+            const imgX = (pdfWidth - imgWidth * ratio) / 2
+            const imgY = 30
+
+            psf.addImage(imgData, 'jpeg', imgX, imgY, imgWidth * ratio, imgHeight * ratio)
+            psf.save(`${desiredRecipe.title}.pdf`)
+        })
+    }
 
     return (
         <div className={style['recipe-main']} ref={ref}>
