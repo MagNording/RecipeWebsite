@@ -11,12 +11,21 @@ Currently, two official plugins are available:
 [Emanuel Sleyman](https://github.com/EmSley77), [Depinder Kaur](https://github.com/DepiKaur) and [Magnus Nording](https://github.com/MagNording)
 
 ## Project documentation:
-This project contains a components folder. Each component has its own .jsx file and .css file.
-To find the components folder, follow
+This project contains a source folder `src` which further contains the following-
+* `components` folder
+* `pages` folder
+* `App.jsx`, `App.css` and `main.jsx` files 
+
+Each of the above is explained below.
+
+## Components
+Each component has its own .jsx file and .css file. 
+
+Navigate to the components folder as follows-
 
 `Project` --> `src` --> `components`
 
-I) In the components folder, the following components can be found-
+I) Within the components folder, the following sub-folders can be found (each of which contains respective components)-
 
 1) ### Categories
 * <b>CategoriesBar</b> is parent to the `AvailableCategories` component and uses it to get value for the selected category (if any category is selected by user).
@@ -39,6 +48,13 @@ Contains components `Main`, `AvailableRecipes` and `RecipeCard` which are explai
 
 * <b>RecipeCard</b> creates a recipe card (which itself is a link to the full-recipe) for each of the available recipes as displayed on the home page.
 
+5) ### RecipeMetaData
+`RecipeMetaData` folder contains components which can be re-used in the project. eg. `IngredientCount` and `RecipeTime`.
+
+* <b>IngredientCount</b> displays the number of ingredients used in the recipe.
+
+* <b>RecipeTime</b> displays the time taken to cook the recipe.
+
 6) ### ScrollButton
 When the button to scroll up automatically is available, how much to scroll until its visible position.
 
@@ -47,21 +63,17 @@ Contains only the `SearchBar` component.
 * <b>SearchBar</b> component is used to fetch input from user input and then update the state.
 it also has a prop that allows parent components to be updated with certain values
 
-8) ### Utils:
-* <b>CommentForm</b>:
-A component that takes in commentData and recipeId as parameters and the makes a post request to the server.
+8) ### Utils
+* <b>CommentForm</b> component takes in commentData and recipeId as parameters and the makes a post request to the server.
 
-* <b>CommentList</b>:
-Component takes in comments and the print them out in a list of comments with username/or anonymized username, comments and date of comment.
+* <b>CommentList</b> component takes in comments and the print them out in a list of comments with username/or anonymized username, comments and date of comment.
 
-* <b>HomePage</b>:
-A Component that has functions to fetch recipes, get sorted recipes and fetch by category.
+* <b>HomePage</b> component has functions to fetch recipes, get sorted recipes and fetch by category.
 
-* <b>RecipeCard</b>:
-How the recipeCard will look like on the homepage, stars, difficulty and other attributes.
+* <b>RecipeCard</b> contains util functions to display a star-rating, categorize difficulty level for a recipe, calculate the corresponding difficulty bars and format the recipe time.
 
 * <b>ViewRecipe</b>:
-Important funtions when viewing the recipeCard and view a recipe in a seperate window, fetchComments, saveRecipeRatin, get ShortUnit and unit conversions.
+Important funtions when viewing the recipeCard and view a recipe in a seperate window, fetchComments, saveRecipeRating, getShortUnit and unit conversions.
 
 9) ### ViewRecipe:
 * <b>CommentForm</b>:
@@ -91,13 +103,33 @@ II) Navigate to the pages folder as follows-
 
 * <b>Home</b>: The home page / landing page with contributing components
 
-* <b>Root</b>:
-Root includes React Outlet which is a component provided by React Router that serves as a placeholder for child routes within a parent route.
+* <b>Root</b>: Root includes `React Outlet` which is a component provided by React `Router` that serves as a placeholder for child routes within a parent route.
 
-However, the following can be found in the src folder.
+III) The following can be found in the `src` folder as well-
 
-### App:
-All links and routes will be available to see
+* <b>App.jsx</b>: It contains the React-Router, which further provides route to different pages, eg. `ViewRecipe` page to view a recipe, `CommentForm` page to leave a comment, `ErrorPage` that displays en error.
 
-### main:
-the main component when running
+* <b>App.css</b>: It serves as the main CSS file for the app and therefore contain the root styling.
+
+* <b>main.jsx</b>: This is the main entry point for a React application, responsible for rendering the root component.
+
+## Useful Resources
+[Folder structure in a React project (1)](https://legacy.reactjs.org/docs/faq-structure.html
+)
+
+[Folder structure in a React project (2)](https://medium.com/@kthamodaran/react-8-best-practices-folder-structure-5dbda48a69e
+)
+
+
+[Create recipe instructions as tick-able](https://www.geeksforgeeks.org/reactjs-htmlfor-attribute/
+)
+
+[Create a Scroll-to-top button](https://www.geeksforgeeks.org/how-to-create-a-scroll-to-top-button-in-react-js/)
+
+[How to write JEST test (1)](https://medium.com/@razita.afrina/testing-fetch-api-calls-in-react-7f047ac2d220
+)
+
+[How to write JEST test (2)](https://stackoverflow.com/questions/44596915/jest-mocking-console-error-tests-fails
+)
+
+
