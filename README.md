@@ -1,7 +1,7 @@
 # React + Vite
 
 ## Contact details of the developers:
-depinder.kaur@iths.se, emanuel.sleyman@iths.se and magnus.nording@iths.se
+[Emanuel Sleyman](https://github.com/EmSley77), [Depinder Kaur](https://github.com/DepiKaur) and [Magnus Nording](https://github.com/MagNording)
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
