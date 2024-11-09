@@ -120,6 +120,9 @@ You can even use the following link to open this project in any browser-
 ```bat
 https://dessertheaven.netlify.app/
 ```
+or scan the following QR-code to open it on your mobile
+
+![QR-code for this website](public/qr-code-for-website.png)
 
 ## Useful Resources
 [Folder structure in a React project (1)](https://legacy.reactjs.org/docs/faq-structure.html)
