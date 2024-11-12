@@ -20,7 +20,7 @@ export default function ViewRecipe() {
     const [comments, setComments] = useState([]);
     const [ingredientStates, setIngredientStates] = useState([]);
 
-    const params = useParams();
+    const params = useParams();    // to get recipeId parameter from the url-path
 
     const ref = useRef();
 
