@@ -131,6 +131,8 @@ or scan the following QR-code to open it on your mobile
 
 [Create recipe ingredients as tickable using React State](https://medium.com/@gbenleseun2016/creating-a-dynamic-checkbox-list-with-react-check-and-uncheck-with-ids-ea37eb3fc182)
 
+[Understand prevState in React](https://ogzhanolguncu.com/blog/how-does-prevstate-works-under-the-hood/)
+
 [Create recipe instructions as tickable using HTML DOM](https://www.geeksforgeeks.org/html-dom-label-htmlfor-property/)
 
 [Create a Scroll-to-top button](https://www.geeksforgeeks.org/how-to-create-a-scroll-to-top-button-in-react-js/)
