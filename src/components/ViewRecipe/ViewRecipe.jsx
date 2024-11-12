@@ -20,32 +20,14 @@ export default function ViewRecipe() {
     const [comments, setComments] = useState([]);
     const [ingredientStates, setIngredientStates] = useState([]);
 
+    // to initialize state with an array of false values (i.e. not checked)
+    const [instructionStates, setInstructionStates] = useState(
+        new Array(desiredRecipe.instructions.length).fill(false)
+      );
+
+    // to get recipeId parameter from the url-path  
     const params = useParams();
-
-
     const ref = useRef();
-
-    function downloadPDF() {
-        const input = ref.current;
-
-        html2canvas(input,{
-            useCORS: true,
-            scale: 2,
-        }).then(canvas => {
-            const imgData = canvas.toDataURL("image/png")
-            const psf = new jsPDF('p', 'mm', 'a4', true)
-            const pdfWidth = psf.internal.pageSize.getWidth()
-            const pdfHeight = psf.internal.pageSize.getHeight()
-            const imgWidth = canvas.width
-            const imgHeight = canvas.height
-            const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight)
-            const imgX = (pdfWidth - imgWidth * ratio) / 2
-            const imgY = 30
-
-            psf.addImage(imgData, 'PNG', imgX, imgY, imgWidth * ratio, imgHeight * ratio)
-            psf.save(`${desiredRecipe.title}.pdf`)
-        })
-    }
 
     // getting recipe by Id
     useEffect(() => {
@@ -69,7 +51,26 @@ export default function ViewRecipe() {
         };
 
         loadRecipe();
-    }, [params.recipeId]);
+    }, []);
+    
+    const handleCheckboxChange = (ingredientId) => {
+        setIngredientStates((prevState) =>
+            prevState.map((ingredient) =>
+                ingredient._id === ingredientId
+                    ? { ...ingredient, checked: !ingredient.checked }      // spread operator means all other properties of the ingredient object
+                    : ingredient
+            )
+        );
+    };
+
+    const handleCheckboxChangeForInstructions = (index) => {
+        // toggle the checked state of the specific checkbox
+        setInstructionStates((prevState) =>
+            prevState.map((isChecked, i) =>
+            i === index ? !isChecked : isChecked
+          )
+        );
+      };
 
     // getting comments of a recipe by recipeId
     useEffect(() => {
@@ -97,15 +98,27 @@ export default function ViewRecipe() {
         }
     }
 
-    const handleCheckboxChange = (ingredientId) => {
-        setIngredientStates((prevState) =>
-            prevState.map((ingredient) =>
-                ingredient._id === ingredientId
-                    ? { ...ingredient, checked: !ingredient.checked }      // spread operator means all other properties of the ingredient object
-                    : ingredient
-            )
-        );
-    };
+    function downloadPDF() {
+        const input = ref.current;
+
+        html2canvas(input,{
+            useCORS: true,
+            scale: 2,
+        }).then(canvas => {
+            const imgData = canvas.toDataURL("image/jpeg")
+            const psf = new jsPDF('p', 'mm', 'a4', true)
+            const pdfWidth = psf.internal.pageSize.getWidth()
+            const pdfHeight = psf.internal.pageSize.getHeight()
+            const imgWidth = canvas.width
+            const imgHeight = canvas.height
+            const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight)
+            const imgX = (pdfWidth - imgWidth * ratio) / 2
+            const imgY = 30
+
+            psf.addImage(imgData, 'jpeg', imgX, imgY, imgWidth * ratio, imgHeight * ratio)
+            psf.save(`${desiredRecipe.title}.pdf`)
+        })
+    }
 
     return (
         <div className={style['recipe-main']} ref={ref}>
@@ -158,6 +171,8 @@ export default function ViewRecipe() {
                                         type="checkbox"
                                         className={style['instruction-checkbox']}
                                         id={`step-${index}`}
+                                        checked={checkedSteps[index]}
+                                        onChange={() => handleCheckboxChangeForInstructions(index)}
                                     />
                                     <label htmlFor={`step-${index}`} className={style['instruction-label']}>
                                         <span className={style['step-number']}>{index + 1}. </span>
