@@ -19,11 +19,7 @@ export default function ViewRecipe() {
     const [thankYouMessage, setThankYouMessage] = useState(false);
     const [comments, setComments] = useState([]);
     const [ingredientStates, setIngredientStates] = useState([]);
-
-    // to initialize state with an array of false values (i.e. not checked)
-    const [instructionStates, setInstructionStates] = useState(
-        new Array(desiredRecipe.instructions.length).fill(false)
-      );
+    const [instructionStates, setInstructionStates] = useState([]);
 
     // to get recipeId parameter from the url-path  
     const params = useParams();
@@ -35,6 +31,7 @@ export default function ViewRecipe() {
             const recipe = await fetchRecipeById(params.recipeId);
             setDesiredRecipe(recipe);
 
+            // initialize ingredient states
             if (recipe) {
                 setIngredientStates(
                     recipe.ingredients.map((ingredient) => {
@@ -47,6 +44,9 @@ export default function ViewRecipe() {
                         };
                     })
                 );
+
+                // initialize instruction states after fetching `desiredRecipe`
+                setInstructionStates(new Array(recipe.instructions.length).fill(false));
             }
         };
 
@@ -98,27 +98,6 @@ export default function ViewRecipe() {
         }
     }
 
-    function downloadPDF() {
-        const input = ref.current;
-
-        html2canvas(input,{
-            useCORS: true,
-            scale: 2,
-        }).then(canvas => {
-            const imgData = canvas.toDataURL("image/jpeg")
-            const psf = new jsPDF('p', 'mm', 'a4', true)
-            const pdfWidth = psf.internal.pageSize.getWidth()
-            const pdfHeight = psf.internal.pageSize.getHeight()
-            const imgWidth = canvas.width
-            const imgHeight = canvas.height
-            const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight)
-            const imgX = (pdfWidth - imgWidth * ratio) / 2
-            const imgY = 30
-
-            psf.addImage(imgData, 'jpeg', imgX, imgY, imgWidth * ratio, imgHeight * ratio)
-            psf.save(`${desiredRecipe.title}.pdf`)
-        })
-    }
     function downloadPDF() {
         const input = ref.current;
 
@@ -192,7 +171,7 @@ export default function ViewRecipe() {
                                         type="checkbox"
                                         className={style['instruction-checkbox']}
                                         id={`step-${index}`}
-                                        checked={checkedSteps[index]}
+                                        checked={instructionStates[index]}
                                         onChange={() => handleCheckboxChangeForInstructions(index)}
                                     />
                                     <label htmlFor={`step-${index}`} className={style['instruction-label']}>
