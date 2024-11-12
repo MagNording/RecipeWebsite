@@ -113,7 +113,7 @@
 
     width: 100%;
     height: auto;
-    padding: 0.5rem;
+    padding: 0.7rem;
     border-radius: 5px;
     transition: 0.2s;
     margin-top: 0.3rem;
@@ -121,7 +121,7 @@
 }
 
 .details > * {
-    font-size: 1rem;
+    font-size: 0.8rem;
 }
 
 .details svg {
@@ -212,7 +212,7 @@
     }
 
     .details > * {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
     }
 
     .bar {
@@ -315,7 +315,7 @@
     }
 
     .details > * , .details > svg{
-        font-size: 0.8rem;
+        font-size: 0.7rem;
     }
  
     .difficulty-text {
@@ -341,7 +341,7 @@
     }
 
     .details > *, .details > svg {
-        font-size: 0.75rem;
+        font-size: 0.7rem;
     }
 
     .bar {
@@ -371,7 +371,7 @@
     }
 
     .details > *, .details > svg {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
     }
 
     .bar {

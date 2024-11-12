@@ -119,6 +119,27 @@ export default function ViewRecipe() {
             psf.save(`${desiredRecipe.title}.pdf`)
         })
     }
+    function downloadPDF() {
+        const input = ref.current;
+
+        html2canvas(input,{
+            useCORS: true,
+            scale: 2,
+        }).then(canvas => {
+            const imgData = canvas.toDataURL("image/jpeg")
+            const psf = new jsPDF('p', 'mm', 'a4', true)
+            const pdfWidth = psf.internal.pageSize.getWidth()
+            const pdfHeight = psf.internal.pageSize.getHeight()
+            const imgWidth = canvas.width
+            const imgHeight = canvas.height
+            const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight)
+            const imgX = (pdfWidth - imgWidth * ratio) / 2
+            const imgY = 30
+
+            psf.addImage(imgData, 'jpeg', imgX, imgY, imgWidth * ratio, imgHeight * ratio)
+            psf.save(`${desiredRecipe.title}.pdf`)
+        })
+    }
 
     return (
         <div className={style['recipe-main']} ref={ref}>

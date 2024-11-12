@@ -20,7 +20,7 @@ export default function AvailableCategories(props) {
     return (
         <>
             {props.availableCategories.length > 0 ? (
-                <ul className='nav-list'>
+                <ul className='category-list'>
                     {props.availableCategories.map((item, index) => {
                         return (
                             <li key={index}>

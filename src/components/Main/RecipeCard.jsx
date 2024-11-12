@@ -5,10 +5,9 @@ import style from './RecipeCard.module.css';
 
 // Kör npm install @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClock } from '@fortawesome/free-solid-svg-icons';
 import { faHeart as solidHeart } from '@fortawesome/free-solid-svg-icons';
 import { faHeart as regularHeart } from '@fortawesome/free-regular-svg-icons';
-import { displayStarRating, refactorRecipeTime, renderDifficultyBars } from '../Utils/RecipeCard.jsx';
+import { displayStarRating, renderDifficultyBars } from '../Utils/RecipeCard.jsx';
 import { RecipeTime } from '../RecipeMetaData/RecipeTime/RecipeTime.jsx';
 
 export default function RecipeCard(props) {
